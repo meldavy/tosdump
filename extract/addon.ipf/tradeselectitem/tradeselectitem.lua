@@ -1334,7 +1334,13 @@ function OPEN_TRADE_SELECT_SKILL_GEM(frame)
 
 		if string.find(sklname, job..'_') ~= nil and exceptionCase == 0 then
 			local skillgem_cls = GetClassByStrProp('Item', 'SkillName', sklname)
-			SkillList[#SkillList + 1] = skillgem_cls
+			if job == 'Hunter' then
+				if string.find(sklname, 'TigerHunter_') == nil then
+					SkillList[#SkillList + 1] = skillgem_cls
+				end
+			else
+				SkillList[#SkillList + 1] = skillgem_cls
+			end
 		end
     end
 

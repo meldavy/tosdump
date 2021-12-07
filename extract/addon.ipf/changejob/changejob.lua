@@ -511,7 +511,7 @@ function UPDATE_CHANGEJOB(frame)
 		end
 	
 		local name = TryGetProp(jobCls, "JobName", "None")
-		if name ~= 'Appraiser' and name ~= 'NakMuay' and name ~= 'Shinobi' and name ~= 'Miko' then
+		if name ~= 'Appraiser' and name ~= 'NakMuay' and name ~= 'Shinobi' and name ~= 'Miko' and name ~= 'RuneCaster' then
 			return true
 		end
 
@@ -589,7 +589,7 @@ function UPDATE_CHANGEJOB(frame)
 		    local preFuncName = TryGetProp(jobCls, 'PreFunction', 'None')
 			if jobCls.HiddenJob == 'YES' and preFuncName ~= 'None' then
 				local jobname = TryGetProp(jobCls, 'JobName', 'None')
-				if jobname == 'Appraiser' or jobname == 'NakMuay' or jobname == 'Shinobi' or jobname == 'Miko' then
+				if jobname == 'Appraiser' or jobname == 'NakMuay' or jobname == 'Shinobi' or jobname == 'Miko' or name == 'RuneCaster' then
 					button:SetImage(BUTTON_IMG_HAD_HIDDEN_JOB);
 				else
 					button:SetImage(BUTTON_IMG_HAVE_JOB);

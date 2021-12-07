@@ -107,6 +107,10 @@ function SCR_BARRACK_CREATE_FAIRY_DOLL_EFFECT_EP13RAINCOAT(handle)
 	SCR_CREATE_FAIRY_GROUND(handle, "effect_ep13raincoat");
 end
 
+function SCR_BARRACK_CREATE_FAIRY_SANTA_GUILTY(handle)
+	SCR_CREATE_FAIRY(handle, "doll_santa_guilty");
+end
+
 -- wing item effect offset
 function SCR_USE_COMPANION_OFFSET(handle)
 	local obj = world.GetActor(handle);

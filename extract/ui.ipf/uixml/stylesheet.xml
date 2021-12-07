@@ -677,4 +677,20 @@
 		<!--hero_countdown-->
 		<font name="normal" size="24" space="0" color="2b81ff" bold="yes" italic="no" dropshadow="yes" outline="yes" underline="no" centerline="no" gradation="gradation1"/>
 	</style>
+	<style name="ps1_1">
+		<!--partysearch-->
+		<font name="normal" size="20" space="0" color="907f63" bold="yes" italic="no" dropshadow="no" outline="no" underline="no" centerline="no"/>
+	</style>
+	<style name="ps1_2">
+		<!--partysearch-->
+		<font name="normal" size="20" space="0" color="8b6c3b" bold="yes" italic="no" dropshadow="no" outline="no" underline="no" centerline="no"/>
+	</style>
+	<style name="ps1_3">
+		<!--partysearch-->
+		<font name="normal" size="20" space="0" color="331c00" bold="yes" italic="no" dropshadow="no" outline="no" underline="no" centerline="no"/>
+	</style>
+	<style name="ps2">
+		<!--partysearch-->
+		<font name="normal" size="16" space="0" color="ffd58d" bold="yes" italic="no" dropshadow="no" outline="yes" underline="no" centerline="no"/>
+	</style>
 </StyleSheet>

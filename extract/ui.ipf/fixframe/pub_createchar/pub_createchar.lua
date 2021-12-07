@@ -309,7 +309,12 @@ function PUB_CREATECHAR_NAME_CHECK()
 	local createcharBtn = GET_CHILD(frame, "createcharBtn");
 	createcharBtn:SetEnable(0);
 
-	local msg = ScpArgMsg("PossibleChangeName_2{Name}", "Name", text).." {nl}"..ScpArgMsg("ReallCreate?");
+	local startPointTxt = ClMsg("Lv440KlaipeCastle");
+	if frame:GetUserIValue("SELECTED_NUM") == 1 then
+		startPointTxt = ClMsg("Lv1KlaipeWest");
+	end
+
+	local msg = ScpArgMsg("PossibleChangeName_2{Name}", "Name", text) .. " {nl}" .. ClMsg("StartingPointAndLevel") .. " {nl}" .. startPointTxt;
 	local msgBox = ui.MsgBox(msg, "PUB_EXEC_CREATECHAR()", "PUB_CREATECHAR_BTN_UNFREEZE()");
 end
 
@@ -338,10 +343,11 @@ function _PUB_EXEC_CREATECHAR(viewOpening)
     local make_layer = current_layer
     if make_layer < 1 or make_layer > 3 then
         make_layer = 1
-    end
-
+	end
+	
+	local start_flag = frame:GetUserIValue("SELECTED_NUM");
 	local actor = GetBarrackPub():GetSelectedActor();
-	barrack.RequestCreateCharacter(text, actor, make_layer);
+	barrack.RequestCreateCharacter(text, actor, make_layer, start_flag);
 	GetBarrackPub():EnablePlayOpening(viewOpening);
 end
 

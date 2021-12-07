@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<ActionDesc>
+	<Particle frame="17" attachNode="None" particleName="F_burstup003" useAttach="false" hiddenObj="false" changeEffect="None" scale="0.3" pause="true" use2DEffect="false" soft2DValue="0" targetPos="false"/>
+	<Sound frame="13.00" soundFile="skl_eff_body_atk_31"/>
+	<Sound frame="17.00" soundFile="mon_voice_beadbird_3"/>
+</ActionDesc>

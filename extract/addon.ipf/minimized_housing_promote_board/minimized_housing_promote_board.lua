@@ -3,6 +3,11 @@ function MINIMIZED_HOUSING_PROMOTE_BOARD_ON_INIT(addon, frame)
 end
 
 function MINIMIZED_HOUDING_PROMOTE_BOARD_BUTTON_OPEN_CHECK(frame)
+    if TUTORIAL_CLEAR_CHECK(GetMyPCObject()) == false then
+		frame:ShowWindow(0)
+		return
+    end
+    
 	local mapprop = session.GetCurrentMapProp();
     local mapCls = GetClassByType("Map", mapprop.type);	
     

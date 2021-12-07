@@ -46,10 +46,6 @@
                             </ToolScp>
                         </condList>
                         <execList>
-                            <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO">
-                                <Str Str="Goddess_Raid_Vasilissa_Solo"/>
-                                <Str Str="MinigameSuccess"/>
-                            </ToolScp>
                             <ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
                                 <Num Num="1"/>
                             </ToolScp>
@@ -108,6 +104,10 @@
                                 <Str Str="Goddess_Raid_Vasilissa_Solo"/>
                                 <Str Str="NO"/>
                             </ToolScp>
+                            <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO">
+								<Str Str="Goddess_Raid_Vasilissa_Solo"/>
+								<Str Str="MinigameSuccess"/>
+							</ToolScp>
                         </execList>
                     </Event>
                 </StageEvents>

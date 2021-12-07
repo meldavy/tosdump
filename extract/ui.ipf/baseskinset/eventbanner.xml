@@ -3,6 +3,12 @@
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MintPC (Mi) -->
 <skinset name="Base">
 	<imagelist category="eventbanner">
+		<image name="211125_Class_Update" file="\event_banner\211125_Class_Update.jpg" imgrect="0 0 480 180"/>
+		<image name="2112_goddesscube" file="\event_banner\2112_goddesscube.jpg" imgrect="0 0 480 180"/>
+		<image name="21112_GM_GUPJ" file="\event_banner\21112_GM_GUPJ.png" imgrect="0 0 480 180"/>
+		<image name="211125_specialedition" file="\event_banner\211125_specialedition.png" imgrect="0 0 480 180"/>
+		<image name="event2112_Burning" file="\event_banner\event2112_Burning.jpg" imgrect="0 0 480 180"/>
+		<image name="event2112_VaivoraReward" file="\event_banner\event2112_VaivoraReward.jpg" imgrect="0 0 480 180"/>
 		<image name="OTP_event20211118" file="\event_banner\OTP_event20211118.png" imgrect="0 0 480 180"/>
 		<image name="event2111winter" file="\event_banner\event2111winter.png" imgrect="0 0 480 180"/>
 		<image name="Sadu_specialedition" file="\event_banner\Sadu_specialedition.png" imgrect="0 0 480 180"/>

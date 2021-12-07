@@ -90,10 +90,6 @@
                                 <Str Str="Glacier_Start"/>
                                 <Num Num="0"/>
                             </ToolScp>
-                            <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO" CondFunc="">
-                                <Str Str="LEGEND_RAID_GLACIER_HARD"/>
-                                <Str Str="MinigameSuccess"/>
-                            </ToolScp>
                             <ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
                                 <Num Num="1"/>
                             </ToolScp>
@@ -153,6 +149,10 @@
                                 <Str Str="59494"/>
                                 <Str Str="Legend_boss_Glacier"/>
                                 <Str Str="NO"/>
+                            </ToolScp>
+                            <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO" CondFunc="">
+                                <Str Str="LEGEND_RAID_GLACIER_HARD"/>
+                                <Str Str="MinigameSuccess"/>
                             </ToolScp>
                         </execList>
                     </Event>

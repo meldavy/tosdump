@@ -269,9 +269,6 @@
 				<Frame Angle="0" AniTime="999999" Dist="0" ForceATK="0" HitCount="1" Length="30" PosType="0" RandDist="0" RandomPerHit="0" RotAngle="0" SklAngle="0.17453292" TermMax="0" TermMin="0" Time="999799" Type="FAN" Width="30" />
 			</HitList>
 			<EtcList>
-                <Scp Scp="SKL_RUN_SCRIPT" Client="NO" UseSleep="NO" Time="0">
-                    <Str Str="DEFENSE_SHADOWDRAINFATTER_DEBUFF"/>
-                </Scp>
 				<Scp Client="YES" Scp="C_VOICE_SOUND" Time="100" UseSleep="NO">
 					<Str Str="voice_wiz_m_ShadowFatter_cast" />
 					<Str Str="voice_wiz_f_ShadowFatter_cast" />

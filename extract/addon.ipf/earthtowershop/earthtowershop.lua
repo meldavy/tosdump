@@ -1363,7 +1363,6 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
         resultCount = 1;
     end
 
-    local recipeCount = {}
     local recipecls = GetClass('ItemTradeShop', parent:GetName());
     if g_account_prop_shop_table[shopType] == nil then
         if recipecls ~= nil then
@@ -1381,7 +1380,6 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
                         isExceptionFlag = true;
                         break;
                     end
-                    recipeCount[#recipeCount + 1] = recipeItemCnt * resultCount
                 end
             end
 
@@ -1407,9 +1405,10 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
         local recipecls = GetClass('ItemTradeShop', parent:GetName());
         if g_account_prop_shop_table[shopType] == nil then -- 아이템
             local itemName = TryGetProp(recipecls, "Item_1_1", "None");
+            local recipeCnt = TryGetProp(recipecls, "Item_1_1_Cnt", 0);
             local itemCls = GetClass('Item', itemName)
             before_count = GET_TOTAL_ITEM_CNT(itemCls.ClassID)
-            after_count = before_count - recipeCount[1]
+            after_count = before_count - GET_TOTAL_AMOUNT_OVERBUY(shopType, recipeCnt, recipecls, GetMyAccountObj(), resultCount)
             coin_name = TryGetProp(itemCls, "Name", "None")
         else -- 주화
             local coinCls = GetClassByStrProp('accountprop_inventory_list', 'ClassName', g_account_prop_shop_table[shopType]['propName'])
@@ -1420,7 +1419,7 @@ function EARTH_TOWER_SHOP_EXEC(parent, ctrl)
                 count = '0'
             end
             before_count = tonumber(count) -- 현재 갯수
-            after_count = before_count - (recipeCnt * resultCount)
+            after_count = before_count - GET_TOTAL_AMOUNT_OVERBUY(shopType, recipeCnt, recipecls, GetMyAccountObj(), resultCount)
             coin_name = ClMsg(TryGetProp(coinCls, "ClassName", "None"))
         end
         before_count = GET_COMMAED_STRING(before_count)

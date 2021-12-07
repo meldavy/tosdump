@@ -114,6 +114,7 @@ function BOUNTYHUNT_EXECUTE(parent, ctrl)
 	end
 
 	local targetItemID = icon:GetInfo():GetIESID();
+	frame:SetUserValue('guid', targetItemID)
 	local yesscp = string.format('_BOUNTYHUNT_EXECUTE("%s")', targetItemID)
 
 	local msgBoxCheckFlag = frame:GetUserValue("MSG_BOX_CHECK_FLAG");
@@ -124,11 +125,13 @@ function BOUNTYHUNT_EXECUTE(parent, ctrl)
 	SET_MODAL_MSGBOX(msgBox);
 end
 
-function _BOUNTYHUNT_EXECUTE(targetItemID)
+function _BOUNTYHUNT_EXECUTE(targetItemID)	
 	local frame = ui.GetFrame('bountyhunt')
 	if frame:IsVisible() == 0 then
 		return;
 	end
+
+	targetItemID = frame:GetUserValue('guid')
 
 	local targetInvItem = session.GetInvItemByGuid(targetItemID)
 	if targetInvItem == nil then
@@ -151,8 +154,8 @@ function _BOUNTYHUNT_EXECUTE(targetItemID)
 	end
 
 	local argStr = targetItemID;
-	pc.ReqExecuteTx_Item("SCR_USE_BOUNTYHUNT_TICKET", argStr)
 	CLOSE_BOUNTY_HUNT(frame)
+	pc.ReqExecuteTx_Item("SCR_USE_BOUNTYHUNT_TICKET", argStr)
 end
 
 function ON_BOUNTYHUNT_CLOSE(frame, msg, argStr, argNum)

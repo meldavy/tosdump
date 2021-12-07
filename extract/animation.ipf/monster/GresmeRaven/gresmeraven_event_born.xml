@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="0.00" soundFile="mon_succubus_turn_wing"/>
+    <Sound frame="0.00" soundFile="mon_pet_hawk_wing"/>
+    <Sound frame="11.00" soundFile="mon_pet_hawk_wing"/>
+    <Sound frame="18.00" soundFile="mon_pet_hawk_wing"/>
+    <Sound frame="21.00" soundFile="skl_eff_born_landing_s_3"/>
+    <Sound frame="57.00" soundFile="mon_pet_hawk_wing"/>
+    <Sound frame="84.00" soundFile="mon_voice_bird_10"/>
+</ActionDesc>

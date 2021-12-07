@@ -210,6 +210,20 @@ function OPEN_CABINET_VIBORA(frame, ctrl, argStr, argNum)
 end
 
 function RUN_OPEN_VIBORA(itemGuid, arg_str)
+	local frame = ui.GetFrame("open_select_vibora")
+	local itemGuid = frame:GetUserValue("UseItemGuid")	
+
+	local cls = GetClassByType('cabinet_weapon', arg_str)
+	local prop = TryGetProp(cls, 'UpgradeAccountProperty', 'None')
+	local item = session.GetInvItemByGuid(itemGuid)	
+	local item_obj = GetIES(item:GetObject())	
+	local ticket_lv = TryGetProp(item_obj, 'NumberArg1', 0)
+	
+	if TryGetProp(GetMyAccountObj(), prop, 0) >= ticket_lv then
+		ui.MsgBox(ScpArgMsg("YouHaveSameLevelArcane"))		
+		return
+	end
+
 	pc.ReqExecuteTx_Item("OPEN_CABINET_VIBORA", itemGuid, arg_str)
 end
 
@@ -442,6 +456,20 @@ function OPEN_CABINET_GODDESS(frame, ctrl, argStr, argNum)
 	frame:ShowWindow(0);
 end
 
-function RUN_OPEN_GODDESS(itemGuid, arg_str)
+function RUN_OPEN_GODDESS(itemGuid, arg_str)	
+	local frame = ui.GetFrame("open_select_vibora")
+	local itemGuid = frame:GetUserValue("UseItemGuid")
+	
+	local cls = GetClassByType('cabinet_armor', arg_str)
+	local prop = TryGetProp(cls, 'UpgradeAccountProperty', 'None')
+	local item = session.GetInvItemByGuid(itemGuid)	
+	local item_obj = GetIES(item:GetObject())	
+	local ticket_lv = TryGetProp(item_obj, 'NumberArg1', 0)
+	
+	if TryGetProp(GetMyAccountObj(), prop, 0) >= ticket_lv then
+		ui.MsgBox(ScpArgMsg("YouHaveSameLevelArcane"))	
+		return
+	end
+
 	pc.ReqExecuteTx_Item("OPEN_CABINET_GODDESS", itemGuid, arg_str)
 end

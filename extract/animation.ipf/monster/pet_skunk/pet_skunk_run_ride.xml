@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<ActionDesc>
+	<Sound frame="0.00" soundFile="mon_ride_step"/>
+	<Sound frame="7.00" soundFile="mon_ride_step"/>
+</ActionDesc>

@@ -9,6 +9,8 @@ local has_claim = {
     create_channel = false,
     delete_channel = false,
     pin_message = false,
+    delete_message = false,
+    gag_member = false,
 }
 local pending_claimcheck = 0
 local NUM_CHANNELS_PER_PAGE = 15
@@ -21,6 +23,8 @@ function GUILDINFO_COMMUNITY_INIT()
     check(209, "create_channel")
     check(210, "delete_channel")
     check(211, "pin_message")
+    check(212, "delete_message")
+    check(213, "gag_member")
     
     local frame = ui.GetFrame("guildinfo")
     local communityPanel = GET_CHILD_RECURSIVELY(frame, "communitypanel")
@@ -401,17 +405,38 @@ end
 function GCM_OPEN_MEMBER_CONTEXT(parent, control)
     local myaid = session.loginInfo.GetAID()
     local target = (control:GetClassString() == "ui::CControlSet" and control or parent):GetName()
-    local has_permission = gcm_IsOwnedChannel(current_channel) or session.party.IsLeader(PARTY_GUILD, myaid)
-    if has_permission and target ~= myaid then
-        context_member = target
-        local context = ui.CreateContextMenu("MEMBER_CONTEXT_MENU", "", 0, 0, 190, 100)
+
+    local canKick = target ~= myaid and (gcm_IsOwnedChannel(current_channel) or session.party.IsLeader(PARTY_GUILD, myaid))
+    local isGagged = gcm_IsMemberGagged(current_channel, target)
+    local canGag = has_claim.gag_member and (isGagged or target ~= myaid)
+    if not (canKick or canGag) then return end
+
+    context_member = target
+    local context = ui.CreateContextMenu("MEMBER_CONTEXT_MENU", "", 0, 0, 190, 100)
+
+    if canKick then
         ui.AddContextMenuItem(
             context,
             "{img context_chat_goout 17 16} " .. ClMsg("Ban"),
-	        "ui.MsgBox(ClMsg('KickConfirm'), 'GCM_KICK_MEMBER', '')"
+            "ui.MsgBox(ClMsg('KickConfirm'), 'GCM_KICK_MEMBER', '')"
         )
-        ui.OpenContextMenu(context)
     end
+    if canGag then
+        if isGagged then
+            ui.AddContextMenuItem(
+                context,
+                "{img context_conversation_delete 18 17} " .. ClMsg("UngagMember"),
+                "GCM_SET_MEMBER_GAGGED(false)"
+            )
+        else
+            ui.AddContextMenuItem(
+                context,
+                "{img context_conversation_delete 18 17} " .. ClMsg("GagMember"),
+                "GCM_SET_MEMBER_GAGGED(true)"
+            )
+        end
+    end
+    ui.OpenContextMenu(context)
 end
 
 function GCM_OPEN_CHANNEL_MENU(channel)
@@ -459,19 +484,38 @@ function GCM_OPEN_MESSAGE_MENU(msg)
         msg = msg:GetParent()
         if not msg then return end
     end
-    local id = msg:GetName()
-    context_message = id
+    context_message = msg:GetName()
 
     local context = ui.CreateContextMenu("MESSAGE_CONTEXT_MENU", "", 0, 0, 190, 100)
     ui.AddContextMenuItem(
         context,
         "{img context_conversation_delete 18 17} " .. ClMsg("Delete"),
-        "ui.MsgBox(ClMsg('DeleteMessageDesc'), 'GCM_DELETE_MESSAGE', 'None')"
+        "ui.MsgBox(ClMsg('DeleteMessageDesc'), 'GCM_DELETE_MESSAGE_LOCAL', 'None')"
     )
+    if has_claim.delete_message then
+        ui.AddContextMenuItem(
+            context,
+            "{img context_conversation_delete 18 17} " .. ClMsg("DeleteMessageFromEveryone"),
+            "ui.MsgBox(ClMsg('DeleteMessageFromEveryoneDesc'), 'GCM_DELETE_MESSAGE_GLOBAL', 'None')"
+        )
+    end
     if has_claim.pin_message or gcm_IsOwnedChannel(current_channel) then
-        ui.AddContextMenuItem(context, "{img context_notice 20 23} " .. ClMsg("PinMessage"), "GCM_PIN_MESSAGE")
+        if gcm_IsPinned(current_channel, context_message) then
+            ui.AddContextMenuItem(context, "{img context_notice 20 23} " .. ClMsg("UnpinMessage"), "GCM_SET_MESSAGE_PINNED(false)")
+        else
+            ui.AddContextMenuItem(context, "{img context_notice 20 23} " .. ClMsg("PinMessage"), "GCM_SET_MESSAGE_PINNED(true)")
+        end
     end
     ui.OpenContextMenu(context)
+end
+
+function GCM_OPEN_NOTICE_MENU(msg)
+    context_message = msg:GetName()
+    if has_claim.pin_message or gcm_IsOwnedChannel(current_channel) then
+        local context = ui.CreateContextMenu("NOTICE_CONTEXT_MENU", "", 0, 0, 190, 100)
+        ui.AddContextMenuItem(context, "{img context_notice 20 23} " .. ClMsg("UnpinMessage"), "GCM_SET_MESSAGE_PINNED(false)")
+        ui.OpenContextMenu(context)
+    end
 end
 
 -- GuildCommCl.cpp에서 호출
@@ -494,12 +538,20 @@ function GCM_ON_MESSAGE_DELETE(id)
     GCM_UPDATE_PINNED()
 end
 
-function GCM_DELETE_MESSAGE()
-    gcm_DeleteMessage(current_channel, context_message) -- GCM_ON_MESSAGE_DELETE
+function GCM_SET_MEMBER_GAGGED(isGagged)
+    gcm_SetMemberGagged(current_channel, context_member, isGagged)
 end
 
-function GCM_PIN_MESSAGE()
-    gcm_PinMessage(current_channel, context_message)
+function GCM_DELETE_MESSAGE_LOCAL()
+    gcm_DeleteMessageLocal(current_channel, context_message) -- GCM_ON_MESSAGE_DELETE
+end
+
+function GCM_DELETE_MESSAGE_GLOBAL()
+    gcm_DeleteMessageGlobal(current_channel, context_message) -- GCM_ON_MESSAGE_DELETE
+end
+
+function GCM_SET_MESSAGE_PINNED(isPinned)
+    gcm_SetMessagePinned(current_channel, context_message, isPinned)
 end
 
 function GCM_TOGGLE_FAVORITE(channel)
@@ -517,10 +569,15 @@ function GCM_UPDATE_CHANNEL_MEMBER()
     local add_member = function(member)
         local ctrlset = panel:CreateControlSet("channel_memberinfo", member:GetAID(), 0, 0)
         local txt_teamname = GET_CHILD_RECURSIVELY(ctrlset, "txt_teamname")
+        local teamname = member:GetName()
+
+        if gcm_IsMemberGagged(current_channel, member:GetAID()) then
+            teamname = teamname .. " {img context_conversation_delete 18 17}"
+        end
 
         ctrlset:SetEventScript(ui.RBUTTONUP, "GCM_OPEN_MEMBER_CONTEXT")
         txt_teamname:SetEventScript(ui.RBUTTONUP, "GCM_OPEN_MEMBER_CONTEXT")
-        txt_teamname:SetText(member:GetName())
+        txt_teamname:SetText(teamname)
 
         if member:GetMapID() == 0 then
             GET_CHILD_RECURSIVELY(ctrlset, "pic_online"):SetImage("memory_4")

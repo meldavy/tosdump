@@ -454,13 +454,17 @@ function C_COLORBLEND_ACTOR(self, obj, actorType, isUse, color_R, color_G, color
 end
 
 function C_FORCE_EFT(actor, obj, eft, scale, snd, finEft, finEftScale, finSnd, destroy, fSpeed, easing, gravity, angle, hitIndex, collrange, createLength, radiusSpd, isLastForce, useHitEffect, linkTexName, dist, offSetAngle, height, delayStart, fixVerDir)
-
-    local item = session.GetEquipItemBySpot(item.GetEquipSpotNum("RH"))
-    if item ~= nil then
-        local equipItemObj = GetIES(item:GetObject());
-    
+    local rhItem = session.GetEquipItemBySpot(item.GetEquipSpotNum("RH"));
+    if rhItem ~= nil then
+        local equipItemObj = GetIES(rhItem:GetObject());
         if obj.type == 30005 and equipItemObj.ClassType == "Musket" then
             eft = "I_archer_musket_atk#Dummy_Force_musket";
+        end
+        
+        if obj.type == 52 and equipItemObj.ClassType == "Bow" then
+            if IS_EXIST_BRIQUETTING_OR_BEAUTYSHOP_ITEM(actor, "RH", "Bow", obj.type, 11007140) == true then
+                eft = "I_ep13stem_crossbow_arrow#Dummy_q_Force";
+            end
         end
     end
     
@@ -512,9 +516,9 @@ function C_FORCE_EFT(actor, obj, eft, scale, snd, finEft, finEftScale, finSnd, d
     end
     
     local ret = actor:GetForce():PlayForce_Tool(eft, scale, snd, finEft, finEftScale, finSnd, destroy, fSpeed, easing, gravity, angle, hitIndex, collrange, createLength, radiusSpd, useHitEffect, customTarget, linkTexName, delayStart, addX, addY, addZ, fixVerDir);
-
-	-- 마지막포스가 날라가면 스킬캔슬 가능하게 해준다.
-	if isLastForce == 1 or isLastForce == nil then	-- nil도 체크하는이유는 값셋팅안된건 걍 무조건 마지막포스라고 생각함
+    
+    -- 마지막포스가 날라가면 스킬캔슬 가능하게 해준다.
+    if isLastForce == 1 or isLastForce == nil then	-- nil도 체크하는이유는 값셋팅안된건 걍 무조건 마지막포스라고 생각함
         actor:EnableSkillCancel(1);
     end
 
@@ -666,8 +670,8 @@ function SCR_COLONY_SIEGE_TOWER_CANNON_ATTACK_EFFECT_RUN(handle, effectName, sca
     if lifeTime == nil then
         lifeTime = 0;
     end
+
     local obj = world.GetActor(handle)
-    
     effect.PlayActorEffect(obj, effectName, nodeName, lifeTime, scale);
 end
 

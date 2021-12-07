@@ -520,9 +520,10 @@ function _BRIQUETTING_HAIR_ACC_SKILL_EXCUTE(targetItemGuid, lookItemGuid, lookMa
 	session.AddItemID(lookItemGuid);	
 	session.AddItemID(lookMatItemGuid);	
 
+	ui.CloseFrame('briquetting_hair_acc');
+	
 	local resultlist = session.GetItemIDList();
 	item.DialogTransaction('DO_BRIQUETTING_HAIR_ACC', resultlist)
-	ui.CloseFrame('briquetting_hair_acc');
 end
 
 function BRIQUETTING_HAIR_ACC_REFRESH_INVENTORY_ICON(frame, msg, guid, argNum)

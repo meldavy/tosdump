@@ -1919,3 +1919,4 @@ ClassID,ClassName,UseJob,Riding,RHand,LHand,Stance1,Stance2,Stance3,Stance4,Stan
 8649,StnCond_8649,Char3_22,FALSE,Musket,,Musket,,,,,,,,,,,,,,,,,,,
 8650,StnCond_8650,Char3_22,FALSE,,Sword,BowAndSword,,,,,,,,,,,,,,,,,,,
 8651,StnCond_8651,Char3_22,FALSE,Bow,Sword,BowAndSword,,,,,,,,,,,,,,,,,,,
+8652,StnCond_8652,Char3_22,FALSE,Cannon,,TwoHandCannon,,,,,,,,,,,,,,,,,,,

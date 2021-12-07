@@ -5,6 +5,11 @@ function MINIMIZEDALARM_ON_INIT(addon, frame)
 end
 
 function ON_PVP_PLAYING_UPDATE(frame, msg, argStr,argNum)
+	if TUTORIAL_CLEAR_CHECK(GetMyPCObject()) == false then
+		frame:ShowWindow(0)
+		return
+	end
+
 	local pvp_type = GET_PVP_TYPE()
 	if pvp_type == "TEAM_BATTLE" then
 		frame:ShowWindow(1);
@@ -56,6 +61,11 @@ function IS_ON_PVP()
 end
 
 function ON_PVP_MINE_STATE_UPDATE(frame,msg,argStr,argNum)
+	if TUTORIAL_CLEAR_CHECK(GetMyPCObject()) == false then
+		frame:ShowWindow(0)
+		return
+	end
+
 	local pic = GET_CHILD_RECURSIVELY(frame,"pic")
 	if argStr == "SHOW" then
 		pic:SetEnable(0)

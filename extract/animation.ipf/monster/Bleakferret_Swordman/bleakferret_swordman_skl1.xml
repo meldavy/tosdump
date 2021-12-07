@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<ActionDesc>
+	<Particle frame="18" attachNode="Dummy_eff_atk1_1" particleName="I_swordtrail008_white4" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.2" pause="true" use2DEffect="false" soft2DValue="20"/>
+	<Particle frame="29" attachNode="Dummy_eff_atk1_2" particleName="I_swordtrail008_white4" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.2" pause="true" use2DEffect="false" soft2DValue="20"/>
+	<Sound frame="11.00" soundFile="mon_voice13_cast8"/>
+	<Sound frame="12.00" soundFile="skl_eff_body_atk_14"/>
+	<Sound frame="13.00" soundFile="skl_eff_body_atk_4"/>
+	<Sound frame="21.00" soundFile="skl_eff_body_atk_4"/>
+</ActionDesc>

@@ -7,6 +7,8 @@ function INGAMEALERT_ON_INIT(addon, frame)
 	addon:RegisterMsg("RECEIVABLE_TAX_PAYMENT_NOTICE", "ON_RECEIVABLE_TAX_PAYMENT_NOTICE")
 	addon:RegisterMsg("FIELD_BOSS_WORLD_EVENT_RECEIVABLE_ITEM_NOTICE", "ON_FIELD_BOSS_WORLD_EVENT_RECEIVABLE_ITEM_NOTICE")	
 	addon:RegisterMsg("FIELD_BOSS_WORLD_EVENT_RECEIVABLE_SILVER_NOTICE", "ON_FIELD_BOSS_WORLD_EVENT_RECEIVABLE_SILVER_NOTICE")	
+	addon:RegisterMsg("PARTICIPANT_UPDATE", "ON_PARTY_BOARD_PARTICIPANT_NOTICE")	
+
 	
 	INGAMEALERT_CREATE_ELEM_BY_TYPE(frame, "Private")
 	INGAMEALERT_CREATE_ELEM_BY_TYPE(frame, "Party")
@@ -15,6 +17,7 @@ function INGAMEALERT_ON_INIT(addon, frame)
 	INGAMEALERT_CREATE_ELEM_BY_TYPE(frame, "TaxPayment")
 	INGAMEALERT_CREATE_ELEM_BY_TYPE(frame, "WorldEventReceivableItem")
 	INGAMEALERT_CREATE_ELEM_BY_TYPE(frame, "WorldEventReceivableSilver")
+	INGAMEALERT_CREATE_ELEM_BY_TYPE(frame, "PartyParticipant")
 	INGAMEALERT_SET_SCRIPT_YESNO(frame, "TaxPayment", "INGAMEALERT_TAX_PAYMENT_SCP_YES", "None")
 
 end
@@ -278,6 +281,36 @@ function ON_FIELD_BOSS_WORLD_EVENT_RECEIVABLE_SILVER_NOTICE(frame, msg, argStr, 
 	
 	local text = GET_CHILD(ctrlset, "text")
 	local askMsg = ScpArgMsg("WorldEventReceivableSilverNotice")
+	text:SetText(askMsg)
+
+	INGAMEALERT_RESIZE_ELEM(ctrlset)
+	INGAMEALERT_SET_MARGIN_BY_CHAT_FRAME(frame)
+end
+
+
+function ON_PARTY_BOARD_PARTICIPANT_NOTICE(frame, msg, argStr, argNum)
+	local participantList = session.party.GetParticipantList()
+	local partyBoard = ui.GetFrame("party_search_board")
+	local tab = GET_CHILD(partyBoard, "party_tab")
+	local tabIndex = tab:GetSelectItemIndex()
+
+	local ctrl = GET_CHILD_RECURSIVELY(frame, "elem_PartyParticipant")
+	if ctrl:IsVisible() == 1 then
+		return;
+	end
+
+	if participantList:Count() == 0 then
+		return;
+	end
+
+	if partyBoard:IsVisible() == 1 and tabIndex == 1 then
+		return;
+	end
+
+	local ctrlset = INGAMEALERT_GET_ELEM_BY_TYPE(frame, "PartyParticipant")
+	
+	local text = GET_CHILD(ctrlset, "text")
+	local askMsg = ScpArgMsg("PartyParticipantNotice")
 	text:SetText(askMsg)
 
 	INGAMEALERT_RESIZE_ELEM(ctrlset)

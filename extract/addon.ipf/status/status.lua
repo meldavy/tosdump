@@ -1428,6 +1428,10 @@ function STATUS_ITEM_GEAR_SCORE(pc, opc, frame, gboxctrl, y)
     title:SetText('{@sti8}' .. ScpArgMsg("EquipedItemGearScore"));
     title:SetTextTooltip(ScpArgMsg("TooltipDescGearScore"))
 
+    local scoreBtn = GET_CHILD_RECURSIVELY(controlSet, "gearScoreBtn")
+    local btnX = title:GetX() + title:GetWidth() + 5;
+    scoreBtn:SetOffset(btnX, -2);
+
     local stat = GET_CHILD(controlSet, "stat", "ui::CRichText");
     title:SetUseOrifaceRect(true)
     stat:SetUseOrifaceRect(true)
@@ -1438,7 +1442,7 @@ function STATUS_ITEM_GEAR_SCORE(pc, opc, frame, gboxctrl, y)
 		title:AdjustFontSizeByWidth(350)
 	end
 	
-    controlSet:Resize(controlSet:GetWidth(), stat:GetHeight());
+    controlSet:Resize(controlSet:GetWidth(), scoreBtn:GetHeight());
     return y + controlSet:GetHeight();
 end
 

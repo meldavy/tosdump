@@ -508,7 +508,6 @@ function NEW_QUEST_ADD(frame, msg, argStr, argNum)
 	local ret = QUEST_ABANDON_RESTARTLIST_CHECK(questIES, sobjIES);
 	local questState = SCR_QUEST_CHECK_C(sobjIES, questIES.ClassName);
 	--퀘스트 중 대화만 끝나면 바로 success인 퀘스트가 있다. 이런 퀘스트도 수락시 지령창에 표시함
-
 	-- new quest check
 	if ret == 'NOTABANDON' or questState == 'SUCCESS' then
         local isNew = 0
@@ -593,31 +592,32 @@ end
 function DENIED_EXCEPTION_QUEST_LIST(QuestClssName)
     
     local qTb = {
-                'CASTLE191_RP_1',
-                'CASTLE191_RP_2',
-                'CASTLE191_RP_3',
-                'CASTLE191_RP_4',
-                'CASTLE191_RP_5',
-                'CASTLE97_RP_1',
-                'CASTLE97_RP_2',
-                'CASTLE97_RP_3',
-                'CASTLE99_RP_1',
-                'CASTLE99_RP_2',
-                'CASTLE99_RP_3',
-                'CASTLE99_RP_4',
-                'CASTLE102_RP_1',
-                'CASTLE102_RP_2',
-                'CASTLE102_RP_3',
-                'CASTLE102_RP_4',
-                'DCAPITAL531_RP_1',
-                'DCAPITAL531_RP_2',
-                'DCAPITAL531_RP_3',
-                'DCAPITAL531_RP_4',
-                'DCAPITAL531_RP_5',
-                'DCAPITAL104_RP_1',
-                'DCAPITAL104_RP_2',
-                'DCAPITAL104_RP_3',
-                'DCAPITAL104_RP_4'
+                -- 'CASTLE191_RP_1',
+                -- 'CASTLE191_RP_2',
+                -- 'CASTLE191_RP_3',
+                -- 'CASTLE191_RP_4',
+                -- 'CASTLE191_RP_5',
+                -- 'CASTLE97_RP_1',
+                -- 'CASTLE97_RP_2',
+                -- 'CASTLE97_RP_3',
+                -- 'CASTLE99_RP_1',
+                -- 'CASTLE99_RP_2',
+                -- 'CASTLE99_RP_3',
+                -- 'CASTLE99_RP_4',
+                -- 'CASTLE102_RP_1',
+                -- 'CASTLE102_RP_2',
+                -- 'CASTLE102_RP_3',
+                -- 'CASTLE102_RP_4',
+                -- 'DCAPITAL531_RP_1',
+                -- 'DCAPITAL531_RP_2',
+                -- 'DCAPITAL531_RP_3',
+                -- 'DCAPITAL531_RP_4',
+                -- 'DCAPITAL531_RP_5',
+                -- 'DCAPITAL104_RP_1',
+                -- 'DCAPITAL104_RP_2',
+                -- 'DCAPITAL104_RP_3',
+                -- 'DCAPITAL104_RP_4',
+				"EP14_3LINE_TUTO_MQ_1"
                 }
 
     local isNew = 0
@@ -873,6 +873,8 @@ function DRAW_QUEST_CTRL(bgCtrl, titleInfo, y)
 	local controlSetType = "quest_list_oneline"
 	local controlsetHeight = ui.GetControlSetAttribute(controlSetType, 'height');
 	
+	local pc = GetMyPCObject();
+
 	if  questListGbox ~= nil then
 		-- 오픈 마크 처리.
 		if titleInfo.isOpened == true then
@@ -886,26 +888,53 @@ function DRAW_QUEST_CTRL(bgCtrl, titleInfo, y)
 			local questInfo = titleInfo.questInfoList[index]
 			-- filter 적용
 			if CHECK_QUEST_VIEW_FILTER(titleInfo.name, questInfo) == true then
-			
-				if titleInfo.isOpened == true then -- 트리가 열려있을 때만 컨트롤 생성
-					local ctrlName = "_Q_" .. questInfo.QuestClassID;
-					local Quest_Ctrl = questListGbox:CreateOrGetControlSet(controlSetType, ctrlName, 5, controlsetHeight * (drawTargetCount));			
-					
-					-- 배경 설정.
-					if cnt % 2 == 1 then
-						Quest_Ctrl:SetSkinName("chat_window_2");
-					else
-						Quest_Ctrl:SetSkinName('None');
+
+				if TUTORIAL_CLEAR_CHECK(pc) == true then
+					if TUTORIAL_QUEST_EXCEPTION_BY_TYPE(pc, questInfo.QuestClassID) == false then
+						if titleInfo.isOpened == true then -- 트리가 열려있을 때만 컨트롤 생성
+							local ctrlName = "_Q_" .. questInfo.QuestClassID;
+							local Quest_Ctrl = questListGbox:CreateOrGetControlSet(controlSetType, ctrlName, 5, controlsetHeight * (drawTargetCount));			
+							
+							-- 배경 설정.
+							if cnt % 2 == 1 then
+								Quest_Ctrl:SetSkinName("chat_window_2");
+							else
+								Quest_Ctrl:SetSkinName('None');
+							end
+							cnt = cnt +1
+							
+							-- detail 설정
+							UPDATE_QUEST_CTRL(Quest_Ctrl, questInfo );
+
+							questCtrlTotalHeight = questCtrlTotalHeight + Quest_Ctrl:GetHeight();
+						end
+
+						drawTargetCount = drawTargetCount +1
 					end
-					cnt = cnt +1
-					
-					-- detail 설정
-					UPDATE_QUEST_CTRL(Quest_Ctrl, questInfo );
+				else
+					if TUTORIAL_QUEST_EXCEPTION_BY_TYPE(pc, questInfo.QuestClassID) == true then
+						
+						if titleInfo.isOpened == true then -- 트리가 열려있을 때만 컨트롤 생성
+							local ctrlName = "_Q_" .. questInfo.QuestClassID;
+							local Quest_Ctrl = questListGbox:CreateOrGetControlSet(controlSetType, ctrlName, 5, controlsetHeight * (drawTargetCount));			
+							
+							-- 배경 설정.
+							if cnt % 2 == 1 then
+								Quest_Ctrl:SetSkinName("chat_window_2");
+							else
+								Quest_Ctrl:SetSkinName('None');
+							end
+							cnt = cnt +1
+							
+							-- detail 설정
+							UPDATE_QUEST_CTRL(Quest_Ctrl, questInfo );
 
-					questCtrlTotalHeight = questCtrlTotalHeight + Quest_Ctrl:GetHeight();
+							questCtrlTotalHeight = questCtrlTotalHeight + Quest_Ctrl:GetHeight();
+						end
+
+						drawTargetCount = drawTargetCount +1
+					end
 				end
-
-				drawTargetCount = drawTargetCount +1
 			end
 		end	
 	end
@@ -2155,8 +2184,6 @@ end
 function EXEC_ABANDON_QUEST(questID)    
 	local frame = ui.GetFrame('quest');
 	pc.ReqExecuteTx("ABANDON_Q", questID);
-
-	ON_UPDATE_QUESTINFOSET_2(nil, 'ABANDON_QUEST', 0, questID);
 
 	quest.RemoveAllQuestMonsterList(questID);
 	quest.RemoveCheckQuest(questID);

@@ -1436,6 +1436,19 @@ function DOLL_VAKARINE_BUFF_LEAVE(actor, obj, buff)
 	SCR_REMOVE_FAIRY(actor:GetHandleVal(), "doll_vakarine");
 end
 
+-- santa guilty
+function DOLL_SANTA_GUILTY_BUFF_ENTER(actor, obj, buff)
+end
+
+function DOLL_SANTA_GUILTY_BUFF_UPDATE(actor, obj, buff)
+	SCR_CREATE_FAIRY(actor:GetHandleVal(), "doll_santa_guilty");
+end
+
+function DOLL_SANTA_GUILTY_BUFF_LEAVE(actor, obj, buff)
+	SCR_REMOVE_FAIRY(actor:GetHandleVal(), "doll_santa_guilty");
+end
+
+
 function XMAS_EFFECT_2019_ENTER(actor, obj, buff)
     effect.AddActorEffectByOffset(actor, "E_effectitem_whitebird", 0.4, "BOT", false, true);
 end

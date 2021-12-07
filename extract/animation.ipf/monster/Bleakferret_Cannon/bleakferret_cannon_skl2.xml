@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="0.00" soundFile="mon_voice_ferret_m_skl_shot"/>
+    <Sound frame="14.00" soundFile="cannon_move_1"/>
+    <Sound frame="18.00" soundFile="cannon_move_1"/>
+    <Sound frame="38.00" soundFile="cannon_move_2"/>
+</ActionDesc>

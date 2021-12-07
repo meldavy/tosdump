@@ -1,11 +1,12 @@
 ﻿-- ingameeventbanner.lua
+local json = require "json_imc"
 
 function INGAMEEVENTBANNER_ON_INIT(addon, frame)
 --	addon:RegisterMsg("MSG_UPDATE_EVENTBANNER_UI", "EVENTBANNER_FRAME_OPEN");
 	addon:RegisterMsg("DO_OPEN_EVENTBANNER_UI", "EVENTBANNER_FRAME_OPEN");
 	addon:RegisterMsg("EVENTBANNER_SOLODUNGEON", "ON_EVENTBANNER_SOLODUNGEON");
-	addon:RegisterMsg("EVENTBANNER_TEAMBATTLE", "ON_EVENTBANNER_TEAMBATTLE");
-	addon:RegisterMsg('WORLDPVP_RANK_PAGE', 'ON_EVENTBANNER_TEAMBATTLE');    
+	-- addon:RegisterMsg("EVENTBANNER_TEAMBATTLE", "ON_EVENTBANNER_TEAMBATTLE");
+	-- addon:RegisterMsg('WORLDPVP_RANK_PAGE', 'ON_EVENTBANNER_TEAMBATTLE');    
 	addon:RegisterMsg('EVENTBANNER_USERTYPE', 'ON_EVENTBANNER_USERTYPE');    
 end
 
@@ -75,6 +76,10 @@ function ON_EVENTBANNER_DETAIL_BTN_TEAMBATTLE(ctrlset, btn)
 	advFrame:ShowWindow(1)
 end
 
+function ON_EVENTBANNER_DETAIL_BTN_GEARSCORE_RANKING(ctrlset, btn)
+	ui.OpenFrame("gear_score_ranking")
+end
+
 function ON_EVENTBANNER_SOLODUNGEON(frame)
 	local ranking_solo_dungeon = GET_CHILD_RECURSIVELY(frame, "ranking_solo_dungeon");
 	local indunName = TryGetProp(GetClass("Indun", "Solo_dungeon"), "Name");
@@ -91,6 +96,64 @@ function ON_EVENTBANNER_TEAMBATTLE(frame, msg, strarg, numarg)
 	detail_btn:SetEventScript(ui.LBUTTONUP, "ON_EVENTBANNER_DETAIL_BTN_TEAMBATTLE");
 	detail_btn:ShowWindow(1);
 	UPDATE_EVENTBANNER_RANKING(ranking_team_battle, name, "UPDATE_EVENTBANNER_RANKING_TEAMBATTLE")
+end
+
+function ON_EVENTBANNER_GEARSCORE(code, ret_json)
+	local frame = ui.GetFrame("ingameeventbanner")
+	local ranking_gear_score = GET_CHILD_RECURSIVELY(frame, "ranking_gear_score");
+	local name = ClMsg("EquipedItemGearScore");
+	local detail_btn = GET_CHILD(ranking_gear_score, "detail_btn");
+	detail_btn:SetEventScript(ui.LBUTTONUP, "ON_EVENTBANNER_DETAIL_BTN_GEARSCORE_RANKING");
+	detail_btn:ShowWindow(1);
+
+	local title_text = GET_CHILD_RECURSIVELY(ranking_gear_score, "title_text");
+	title_text:SetTextByKey("value", name);
+	
+	local rankcount = 0;
+	local x = tonumber(ranking_gear_score:GetUserConfig("OffsetX"));
+	local y = tonumber(ranking_gear_score:GetUserConfig("OffsetY"));
+	local eachHeight = ui.GetControlSetAttribute("gearscore_ranking_each_rank", "height");
+	local list_bg = GET_CHILD_RECURSIVELY(ranking_gear_score, "list_bg");
+	if code == 200 then
+		local dic = json.decode(ret_json)
+		local rankList = dic["list"]
+
+		for i = 1, 3 do 
+			local eachctrl = list_bg:CreateOrGetControlSet("gearscore_ranking_each_rank", "gearscore_ranking_each_rank_"..i, x, y+(i-1)*eachHeight);
+			AUTO_CAST(eachctrl);
+			local picName = eachctrl:GetUserConfig("RankingPic_"..i);
+			local skinName = eachctrl:GetUserConfig("RankingSkin_"..i);
+			local bg = GET_CHILD_RECURSIVELY(eachctrl, "bg");
+			bg:SetSkinName(skinName);
+			local ranking_pic = GET_CHILD_RECURSIVELY(eachctrl, "ranking_pic");
+			ranking_pic:SetImage(picName);
+
+			local func = _G["UPDATE_EVENTBANNER_RANKING_GEARSCORE"];
+			local result = func(eachctrl, name, rankList[i]);
+			if result == true then
+				rankcount = rankcount + 1;
+			end
+		end
+	end
+
+	if rankcount == 0 then
+		local sysTime = geTime.GetServerSystemTime();
+		if code ~= 200 then
+			local detail_btn = GET_CHILD(ranking_gear_score, "detail_btn");
+			detail_btn:ShowWindow(0);
+
+			local listbg = GET_CHILD(ranking_gear_score, "list_bg");
+			listbg:RemoveAllChild();
+	
+			local topFrame = ranking_gear_score:GetTopParentFrame();
+			local RANK_GUID_FONT_NAME = topFrame:GetUserConfig('RANK_GUID_FONT_NAME');		
+			
+			local text = listbg:CreateControl('richtext', 'text', 0, 0, 0, 0);	
+			text:SetGravity(ui.CENTER_HORZ, ui.CENTER_VERT);
+			text:SetFontName(RANK_GUID_FONT_NAME);
+			text:SetText(ClMsg("news_ranking_guide_msg"));
+		end
+	end
 end
 
 function UPDATE_EVENTBANNER_RANKING_SOLODUNGEON(eachctrl, name, i)
@@ -121,7 +184,7 @@ function UPDATE_EVENTBANNER_RANKING_SOLODUNGEON(eachctrl, name, i)
 	return true;
 end
 
-function UPDATE_EVENTBANNER_RANKING_TEAMBATTLE(eachctrl, name, i)
+function UPDATE_EVENTBANNER_RANKING_GEARSCORE(eachctrl, name, info)
 	local noranker_text = GET_CHILD_RECURSIVELY(eachctrl, "noranker_text");
 	local job_pic = GET_CHILD_RECURSIVELY(eachctrl, "job_pic");
 	local name_text = GET_CHILD_RECURSIVELY(eachctrl, "name_text");
@@ -131,33 +194,13 @@ function UPDATE_EVENTBANNER_RANKING_TEAMBATTLE(eachctrl, name, i)
 	name_text:SetVisible(0);
 	job_pic:SetVisible(0);
 	score_text:SetTextByKey("value", "-");
-
-    local rank_type = session.worldPVP.GetRankProp("Type");    
-	if rank_type == 210 then
-        return false;
-	end
-	
-	local info = session.worldPVP.GetTeamBattleRankInfoByIndex(i - 1);
-	if info == nil then
-		return false;
-	end
-	
-	local iconinfo = info:GetIconInfo();
-	if iconinfo == nil then
-		return false;
-	end
 	
 	noranker_text:SetVisible(0);
 	name_text:SetVisible(1);
-	job_pic:SetVisible(1);
 
-	local job_id = iconinfo.job;
-	local jobIcon = GET_BASE_JOB_ICON(job_id);
-	job_pic:SetImage(jobIcon);
-
-	name_text:SetTextByKey("lv", iconinfo:GetLevel());
-	name_text:SetTextByKey("name", iconinfo:GetFamilyName());
-	score_text:SetTextByKey("value", info.point);
+	name_text:SetTextByKey("team", info["team_name"]);
+	name_text:SetTextByKey("char", info["char_name"]);
+	score_text:SetTextByKey("value", info["value"]);
 	return true;
 end
 
@@ -211,7 +254,8 @@ end
 
 function UPDATE_EVENTBANNER_RANKINGS(frame)
 	ON_EVENTBANNER_SOLODUNGEON(frame);
-	ON_EVENTBANNER_TEAMBATTLE(frame);
+	-- ON_EVENTBANNER_TEAMBATTLE(frame);
+	GetStatusRanking('ON_EVENTBANNER_GEARSCORE', 'pc_gear_score', 0)
 end
 
 function UPDATE_EVENTBANNER_UI(frame)

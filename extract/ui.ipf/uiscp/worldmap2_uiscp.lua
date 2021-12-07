@@ -349,6 +349,11 @@ function WORLDMAP2_TOKEN_WARP(mapName)
 	if ENABLE_WARP_CHECK(GetMyPCObject()) == false then
 		 ui.SysMsg(ScpArgMsg("WarpBanBountyHunt"))
         return
+    end
+    
+    if TUTORIAL_CLEAR_CHECK(pc) == false then
+		ui.SysMsg(ClMsg("CanUseAfterTutorialClear"))
+		return
 	end
 
     if session.loginInfo.IsPremiumState(ITEM_TOKEN) == false and IsBuffApplied(GetMyPCObject(), 'Premium_Nexon') ~= 'YES' then

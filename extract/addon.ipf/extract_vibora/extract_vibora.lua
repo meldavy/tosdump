@@ -177,9 +177,8 @@ function REQUEST_EXTRACT_VIBORA(frame, ctrl, argStr, argNum)
 	end
 
 	if selectExist == 1 then		
-		local itemGuid = frame:GetUserValue("UseItemGuid")
-		local arg_str = string.format('%d', selected)
-		
+		local itemGuid = frame:GetUserValue("UseItemGuid")		
+		local arg_str = string.format('%d', selected)		
 		local yesScp = string.format("RUN_EXTRACT_VIBORA(%s, %s)", itemGuid, arg_str)
 		local msg = ScpArgMsg('{set}ReallyExtractCabinetVibora', 'set', item_name)
 		ui.MsgBox_NonNested(msg, "RUN_EXTRACT_VIBORA", yesScp, "None");
@@ -189,7 +188,9 @@ function REQUEST_EXTRACT_VIBORA(frame, ctrl, argStr, argNum)
 	frame:ShowWindow(0);
 end
 
-function RUN_EXTRACT_VIBORA(itemGuid, arg_str)
+function RUN_EXTRACT_VIBORA(itemGuid, arg_str)	
+	local frame = ui.GetFrame("extract_vibora")
+	local itemGuid = frame:GetUserValue("UseItemGuid")
 	pc.ReqExecuteTx_Item("EXTRACT_CABINET_VIBORA", itemGuid, arg_str)
 end
 
@@ -401,5 +402,7 @@ function REQUEST_EXTRACT_GODDESS(frame, ctrl, argStr, argNum)
 end
 
 function RUN_EXTRACT_GODDESS(itemGuid, arg_str)
+	local frame = ui.GetFrame("extract_vibora")
+	local itemGuid = frame:GetUserValue("UseItemGuid")
 	pc.ReqExecuteTx_Item("EXTRACT_CABINET_GODDESS", itemGuid, arg_str)
 end

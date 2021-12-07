@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by IMC (IMCGames Co., Ltd) -->
+<ActionDesc>
+	<BlendOn frame="0" R="0" G="0" B="0" A="50"/>
+	<BlendOn frame="8" R="100" G="80" B="80" A="100"/>
+	<Shockwave frame="9" type="2" intensity="10" frequency="70" duration="0.2" range="1000"/>
+	<BlendOn frame="9" R="150" G="150" B="100" A="100"/>
+	<Particle frame="9" attachNode="Dummy_emitter" particleName="F_ground185_spred_out_light" useAttach="false" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+	<Particle frame="9" attachNode="Dummy_emitter" particleName="E_cleric_HolySmash_swordtrail" useAttach="anim" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+	<Particle frame="9" attachNode="Dummy_emitter" particleName="I_swordtrail028_red" useAttach="false" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+	<Particle frame="0" attachNode="Dummy_emitter" particleName="I_archer_multishot_ranger01_3_light" useAttach="false" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+	<BlendOn frame="10" R="150" G="150" B="100" A="100"/>
+	<BlendOn frame="11" R="100" G="80" B="80" A="100"/>
+	<BlendOff frame="12" R="0" G="0" B="0" A="0"/>
+</ActionDesc>

@@ -46,10 +46,6 @@
                         </condList>
                         <execList>
                             <ToolScp Scp="MGAME_SET_RAID_TIMER_END" Client="NO" UseSleep="NO"/>
-                            <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO">
-                                <Str Str="LEGEND_RAID_GILTINE"/>
-                                <Str Str="MinigameSuccess"/>
-                            </ToolScp>
                             <ToolScp Scp="MGAME_END" Client="NO" UseSleep="NO">
                                 <Num Num="1"/>
                             </ToolScp>
@@ -128,6 +124,10 @@
                                 <Str Str="LEGEND_RAID_GILTINE"/>
                                 <Str Str="Giltine_clear_gold"/>
                                 <Num Num="180"/>
+                            </ToolScp>
+                            <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO">
+                                <Str Str="LEGEND_RAID_GILTINE"/>
+                                <Str Str="MinigameSuccess"/>
                             </ToolScp>
                         </execList>
                     </Event>

@@ -236,7 +236,7 @@
                     <Num Num="0" UseFunc="1" FuncTxt="local value = 1800000
     local abil = GetAbility(self, 'Doppelsoeldner37')
     if abil ~= nil and TryGetProp(abil, 'ActiveState', 0) == 1 then
-        value = 15000
+        value = obj.Level * 3000
     end
 
     return value"/>

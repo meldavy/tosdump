@@ -2256,10 +2256,11 @@
 			<richtext name="itemtext" rect="0 0 200 30" format="{@st43d}{/}" margin="0 0 0 31" layout_gravity="center bottom" textalign="center top" param1="txt" param1_def="ItemName" resizebytext="false" spacey="0" maxwidth="0" fontname="white_18_b_ds_ol" fixwidth="true" omitbywidth="true" updateparent="false" drawbackground="false" slideshow="false"/>
 		</controls>
 	</controlset>
-	<controlset name="status_stat" toggle="false" hittest="true" width="455" height="15" skin="no">
+	<controlset name="status_stat" toggle="false" hittest="true" width="455" height="15" hittestset="true" skin="no">
 		<controls>
 			<richtext name="title" rect="0 0 50 15" layout_gravity="left top" hittest="true" textalign="left top" margin="10 0 0 0" fontname="yellow_18_ol" resizebytext="true"/>
 			<richtext name="stat" rect="0 0 50 15" layout_gravity="right top" hittest="false" textalign="left top" margin="0 0 0 0" fontname="white_18_ol" resizebytext="true"/>
+   			<button name="gearScoreBtn" rect="0 0 30 30" margin="-100 0 0 0" layout_gravity="left top" image="hero_btn_trophy" LBtnUpScp="ui.OpenFrame(&apos;gear_score_ranking&apos;)" visible="false"/>
 		</controls>
 	</controlset>
 	<controlset name="reinforce_mix_stat" toggle="false" hittest="true" width="470" height="30" skin="no">
@@ -4478,7 +4479,7 @@
 	</controlset>
 	<controlset name="gcm_notice" hittest="true" width="868" height="46" hittestset="true" draw="false" skin="none">
 		<controls>
-			<button name="bg" margin="3 0 0 0" rect="0 0 860 46" skin="guild_community_notice_select" layout_gravity="left top" LBtnUpScp="GCM_TOGGLE_EXPAND_NOTICE"/>
+			<button name="bg" margin="3 0 0 0" rect="0 0 860 46" skin="guild_community_notice_select" layout_gravity="left top" LBtnUpScp="GCM_TOGGLE_EXPAND_NOTICE" RBtnUpScp="GCM_OPEN_NOTICE_MENU"/>
 			<picture name="pin" margin="12 7 0 0" rect="0 0 32 32" hittest="false" image="guild_community_notice_pin" layout_gravity="left top"/>
 			<richtext name="txt" rect="0 0 800 20" margin="50 0 0 0" layout_gravity="left center" format="{@st66b}{s16}%s{/}{/}" param1="text" hittest="false" fixheight="false" fixwidth="true" resizebytext="false"/>
 		</controls>
@@ -6420,6 +6421,59 @@
 			<richtext name="nameText" rect="0 0 190 21" fixwidth="true" resizebytext="false" margin="55 0 0 0" layout_gravity="left center" caption="지역 이름" fontname="white_16_ol"/>
 			<richtext name="countText" rect="0 0 300 30" margin="0 0 50 0" layout_gravity="right center" format="{@st66d}{#ffcc33}{s16}%s/%s" param1="cur" param1_def="0" param2="max" param2_def="15" fontname="white_16_b_ol"/>
 			<richtext name="disableText" rect="0 0 300 30" margin="0 0 50 0" layout_gravity="right center" caption="권한 없음" fontname="white_16_b_ol"/>
+		</controls>
+	</controlset>
+	<controlset name="party_board_member" toggle="false" hittest="true" width="256" height="86" skin="" stateskin="false" draw="false" hittestset="true">
+		<controls>
+			<picture name="jobportrait_bg1" rect="0 0 50 50" hittest="true" margin="10 25 0 0" layout_gravity="left top" stretch="false"/>
+			<picture name="jobportrait1" parent="jobportrait_bg1" rect="0 0 50 50" hittest="true" margin="-2 0 0 0" layout_gravity="left top" stretch="true"/>
+			<picture name="jobportrait_bg2" rect="0 0 50 50" hittest="true" margin="60 25 0 0" layout_gravity="left top" stretch="false"/>
+			<picture name="jobportrait2" parent="jobportrait_bg2" rect="0 0 50 50" hittest="true" margin="-2 0 0 0" layout_gravity="left top" stretch="true"/>
+			<picture name="jobportrait_bg3" rect="0 0 50 50" hittest="true" margin="110 25 0 0" layout_gravity="left top" stretch="false"/>
+			<picture name="jobportrait3" parent="jobportrait_bg3" rect="0 0 50 50" hittest="true" margin="-2 0 0 0" layout_gravity="left top" stretch="true"/>
+			<picture name="leader_img" rect="0 0 24 18" hittest="false" margin="15 3 0 0" layout_gravity="left top" image="party_leader_mark" stretch="true"/>
+			<richtext name="name_text" rect="0 0 150 30" margin="50 4 0 0" spacey="0" fontname="white_16_ol" layout_gravity="left top" hittest="false" textalign="left center" format="{@ps2}{s14}%s" param1="name" param1_def="460 캐릭터이름"/>
+			<button name="infoPic" rect="0 0 26 26" margin="0 42 13 0" layout_gravity="right top" LBtnUpScp="GET_PARTICIPANT_INFO" image="ps_infoBtn" oversound="button_cursor_over_3" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" stretch="true" hittest="true"/>
+			<groupbox name="labelline" margin="0 0 0 5" rect="0 0 228 3" skin="ps_line2" layout_gravity="center bottom"/>
+		</controls>
+	</controlset>
+	<controlset name="party_board_post" toggle="false" hittest="true" width="347" height="70" skin="" stateskin="false" draw="false" hittestset="true">
+		<controls>
+			<groupbox name="memberListgb" rect="0 0 336 70" margin="0 0 0 0" layout_gravity="left top" draw="true" hittestbox="false" resizebyparent="false" skin="ps_frame2"/>
+			<button name="partyinfo" rect="0 0 347 70" margin="0 0 0 0" layout_gravity="left top" skin="ps_listBtn" LBtnUpScp="PARTY_SEARCH_BOARD_SELECT_POST" clicksound="button_click_big" oversound="button_cursor_over_2"/>
+			<picture name="leader_img" rect="0 0 24 18" hittest="false" margin="25 40 0 0" layout_gravity="left top" image="party_leader_mark" stretch="true"/>
+			<richtext name="name_text" rect="0 0 150 30" margin="60 43 0 0" spacey="0" fontname="white_16_ol" layout_gravity="left top" hittest="false" textalign="left center" format="{@ps2}{s14}%s" param1="name" param1_def="460 캐릭터 이름"/>
+			<richtext name="party_text" rect="0 0 260 30" margin="25 -12 0 0" layout_gravity="left center" hittest="true" format="{@sti1c}{s16}%s" param1="name" param1_def="파티" fixwidth="true" fixheight="true" fontname="brown_16_b" omitbywidth="true"  textalign="left center"/>
+			<richtext name="member_num" rect="0 0 50 30" margin="0 10 5 0" layout_gravity="right top" hittest="false" format="{@st204_green}{s16}%s{@st43b}{s16}/5" param1="value" param1_def="1" drawbackground="false" fixwidth="true" fontname="brown_16_b" maxwidth="0" resizebytext="true" slideshow="false" spacey="0" textalign="left center" updateparent="false"/>
+		</controls>
+	</controlset>
+	<controlset name="party_board_participant" toggle="false" hittest="true" width="326" height="125" skin="ps_frame2" stateskin="false" draw="true" hittestset="true">
+		<controls>
+			<richtext name="name_text" rect="0 0 150 30" margin="15 15 0 0" spacey="0" fontname="white_16_ol" layout_gravity="left top" hittest="false" textalign="left center" format="{@sti1c}{s16}%s" param1="name" param1_def="캐릭터 이름"/>
+			<gauge name="duration_gauge" rect="0 0 295 15" margin="15 0 0 15" layout_gravity="left bottom" skin="bountyhunt_milestone_timegauge" inverse="false" point="30" maxpoint="30"/>
+			<button name="infoPic" rect="0 0 26 26" margin="0 15 110 0" layout_gravity="right top" LBtnUpScp="GET_PARTICIPANT_INFO" image="ps_infoBtn" oversound="button_cursor_over_3" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" hittest="true" texttooltip="hihello"/>
+			<button name="accept_btn" rect="0 0 72 32" margin="0 15 15 0" layout_gravity="right top" skin="ps_acceptBtn" format="{@sti1c}{s16}%s" param1="text" param1_def="수락" LBtnUpArgNum="1" LBtnUpScp="PARTY_SEARCH_BOARD_ACCEPT_OR_REJECT_PARTICIPANT"/>
+			<button name="reject_btn" rect="0 0 72 32" margin="0 53 15 0" layout_gravity="right top" skin="ps_refuseBtn" format="{@sti1c}{s16}%s" param1="text" param1_def="거절" LBtnUpArgNum="0" LBtnUpScp="PARTY_SEARCH_BOARD_ACCEPT_OR_REJECT_PARTICIPANT"/>
+		</controls>
+	</controlset>
+	<controlset name="gearscore_ranking_ranker" toggle="false" hittest="true" width="590" height="70" skin="base_btn" stateskin="false" draw="true" hittestset="true">
+		<controls>
+						<picture name="emblem_pic" rect="0 0 26 26" margin="95 0 0 0" layout_gravity="left center" stretch="true" image="guildmark_slot" hittest="false"/>
+			<richtext name="rank_text" rect="0 0 75 62" margin="8 1 0 0" layout_gravity="left center" resizebytext="false" textalign="center center" format="{@st43}{s18}{ol}{ds}%s위" param1="value" param1_def="1" fontname="white_14_ol"/>
+			<richtext name="team_name_text" rect="0 0 130 20" margin="130 0 0 0" layout_gravity="left center" resizebytext="false" textalign="left center" format="%s" param1="value" param1_def="고릴라는" fontname="black_16_b"/>
+			<richtext name="char_name_text" rect="0 0 130 20" margin="270 0 0 0" layout_gravity="left center" resizebytext="false" textalign="left center" format="%s" param1="value" param1_def="바나나" fontname="black_16_b"/>
+			<richtext name="value_text" rect="0 0 50 20" margin="0 0 30 0" layout_gravity="right center" resizebytext="true" textalign="center center" format="%s" param1="value" param1_def="560" fontname="black_16_b"/>
+		</controls>
+	</controlset>
+	<controlset name="gearscore_ranking_each_rank" width="520" height="58" hittestset="true" draw="false" skin="none">
+		<userconfig RankingPic_1="adventure_ranking1" RankingPic_2="adventure_ranking2" RankingPic_3="adventure_ranking3" RankingSkin_1="rank_one_skin" RankingSkin_2="rank_two_skin" RankingSkin_3="rank_three_skin"/>
+		<controls>
+			<picture name="ranking_pic" rect="0 0 53 44" margin="0 0 0 0" layout_gravity="left center" stretch="true" image="adventure_ranking1"/>
+			<groupbox name="bg" rect="0 0 400 50" margin="54 5 0 0" layout_gravity="left top" draw="true" skin="rank_one_skin"/>
+			<picture name="job_pic" parent="bg" rect="0 0 30 30" margin="10 0 0 0" layout_gravity="left center" stretch="true" image="None"/>
+			<richtext name="name_text" parent="bg" rect="0 0 300 30" margin="40 0 0 0" fixwidth="true" layout_gravity="left center" textalign="left center" format="%s %s" param1="team" param1_def="0" param2="char" param2_def="None" fontname="white_18_ol" omitbywidth="true" ellipsistexttooltip="true"/>
+			<richtext name="noranker_text" parent="bg" rect="0 0 300 30" margin="20 0 0 0" fixwidth="true" layout_gravity="left center" textalign="left center" format="%s" param1="value" param1_def="-    -" fontname="white_18_ol"/>
+			<richtext name="score_text" parent="bg" rect="0 0 200 30" margin="0 0 12 0" layout_gravity="right center" textalign="right center" format="%s" param1="value" param1_def="0" fontname="white_18_ol"/>
 		</controls>
 	</controlset>
 </controlsetlist>

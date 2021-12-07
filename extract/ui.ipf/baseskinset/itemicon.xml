@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <!-- edited with XMLSpy v2008 sp1 http://www.altova.com by MintPC Mi -->
 <skinset name="Base">
 	<imagelist category="item_tooltip_icon">
@@ -4275,6 +4275,7 @@
 		<image name="icon_item_helmet_21halloween_t" file="\icon\hairacc\icon_item_helmet_21halloween_t.png" imgrect="0 0 256 256" CMM_Caption="21년 할로윈 헬멧 코스튬 3종"/>
 		<image name="icon_item_helmet_21halloween_o" file="\icon\hairacc\icon_item_helmet_21halloween_o.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_helmet_21halloween_s" file="\icon\hairacc\icon_item_helmet_21halloween_s.png" imgrect="0 0 256 256"/>
+		<image name="icon_item_accessory_6th_glasses" file="\icon\hairacc\icon_item_accessory_6th_glasses.png" imgrect="0 0 256 256"/>
 	</imagelist>
 	<imagelist category="collection_item">
 		<image name="icon_collitem_collection" file="\icon\colletion\icon_item_collection.tga" imgrect="0 0 673 419" CMM_Caption="월계수"/>
@@ -6693,6 +6694,24 @@
 		<image name="icon_item_Unlock_hwarang" file="\icon\item\icon_item_Unlock_hwarang.png" imgrect="0 0 256 256" CMM_Caption="화랑 해금권"/>
 		<image name="icon_item_honormedal_hwarang_Costume" file="\icon\item\icon_item_honormedal_hwarang_Costume.png" imgrect="0 0 256 256" CMM_Caption="화랑 백일홍 코스튬"/>
 		<image name="icon_item_wing_diena" file="\icon\item\icon_item_wing_diena.png" imgrect="0 0 256 256" CMM_Caption="디에나 날개"/>
+		<image name="icon_item_expcard_2" file="\icon\item\icon_item_expcard_2.png" imgrect="0 0 128 128" CMM_Caption="Lv19 경험치 카드"/>
+		<image name="icon_item_Kingdom_Sword" file="\icon\item\icon_item_Kingdom_Sword.png" imgrect="0 0 128 128" CMM_Caption="왕국군의 검"/>
+		<image name="icon_item_Kingdom_Spear" file="\icon\item\icon_item_Kingdom_Spear.png" imgrect="0 0 128 128" CMM_Caption="왕국군의 창"/>
+		<image name="icon_item_Kingdom_Arrow" file="\icon\item\icon_item_Kingdom_Arrow.png" imgrect="0 0 128 128" CMM_Caption="왕국군의 화살"/>
+		<image name="icon_item_BreakMaterials" file="\icon\item\icon_item_BreakMaterials.png" imgrect="0 0 128 128" CMM_Caption="부서진 자재"/>
+		<image name="icon_item_TentMaterials" file="\icon\item\icon_item_TentMaterials.png" imgrect="0 0 128 128" CMM_Caption="쓸만한 텐트 자재"/>
+		<image name="icon_item_LowQualityBarricade" file="\icon\item\icon_item_LowQualityBarricade.png" imgrect="0 0 128 128" CMM_Caption="조잡한 바리케이트"/>
+		<image name="icon_item_DefencePlan_1" file="\icon\item\icon_item_DefencePlan_1.png" imgrect="0 0 128 128" CMM_Caption="델무어 소작촌 방어 계획"/>
+		<image name="icon_item_DefencePlan_2" file="\icon\item\icon_item_DefencePlan_2.png" imgrect="0 0 128 128" CMM_Caption="델무어 장원 방어 계획"/>
+		<image name="icon_item_DefencePlan_3" file="\icon\item\icon_item_DefencePlan_3.png" imgrect="0 0 128 128" CMM_Caption="델무어 외성 방어 계획"/>
+		<image name="icon_item_DefencePlan_4" file="\icon\item\icon_item_DefencePlan_4.png" imgrect="0 0 128 128" CMM_Caption="델무어 내성 방어 계획"/>
+		<image name="icon_item_DefencePlan_5" file="\icon\item\icon_item_DefencePlan_5.png" imgrect="0 0 128 128" CMM_Caption="델무어 안뜰 방어 계획"/>
+		<image name="icon_item_WarPlan" file="\icon\item\icon_item_WarPlan.png" imgrect="0 0 128 128" CMM_Caption="작전 계획서 "/>
+		<image name="icon_item_Unknown_Triplehelix_piece" file="\icon\item\icon_item_Unknown_Triplehelix_piece.png" imgrect="0 0 128 128" CMM_Caption="머티니스 조각"/>
+		<image name="icon_item_RescueKit" file="\icon\item\icon_item_RescueKit.png" imgrect="0 0 128 128" CMM_Caption="긴급 구급 키트"/>
+		<image name="icon_item_Orsha_Flag" file="\icon\item\icon_item_Orsha_Flag.png" imgrect="0 0 128 128" CMM_Caption="오르샤 깃발"/>
+		<image name="icon_item_Kingdom_Flag" file="\icon\item\icon_item_Kingdom_Flag.png" imgrect="0 0 128 128" CMM_Caption="왕국군 깃발"/>
+		<image name="icon_item_Coin_6th_Event" file="\icon\item\icon_item_Coin_6th_Event.png" imgrect="0 0 256 256" CMM_Caption="6주년 코인"/>
 	</imagelist>
 	<imagelist category="housing">
 		<image name="icon_item_housing_craft_bronze_1" file="\icon\item\icon_item_housing_craft_bronze_1.png" imgrect="0 0 256 256" CMM_Caption="[하우징 공방] 쿠폰"/>
@@ -8898,6 +8917,7 @@
 		<image name="icon_item_sadhu_complete_pack" file="\icon\payment\icon_item_sadhu_complete_pack.png" imgrect="0 0 256 256"/>
 		<image name="icon_item_Ticket_vibora_vision_sadhu" file="\icon\payment\icon_item_Ticket_vibora_vision_sadhu.png" imgrect="0 0 256 256" CMM_Caption="바이보라 비전-아그니 지급권"/>
 		<image name="icon_item_Ticket_vibora_vision_hwarang" file="\icon\payment\icon_Ticket_vibora_vision_hwarang.png" imgrect="0 0 256 256" CMM_Caption="바이보라 비전-주살내기 지급권 "/>
+		<image name="item_icon_pet_skunk" file="\icon\payment\item_icon_pet_skunk.png" imgrect="0 0 256 256" CMM_Caption="스컹크 알"/>
 		<image name="icon_item_relic_reinforce_100000coupon" file="\icon\payment\icon_item_relic_reinforce_100000coupon.png" imgrect="0 0 256 256" CMM_Caption="성물 실버 할인 쿠폰"/>
 		<image name="icon_item_effect_zanas_jpn" file="\icon\payment\icon_item_effect_zanas_jpn.png" imgrect="0 0 256 256" CMM_Caption="자나스 이펙트"/>
 		<image name="icon_item_doll_zanas_jpn" file="\icon\payment\icon_item_doll_zanas_jpn.png" imgrect="0 0 256 256" CMM_Caption="자나스 인형"/>
@@ -8933,6 +8953,9 @@
 		<image name="icon_item_cabinet_open_ticket_god_armor_lv1" file="\icon\payment\icon_item_cabinet_open_ticket_god_armor_lv1.png" imgrect="0 0 256 256" CMM_Caption="여/마신 방어구 Lv1 선택 개방권"/>
 		<image name="icon_item_cabinet_open_ticket_god_armor_lv2" file="\icon\payment\icon_item_cabinet_open_ticket_god_armor_lv2.png" imgrect="0 0 256 256" CMM_Caption="여/마신 방어구 Lv2 선택 개방권"/>
 		<image name="icon_item_cabinet_open_ticket_god_armor_lv3" file="\icon\payment\icon_item_cabinet_open_ticket_god_armor_lv3.png" imgrect="0 0 256 256" CMM_Caption="여/마신 방어구 Lv3 선택 개방권"/>
+		<image name="icon_item_box_mythic_Auto_Hard_20ea" file="\icon\payment\icon_item_box_mythic_Auto_Hard_20ea.png" imgrect="0 0 128 128" CMM_Caption="자동 매치 패키지 상자_20"/>
+		<image name="icon_item_doll_santa_guilty" file="\icon\payment\icon_item_doll_santa_guilty.png" imgrect="0 0 256 256" CMM_Caption="길티네 인형"/>
+		<image name="icon_item_box_twndeer" file="\icon\payment\icon_item_box_twndeer.png" imgrect="0 0 256 256" CMM_Caption="꽃사슴 세트"/>
 	</imagelist>
 	<imagelist category="seal">
 		<image name="icon_seal_yellow_cc_A1" file="\icon\seal\seal_yellow_cc_A1.tga" imgrect="0 0 80 80"/>

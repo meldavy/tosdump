@@ -2272,8 +2272,8 @@ function SCR_ABIL_Monk34_ACTIVE(self, ability)
         SetExProp(ability, "Monk34_ShootTime", shootTime)
         SetExProp(ability, "Monk34_CancelTime", cancelTime)
 
-        skill.ShootTime = 2000
-        skill.CancelTime = 2000
+        skill.ShootTime = 1000
+        skill.CancelTime = 550
 
         InvalidateSkill(self, skill.ClassName);
         SendSkillProperty(self, skill);
@@ -3438,4 +3438,12 @@ end
 
 function SCR_ABIL_Archer39_INACTIVE(self, ability)
     RemoveBuff(self, "Concentration_Buff");
+end
+
+function SCR_ABIL_Doppelsoeldner37_ACTIVE(self, ability)
+    RemoveBuff(self, "DeedsOfValor");
+end
+
+function SCR_ABIL_Doppelsoeldner37_INACTIVE(self, ability)
+    RemoveBuff(self, "DeedsOfValor");
 end

@@ -2359,11 +2359,11 @@
                     <Num Num="1"/>
                     <Num Num="1"/>
                 </Scp>
-                <Scp Scp="MSL_THROW_SYNC_PAD" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1000">
-                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="1.2"/>
+                <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1000">
+                    <Str_Arg Str="I_force106_eye#EYE_BR" Arg="1.2"/>
                     <Str_Arg Str="F_explosion114_feather_white" Arg="1.7"/>
                     <Str_Arg Str="None" Arg="1"/>
-                    <Pos Angle="0" Dist="0" PosType="1"/>
+                    <Pos Angle="0" Dist="0" Rand="20" PosType="1"/>
                     <Num Num="30"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
@@ -2378,7 +2378,6 @@
                     <Num Num="0"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
-                    <Str Str="Skiaclipse_pad_6"/>
                 </Scp>
                 <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1200">
                     <Str_Arg Str="I_force106_eye#EYE_BR" Arg="1.2"/>
@@ -2420,11 +2419,8 @@
                     <Num Num="1"/>
                     <Num Num="0"/>
                 </Scp>
-                <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="1600">
-                    <Str Str="mon_voice_skiaclipse_skl2_shot"/>
-                </Scp>
-                <Scp Scp="MSL_THROW_SYNC_PAD" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1600">
-                    <Str_Arg Str="I_force106_eye#EYE_BR" Arg="2"/>
+                <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1600">
+                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="1.2"/>
                     <Str_Arg Str="F_explosion114_feather_white" Arg="1.7"/>
                     <Str_Arg Str="None" Arg="1"/>
                     <Pos Angle="0" Dist="0" Rand="20" PosType="1"/>
@@ -2442,7 +2438,9 @@
                     <Num Num="0"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
-                    <Str Str="Skiaclipse_pad_6"/>
+                </Scp>
+                <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="1600">
+                    <Str Str="mon_voice_skiaclipse_skl2_shot"/>
                 </Scp>
                 <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="1700">
                     <Str Str="mon_move_skiaclipse_skl2_shot"/>
@@ -2467,8 +2465,8 @@
                     <Num Num="1"/>
                     <Num Num="0"/>
                 </Scp>
-                <Scp Scp="MSL_THROW_SYNC_PAD" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2000">
-                    <Str_Arg Str="I_force106_eye#EYE_BR" Arg="1.4"/>
+                <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2000">
+                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="2"/>
                     <Str_Arg Str="F_explosion114_feather_white" Arg="1.7"/>
                     <Str_Arg Str="None" Arg="1"/>
                     <Pos Angle="0" Dist="0" Rand="20" PosType="1"/>
@@ -2486,7 +2484,6 @@
                     <Num Num="0"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
-                    <Str Str="Skiaclipse_pad_6"/>
                 </Scp>
                 <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2200">
                     <Str_Arg Str="I_force106_eye#EYE_BL" Arg="1.4"/>
@@ -2508,8 +2505,8 @@
                     <Num Num="1"/>
                     <Num Num="0"/>
                 </Scp>
-                <Scp Scp="MSL_THROW_SYNC_PAD" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2400">
-                    <Str_Arg Str="I_force106_eye#EYE_BR" Arg="0.60000002"/>
+                <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2400">
+                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="1.4"/>
                     <Str_Arg Str="F_explosion114_feather_white" Arg="1.7"/>
                     <Str_Arg Str="None" Arg="1"/>
                     <Pos Angle="0" Dist="0" Rand="20" PosType="1"/>
@@ -2527,7 +2524,6 @@
                     <Num Num="0"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
-                    <Str Str="Skiaclipse_pad_6"/>
                 </Scp>
                 <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2600">
                     <Str_Arg Str="I_force106_eye#EYE_BL" Arg="0.60000002"/>
@@ -2549,8 +2545,8 @@
                     <Num Num="1"/>
                     <Num Num="0"/>
                 </Scp>
-                <Scp Scp="MSL_THROW_SYNC_PAD" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2800">
-                    <Str_Arg Str="I_force106_eye#EYE_BR" Arg="0.89999998"/>
+                <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="2800">
+                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="0.60000002"/>
                     <Str_Arg Str="F_explosion114_feather_white" Arg="1.7"/>
                     <Str_Arg Str="None" Arg="1"/>
                     <Pos Angle="0" Dist="0" Rand="20" PosType="1"/>
@@ -2568,10 +2564,9 @@
                     <Num Num="0"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
-                    <Str Str="Skiaclipse_pad_6"/>
                 </Scp>
-                <Scp Scp="MSL_THROW_SYNC_PAD" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="3000">
-                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="0.89999998"/>
+                <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="3000">
+                    <Str_Arg Str="I_force106_eye#EYE_BL" Arg="0.60000002"/>
                     <Str_Arg Str="F_explosion114_feather_white" Arg="1.7"/>
                     <Str_Arg Str="None" Arg="1"/>
                     <Pos Angle="0" Dist="0" Rand="20" PosType="1"/>
@@ -2589,7 +2584,6 @@
                     <Num Num="0"/>
                     <Num Num="1"/>
                     <Num Num="0"/>
-                    <Str Str="Skiaclipse_pad_6"/>
                 </Scp>
             </EtcList>
         </MainSkl>
@@ -3259,7 +3253,7 @@
     <Skill Name="Mon_FD_boss_Moringponia_Skill_5">
         <MainSkl ScrLock="None" JumpFlee="YES" MSPDToUsePos="0">
             <HitList>
-                <Frame Type="FAN" Time="9999" HitCount="1" TermMin="0" TermMax="0" PosType="0" Dist="0" RandDist="0" RandomPerHit="0" Angle="0" AniTime="10199" RotAngle="0" ForceATK="0"/>
+                <Frame Type="FAN" Time="9999" HitCount="1" TermMin="0" TermMax="0" PosType="0" Dist="0" RandDist="0" RandomPerHit="0" Angle="0" AniTime="10199" RotAngle="0" ForceATK="0" ScriptIndex="0" ScriptName="" SkillType="0"/>
             </HitList>
             <EtcList>
                 <Anim Time="0" Anim="atk2" Speed="1"/>
@@ -3353,17 +3347,6 @@
                     <Num Num="0"/>
                 </Scp>
             </EtcList>
-            <ResultList>
-                <ToolScp Scp="S_R_TGTBUFF" Client="NO" UseSleep="NO">
-                    <Str Str="UC_stun"/>
-                    <Num Num="1"/>
-                    <Num Num="0"/>
-                    <Num Num="3000"/>
-                    <Num Num="1"/>
-                    <Num Num="100"/>
-                    <Num Num="-1"/>
-                </ToolScp>
-            </ResultList>
         </MainSkl>
     </Skill>
     <Skill Name="Mon_FD_boss_Tantaliser_Skill_1">
@@ -4355,11 +4338,6 @@
                 </Scp>
                 <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="2500">
                     <Str Str="skl_ice_cast_2"/>
-                </Scp>
-                <Scp Scp="MONSKL_CRE_PAD" Client="NO" UseSleep="NO" Time="3000">
-                    <Pos Angle="0" Dist="150"/>
-                    <Angle Angle="0"/>
-                    <Str Str="Unique_Pbeta_Breath_IceRink"/>
                 </Scp>
             </EtcList>
         </MainSkl>
@@ -5450,17 +5428,6 @@
                     <Num Num="999"/>
                 </Scp>
             </EtcList>
-            <ResultList>
-                <ToolScp Scp="S_R_TGTBUFF" Client="NO" UseSleep="NO">
-                    <Str Str="UC_freeze"/>
-                    <Num Num="1"/>
-                    <Num Num="0"/>
-                    <Num Num="3500"/>
-                    <Num Num="10"/>
-                    <Num Num="100"/>
-                    <Num Num="-1"/>
-                </ToolScp>
-            </ResultList>
         </MainSkl>
     </Skill>
     <Skill Name="Mon_FD_boss_Glacier_Skill_5">

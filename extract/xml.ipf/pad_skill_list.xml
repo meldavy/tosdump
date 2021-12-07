@@ -28540,7 +28540,7 @@ return obj.Level"/>
 	<PadSkill Name="Wizard_New_FirePillar10" CheckerType="0" Range="50" UpdateTerm="500" ApplyFlyMon="1">
 		<createEvent>
 			<ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
-				<Num Num="8000" UseFunc="1" FuncTxt="return 11000"/>
+				<Num Num="8000" UseFunc="1" FuncTxt="return 10000"/>
 				<Num Num="99990" UseFunc="1" FuncTxt="return 99999;"/>
 			</ToolScp>
 			<ToolScp Scp="C_PAD_EFFECT_POS" Client="YES" UseSleep="NO">
@@ -28587,10 +28587,6 @@ return obj.Level"/>
 			</ToolScp>
 		</leaveEvent>
 		<updateEvent>
-			<ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
-				<Num Num="-500"/>
-				<Num Num="0"/>
-			</ToolScp>
 			<ToolScp Scp="PAD_BUFF_ENEMY" Client="NO" UseSleep="NO">
 				<Str Str="ENEMY"/>
 				<Num Num="0"/>
@@ -28615,6 +28611,10 @@ return 1"/>
 				<Num Num="0"/>
 				<Num Num="0"/>
 				<Str Str="None"/>
+			</ToolScp>
+			<ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
+				<Num Num="-500"/>
+				<Num Num="0"/>
 			</ToolScp>
 		</updateEvent>
 	</PadSkill>
@@ -30819,7 +30819,7 @@ return 1"/>
 			</ToolScp>
 		</updateEvent>
 	</PadSkill>
-	<PadSkill Name="counterspell_pad" CheckerType="0" Range="50" UpdateTerm="1000" EnableSearch="0">
+	<PadSkill Name="counterspell_pad" CheckerType="0" Range="50" UpdateTerm="1000" EnableSearch="1">
 		<createEvent>
 			<ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
 				<Num Num="0" UseFunc="1" FuncTxt="	local value = 25000
@@ -32389,7 +32389,7 @@ end"/>
 			</ToolScp>
 		</updateEvent>
 	</PadSkill>
-	<PadSkill Name="plant_pad" CheckerType="0" Range="100" AllowOverlap="1">
+	<PadSkill Name="plant_pad" CheckerType="0" Range="100" AllowOverlap="1" ApplyFlyMon="1">
 		<createEvent>
 			<ToolScp Scp="PAD_ADD_LIFE" Client="NO" UseSleep="NO">
 				<Num Num="10000" UseFunc="1" FuncTxt="return 5000 + obj.Level * 600;"/>
@@ -32425,17 +32425,6 @@ end"/>
 				<Num Num="0"/>
 				<Num Num="0"/>
 				<Str Str="Chortasmata_Debuff" UseFunc="1" FuncTxt="local str = &apos;Chortasmata_Debuff&apos;; local abilDruid23 = GetAbility(self, &apos;Druid23&apos;); if abilDruid23 ~= nil and TryGetProp(abilDruid23, &apos;ActiveState&apos;) == 1 then str = &apos;None&apos;; end return str"/>
-				<Num Num="0" UseFunc="1" FuncTxt="return obj.Level"/>
-				<Num Num="0"/>
-				<Num Num="0" UseFunc="1" FuncTxt="return 10000 + obj.Level * 600;"/>
-				<Num Num="1"/>
-				<Num Num="100"/>
-			</ToolScp>
-			<ToolScp Scp="PAD_TGT_BUFF_MON" Client="NO" UseSleep="NO">
-				<Str Str="ENEMY"/>
-				<Num Num="0"/>
-				<Num Num="0"/>
-				<Str Str="PlantGround_Debuff"/>
 				<Num Num="0" UseFunc="1" FuncTxt="return obj.Level"/>
 				<Num Num="0"/>
 				<Num Num="0" UseFunc="1" FuncTxt="return 10000 + obj.Level * 600;"/>
@@ -32490,7 +32479,7 @@ end"/>
 			</ToolScp>
 		</updateEvent>
 	</PadSkill>
-	<PadSkill Name="plant_pad_born" CheckerType="0" Range="100" UpdateTerm="100">
+	<PadSkill Name="plant_pad_born" CheckerType="0" Range="100" UpdateTerm="100" ApplyFlyMon="1">
 		<createEvent>
 			<ToolScp Scp="C_PAD_EFFECT_POS" Client="YES" UseSleep="NO">
 				<Str_Arg Str="E_cleric_chortasmata_born" Arg="1"/>
@@ -33209,12 +33198,6 @@ return SR"/>
 			</ToolScp>
 		</createEvent>
 		<enterEvent>
-			<ToolScp Scp="PAD_TGT_DAMAGE_SDR" Client="NO" UseSleep="NO">
-				<Str Str="ENEMY"/>
-				<Num Num="1"/>
-				<Num Num="0"/>
-				<Num Num="-99"/>
-			</ToolScp>
 			<ToolScp Scp="PAD_TGT_BUFF" Client="NO" UseSleep="NO">
 				<Str Str="ENEMY"/>
 				<Num Num="0"/>
@@ -33226,6 +33209,12 @@ return SR"/>
 				<Num Num="1"/>
 				<Num Num="100"/>
 				<Num Num="0"/>
+			</ToolScp>
+			<ToolScp Scp="PAD_TGT_DAMAGE_SDR" Client="NO" UseSleep="NO">
+				<Str Str="ENEMY"/>
+				<Num Num="1"/>
+				<Num Num="0"/>
+				<Num Num="-99"/>
 			</ToolScp>
 			<ToolScp Scp="SCR_ADDBUFF_Hwarang_Skillcost_Buff" Client="NO" UseSleep="NO"/>
 		</enterEvent>

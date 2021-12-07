@@ -69,5 +69,5 @@ ClassID,minLv,maxLv,dropRatio,ClassName,Name,ServerMsg,EventCompositon,Dropable,
 68,420,450,2,SWD04_126_6,바이보라 비전 - 도블레 아타케,YES,NO,YES,Luchador
 69,420,450,2,SWD04_126_7,바이보라 비전 - 아레나,YES,NO,YES,Murmillo
 70,420,450,2,TMAC04_118_8,바이보라 비전 - 에마,YES,NO,YES,Miko
-73,420,450,2,TBW04_126_4,바이보라 비전 - 주살내기,YES,NO,YES,Hwarang
-74,420,450,2,TBW04_126_5,바이보라 비전 - 템페스트,YES,NO,YES,Ranger
+71,420,450,2,TBW04_126_4,바이보라 비전 - 주살내기,YES,NO,YES,Hwarang
+72,420,450,2,TBW04_126_5,바이보라 비전 - 템페스트,YES,NO,YES,Ranger

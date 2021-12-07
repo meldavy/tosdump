@@ -1,4 +1,4 @@
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <Category>
 	<ReadXml Name="bonescale"/>
 	<ReadXml Name="item_goddess_reinforce"/>
@@ -361,4 +361,5 @@
 	<ReadXml Name="achieve_exchange_event"/>
 	<ReadXml Name="achieve_exchange_event_item"/>
 	<ReadXml Name="achieve_level_reward"/>
+	<ReadXml Name="achieve_guidequest"/>
 </Category>

@@ -673,4 +673,6 @@
 	<Code Code="WARNING_GUILD_COMMUNITY" Team="PROGRAM" Category="GUILD" SubCategory="GUILD_COMMUNITY" Logger="root" Enabled="YES" CallStack="NO" Desc="길드 커뮤니티 경고"/>
 	<Code Code="INFO_GUILD_COMMUNITY" Team="PROGRAM" Category="GUILD" SubCategory="GUILD_COMMUNITY" Logger="root" Enabled="NO" CallStack="NO" Desc="길드 커뮤니티 정보"/>
 	<Code Code="WARNING_PVP_CHAT_USING" Team="PROGRAM" Category="CRITICAL" SubCategory="" Logger="root" Enabled="YES" CallStack="YES" Desc="PVP 채팅 에드온 조작 유저"/>
+	<Code Code="ERROR_NEXON_CEM_NO_SERVICE_ID" Team="tos_team" Category="ERROR" SubCategory="" Logger="root" Enabled="YES" CallStack="NO" Desc="NEXON_CEM_ACCESS_KEY 및 NEXON_CEM_SECRET_KEY 환경변수가 지정되지 않았습니다"/>
+	<Code Code="ERROR_NEXON_CEM_NO_APIKEY" Team="tos_team" Category="ERROR" SubCategory="" Logger="root" Enabled="YES" CallStack="NO" Desc="NEXON_CEM_ACCESS_KEY 및 NEXON_CEM_SECRET_KEY 환경변수가 지정되지 않았습니다"/>
 </imcErrorCode>

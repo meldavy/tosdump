@@ -1,4 +1,11 @@
 ClassID,StartTimeYYYYMM,StartTimeDDHHMM,NewTimeYYYYMM,NewTimeDDHHMM,EndTimeYYYYMM,EndTimeDDHHMM,DeadlineTimeYYYYMM,DeadlineTimeDDHHMM,ExchangeTimeYYYYMM,ExchangeTimeDDHHMM,ClassName,Name,ImagePath,url,UserCommand1,UserCommand2,UserCommand3,ShowType
+996530,202111,250900,202112,10000,202201,60700,202201,10000,0,0,2112_goddesscube,축복받은 여신의 큐브 - 애슬레저,2112_goddesscube,http://tos.nexon.com/news/update/view.aspx?n4ArticleSN=2573&n4CategorySN=0,,,,
+996540,202111,250900,202112,10000,202112,230700,202112,180000,0,0,211125_specialedition,화랑 패키지,211125_specialedition,http://tos.nexon.com/news/update/view.aspx?n4ArticleSN=2574&n4CategorySN=0,,,,
+996550,202111,250900,202112,10000,202112,90700,202112,40000,0,0,211125_Class_Update,화랑 업데이트,211125_Class_Update,http://tos.nexon.com/events/20211125/index.aspx,,,,
+996560,202111,250900,202112,10000,202201,10000,202112,260000,0,0,21112_GM_GUPJ,바오밥 성장 프로젝트,21112_GM_GUPJ,http://tos.nexon.com/lab/gos/view.aspx?n4ArticleSN=179,,,,
+996570,202111,250900,202112,10000,202201,60700,202201,10000,0,0,event211125_DevilsTemptation,마신의 유혹 - 11월,event211014_DevilsTemptation,http://tos.nexon.com/news/events/view.aspx?n4ArticleSN=361&n4ArticleCategorySN=1,,,,
+996580,202112,10000,202112,60000,202201,10000,202112,260000,0,0,event2112_Burning,주말 앤 버닝 - 12월,event2112_Burning,http://tos.nexon.com/news/events/view.aspx?n4ArticleSN=360&n4ArticleCategorySN=1,,,,
+996590,202112,10000,202112,60000,202201,10000,202112,260000,0,0,event2112_VaivoraReward,바이보라 출석 - 12월,event2112_VaivoraReward,http://tos.nexon.com/news/events/view.aspx?n4ArticleSN=359&n4ArticleCategorySN=1,,,,
 996600,202111,180900,202111,230000,202206,300700,202206,250000,0,0,OTP_event20211118,넥슨OTP 가입 이벤트,OTP_event20211118,http://tos.nexon.com/news/events/view.aspx?n4ArticleSN=358&n4ArticleCategorySN=1,,,,
 996610,202111,110900,202111,160000,202112,90700,202112,40000,0,0,event2111winter,따끈따끈 겨울 준비,event2111winter,http://tos.nexon.com/news/events/view.aspx?n4ArticleSN=354&n4ArticleCategorySN=1,,,,
 996620,202110,280900,202111,20000,202111,250700,202111,200000,0,0,Sadu_specialedition,사두 패키지,Sadu_specialedition,http://tos.nexon.com/news/update/view.aspx?n4ArticleSN=2547,,,,

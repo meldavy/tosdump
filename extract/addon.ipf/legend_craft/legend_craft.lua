@@ -97,7 +97,7 @@ function LEGEND_CRAFT_INIT_RECIPE_LIST()
 	local clslist, cnt = GetClassList('legendrecipe');
 	for i = 0, cnt - 1 do
 		local cls = GetClassByIndexFromList(clslist, i);
-		if cls.DropGroup ~= "Ark" then
+		if cls.DropGroup ~= "Ark" and cls.DropGroup ~= "None" then
 			if g_legendCraftRecipeTable[cls.DropGroupName] == nil then
 				g_legendCraftRecipeTable[cls.DropGroupName] = {};
 			end

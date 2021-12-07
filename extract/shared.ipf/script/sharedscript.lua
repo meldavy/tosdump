@@ -3175,21 +3175,21 @@ end
 
 function JOB_HWARANG_PRE_CHECK(pc, jobCount)
 
-    -- local aObj
-    -- if IsServerSection() == 0 then
-    --     aObj = GetMyAccountObj();
-    -- else
-    --     aObj = GetAccountObj(pc);
-    -- end
+    local aObj
+    if IsServerSection() == 0 then
+        aObj = GetMyAccountObj();
+    else
+        aObj = GetAccountObj(pc);
+    end
     
-    -- if aObj ~= nil then
-    --     local value = TryGetProp(aObj, 'UnlockQuest_Char3_22', 0)
-    --     if value == 1 or IS_KOR_TEST_SERVER() == true then
-    --         return 'YES'
-    --     end
-    -- end
+    if aObj ~= nil then
+        local value = TryGetProp(aObj, 'UnlockQuest_Char3_22', 0)
+        if value == 1 or IS_KOR_TEST_SERVER() == true then
+            return 'YES'
+        end
+    end
 
-    return 'YES'
+    return 'NO'
 end
 
 
@@ -3810,4 +3810,71 @@ function get_collection_name_by_item(item_name)
     end
     
     return _collection_list_by_item[item_name]
+end
+
+function TUTORIAL_CLEAR_CHECK(pc)
+    local etc = nil
+    if IsServerSection() == 1 then
+        etc = GetETCObject(pc)
+    else
+        etc = GetMyEtcObject()
+    end
+
+    if etc == nil then
+        return false
+    end
+
+    local sObj = GetSessionObject(pc, 'ssn_klapeda')
+    if sObj == nil then
+        return false;
+    end
+
+    local startLog = TryGetProp(sObj, 'QSTARTZONETYPE', "None")
+
+    if startLog ~= "StartLine3" then
+        return true;
+    end
+
+    local clear_check = TryGetProp(etc, 'StartLine3_Clear', 0)
+    if clear_check < 300 then
+        return false
+    end
+
+    return true
+end
+
+-- 기존 시나리오 퀘스트인지 체크
+-- false : 기존 퀘스트
+-- true : 신규 
+function TUTORIAL_QUEST_EXCEPTION(pc, QuestClassID)
+    local quest_ies = GetClass("QuestProgressCheck", QuestClassID)
+    local isStartLine3 = TryGetProp(quest_ies, "QStartZone", "None")
+    if isStartLine3 == "StartLine3" then
+        return true;
+    end
+    
+    return false
+end
+
+
+function TUTORIAL_QUEST_EXCEPTION_BY_TYPE(pc, QuestClassID)
+    local quest_ies = GetClassByType("QuestProgressCheck", tonumber(QuestClassID))
+    local isStartLine3 = TryGetProp(quest_ies, "QStartZone", "None")
+    if isStartLine3 == "StartLine3" then
+        return true;
+    end
+
+    return false
+end
+
+function GET_ITEM_EXPIRE_TIME(item)
+    local expire_datetime = TryGetProp(item, 'ExpireDateTime', 'None')
+    local expire_time = TryGetProp(item, 'ExpireTime', 'None')
+    if expire_datetime ~= 'None' then
+        return expire_datetime
+    elseif expire_time ~= 'None' then
+        return expire_time
+    else
+        return 'None'
+    end
 end

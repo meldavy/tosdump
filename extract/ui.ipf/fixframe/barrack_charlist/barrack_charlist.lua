@@ -932,6 +932,10 @@ function SELECTTEAM_ON_MSG(frame, msg, argStr, argNum, ud)
 end
 
 function BARRACK_GO_CREATE()
+	BARRACK_STARTMAP_SELECT_INIT()
+end
+
+function _BARRACK_GO_CREATE(select)
     if IS_FULL_SLOT_CURRENT_LAYER() == true then
         ui.SysMsg(ScpArgMsg("{layer}LayerFull", 'layer', current_layer))
         return
@@ -939,6 +943,11 @@ function BARRACK_GO_CREATE()
 	barrack.GoCreate()
 	ui.CloseFrame("inputstring")
 	ui.CloseFrame("barrackthema")
+
+	local createcharframe = ui.GetFrame("pub_createchar")
+	if createcharframe ~= nil then
+		createcharframe:SetUserValue("SELECTED_NUM", select)
+	end
 end
 
 function BARRACK_GO_CREATE_RETRY()	

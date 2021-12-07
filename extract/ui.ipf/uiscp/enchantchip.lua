@@ -64,7 +64,7 @@ function CLIENT_ENCHANTCHIP(invItem)
 
 		-- 마법 부여 스크롤(거래불가) 부분 처리
 		local bg = GET_CHILD_RECURSIVELY(enchantFrame, "bg");
-		if obj ~= nil and obj.ClassName == "Premium_Enchantchip_CT" and text1:GetLineCount() > 1 then	
+		if obj ~= nil and (obj.ClassName == "Premium_Enchantchip_CT" or obj.ClassName == "Premium_Enchantchip_NoTrade") and text1:GetLineCount() > 1 then	
 			if bg ~= nil then
 				bg:SetSkinName("test_Item_tooltip_equip_sub");
 				
@@ -87,7 +87,7 @@ function CLIENT_ENCHANTCHIP(invItem)
 
 				enchantFrame:Invalidate();
 			end
-		elseif obj ~= nil and obj.ClassName == "Premium_Enchantchip_CT" and  text1:GetLineCount() <= 1 then
+		elseif obj ~= nil and (obj.ClassName == "Premium_Enchantchip_CT" or obj.ClassName == "Premium_Enchantchip_NoTrade") and  text1:GetLineCount() <= 1 then
 			local bg_title = GET_CHILD_RECURSIVELY(bg, "bg_title");
 			if bg_title ~= nil then
 				bg_title:RemoveChild("bg_title");

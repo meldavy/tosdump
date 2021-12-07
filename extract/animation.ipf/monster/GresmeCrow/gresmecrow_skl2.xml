@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<ActionDesc>
+	<Particle frame="10" particleName="F_spin011_white" attachNode="Dummy_emitter" scale="1.1" useAttach="true" pause="true" targetPos="false"/>
+	<Sound frame="1.00" soundFile="skl_eff_body_atk_12"/>
+	<Sound frame="9.00" soundFile="skl_eff_body_atk_31"/>
+	<Sound frame="10.00" soundFile="skl_eff_body_atk_2"/>
+</ActionDesc>

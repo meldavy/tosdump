@@ -53,6 +53,12 @@ function INDUNINFO_CHAT_OPEN(frame, msg, argStr, argNum)
 end
 
 function INDUNINFO_UI_OPEN(frame, index, selectIndun)
+    if TUTORIAL_CLEAR_CHECK(GetMyPCObject()) == false then
+        ui.SysMsg(ClMsg('CanUseAfterTutorialClear'))
+        frame:ShowWindow(0)
+        return
+    end
+
     if index == nil then
         index = 0
     end

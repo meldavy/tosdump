@@ -333,7 +333,7 @@
 local abil = GetAbility(pc, 'TigerHunter14') 
 local value = 4
 if abil ~= nil and abil.ActiveState == 1 then 
-	value = 7
+	value = 6
 end  
 return value"/>
 				<Num Num="0"/>

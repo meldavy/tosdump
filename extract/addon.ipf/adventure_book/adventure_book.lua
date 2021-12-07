@@ -1,5 +1,7 @@
 ADVENTURE_BOOK_ACHIEVE_SUBCATEGORY_SELECT = {} -- 선택중인 서브 카테고리 이름(achieve_info)
 ADVENTURE_BOOK_ACHIEVE_NOT_TIME_START = {}
+ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY = {}
+ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_SELECT = nil
 
 function ADVENTURE_BOOK_ON_INIT(addon, frame)
 	-- 모험일지
@@ -32,6 +34,7 @@ function ADVENTURE_BOOK_ON_INIT(addon, frame)
 	
 	ADVENTURE_BOOK_ACHIEVE_CREATE_SUBCATEGORY()
 	ADVENTURE_BOOK_INIT_TIMER_ACHIEVE()
+	ADVENTURE_BOOK_ACHIEVE_CREATE_GUIDEQUEST_CHAPTER()
 end
 
 function ADVENTURE_BOOK_BTN_CLOSE(ctrl , btn)
@@ -75,10 +78,17 @@ function ADVENTURE_BOOK_ACHIEVE_CREATE_SUBCATEGORY()
 			local icon_btn = list_achieve_subcategory_scroll:CreateOrGetControl('button', "subcategorysel_"..j, icon_width, icon_height, ui.LEFT, ui.CENTER_VERT, x, 0, 0, 0)
 			AUTO_CAST(icon_btn)
 			icon_btn:SetImage(subCategory[j].Icon)
-			icon_btn:SetTextTooltip(ClMsg(subCategory[j].Name))
+			local tooltipTxt = ClMsg(subCategory[j].Name)
+			if subCategory[j].ClassName == 'GuideQuest' then
+				tooltipTxt = tooltipTxt .. ClMsg('adventure_book_achieve_subcategory_maincont_grewup_sub')
+			end
+			icon_btn:SetTextTooltip(tooltipTxt)
 			icon_btn:SetEventScript(ui.LBUTTONUP, "ADVENTURE_BOOK_ACHIEVE_SELECT_SUBCATEGORY")
 			icon_btn:SetEventScriptArgNumber(ui.LBUTTONUP, i)
 			icon_btn:SetEventScriptArgString(ui.LBUTTONUP, subCategory[j].ClassName)
+			if subCategory[j].ClassName == "GuideQuest" then
+				icon_btn:SetEventScript(ui.RBUTTONUP, "ADVENTURE_BOOK_RBTNUP_SUBCATEGORY_GUIDEQUEST")
+			end
 			x = x + icon_btn:GetWidth() + icon_space
 		end
 
@@ -99,6 +109,27 @@ function ADVENTURE_BOOK_ACHIEVE_CREATE_SUBCATEGORY()
 		btn_left:SetEnable(0)
 		if num <= max then
 			btn_right:SetEnable(0)
+		end
+	end
+end
+
+function ADVENTURE_BOOK_ACHIEVE_CREATE_GUIDEQUEST_CHAPTER()
+	-- 성장 퀘스트 챕터 목록
+	local ind = 1
+	local clsList, cnt = GetClassListByProp('Achieve', 'SubCategory', 'GuideQuest')
+	for i = 1, cnt do
+		local cls = clsList[i]
+		if cls ~= nil and TryGetProp(cls, 'IsTitle', 'None') == 'YES' then
+			if ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY == nil then
+				ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY = {}
+			end
+	
+			local chapterName = TryGetProp(cls, 'DescTitle', 'None')
+			local isComplete = ADVENTURE_BOOK_ACHIEVE_CONTENT.IS_COMPLETE(TryGetProp(cls, 'ClassID', 0))
+			local chapterInfo = { Name = chapterName, Complete = isComplete }
+			ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY[ind] = chapterInfo
+
+			ind = ind + 1
 		end
 	end
 end
@@ -525,6 +556,14 @@ function ADVENTURE_BOOK_SEARCH_PROP_BY_CLASSID_FUNC(clsID, idSpace, propName, se
 end
 
 function ADVENTURE_BOOK_EQUAL_PROP_BY_CLASSID_FUNC(clsID, idSpace, propName, targetPropValue)
+	if idSpace == "Achieve" and propName == "SubCategory" and targetPropValue == "GuideQuest" then
+		propName = "SubGroup"
+		if ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_SELECT == nil or ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_SELECT <= 0 then
+			ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_SELECT = 1
+		end
+		targetPropValue = targetPropValue .. "_" .. ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_SELECT
+	end
+	
 	local cls = GetClassByType(idSpace, clsID)
 	local prop = TryGetProp(cls, propName);
 	
@@ -1781,4 +1820,57 @@ end
 
 function ADVENTURE_BOOK_ACHIEVE_LEVEL_REWARD_REQUEST_REWARD_ACCEPT(classID)
     session.ReqAchieveLevelReward(classID)
+end
+
+-- 성장 업적
+function ADVENTURE_BOOK_GUIDEQUEST_CHAPTER_SELECT(select, argNum, argStr)
+	local MainCategoryList = ADVENTURE_BOOK_ACHIEVE_CONTENT.GET_MAIN_CATEGORY_CLASS_LIST()
+	local MainCategory = TryGetProp(MainCategoryList[argNum], "ClassName", "None")
+	if MainCategory == "None" then return end
+
+	local frame = ui.GetFrame("adventure_book")
+	local gb_achieve = frame:GetChild('gb_achieve')
+	local page = gb_achieve:GetChild("page_achieve_list_"..MainCategory)
+	if page == nil then return end
+
+	page:SetUserValue("SubCategory", argStr)
+	
+	ADVENTURE_BOOK_ACHIEVE_SUBCATEGORY_SELECT[argNum] = argStr
+	ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_SELECT = tonumber(select)
+	ADVENTURE_BOOK_RENEW_SELECTED_TAB_ACHIEVE()
+end
+
+function ADVENTURE_BOOK_RBTNUP_SUBCATEGORY_GUIDEQUEST(parent, ctrl)
+	if ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY == nil or #ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY == 0 then
+		ADVENTURE_BOOK_ACHIEVE_CREATE_GUIDEQUEST_CHAPTER()
+	end
+
+	local incompleteList = {}
+	local completeList = {}
+	for i = 1, #ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY do
+		local chapterInfo = ADVENTURE_BOOK_ACHIEVE_GUIDEQUEST_CATEGORY[i]
+		if chapterInfo.Complete == 0 then
+			table.insert(incompleteList, { Name = dic.getTranslatedStr(chapterInfo.Name), Index = i })
+		else
+			table.insert(completeList, { Name = dic.getTranslatedStr(chapterInfo.Name), Index = i })
+		end
+	end
+
+	local argNum = ctrl:GetEventScriptArgNumber(ui.LBUTTONUP)
+	local argStr = ctrl:GetEventScriptArgString(ui.LBUTTONUP)
+
+	local context = ui.CreateContextMenu("GUIDEQUEST_CONTEXT_MENU", '', 0, 0, 100, 100)
+	for i = 1, #incompleteList do
+		local index = incompleteList[i].Index
+		local name = incompleteList[i].Name
+		local strscp = string.format('ADVENTURE_BOOK_GUIDEQUEST_CHAPTER_SELECT(%d, %d, \'%s\')', index, argNum, argStr)
+		ui.AddContextMenuItem(context, name, strscp)
+	end
+	for i = 1, #completeList do
+		local index = completeList[i].Index
+		local name = completeList[i].Name
+		local strscp = string.format('ADVENTURE_BOOK_GUIDEQUEST_CHAPTER_SELECT(%d, %d, \'%s\')', index, argNum, argStr)
+		ui.AddContextMenuItem(context, '[' .. ClMsg('COMPLETE') .. ']' .. name, strscp)
+	end
+	ui.OpenContextMenu(context)
 end

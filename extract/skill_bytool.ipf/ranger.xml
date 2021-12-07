@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <ToolSkill>
 	<Skill Name="Ranger_SpiralArrow">
 		<KeyInput>
@@ -800,7 +800,14 @@ end" Arg="1"/>
 		<MainSkl ScrLock="None" JumpFlee="NO" MSPDToUsePos="0">
 			<EtcList>
 				<Scp Scp="C_FORCE_EFT" Client="YES_Time" UseSleep="NO" Time="200">
-					<Str_Arg Str="I_archer_FocusFire_arrow_trailonly" Arg="10"/>
+					<Str_Arg Str="I_archer_FocusFire_arrow_trailonly" Arg="10" UseFunc="1" FuncTxt="local pc = GetMyPCObject() 
+					local name = &quot;I_archer_FocusFire_arrow_trailonly&quot; 
+					local scale = 10.0 
+					if GetExProp(pc, &quot;Ranger_Special_Costume&quot;) > 0 then  
+					name = &quot;I_arrow024_yellow_1&quot; 
+					scale = 1 
+					end
+					return name, scale;"/>
 					<Str Str="arrow_cast"/>
 					<Str_Arg Str="None" Arg="1"/>
 					<Str Str="arrow_blow"/>
@@ -816,7 +823,14 @@ end" Arg="1"/>
 					<Num Num="0"/>
 				</Scp>
 				<Scp Scp="C_FORCE_EFT" Client="YES_Time" UseSleep="NO" Time="250">
-					<Str_Arg Str="I_archer_FocusFire_arrow_trailonly" Arg="10"/>
+					<Str_Arg Str="I_archer_FocusFire_arrow_trailonly" Arg="10" UseFunc="1" FuncTxt="local pc = GetMyPCObject() 
+					local name = &quot;I_archer_FocusFire_arrow_trailonly&quot; 
+					local scale = 10.0 
+					if GetExProp(pc, &quot;Ranger_Special_Costume&quot;) > 0 then  
+					name = &quot;I_arrow024_yellow_1&quot; 
+					scale = 1
+					end
+					return name, scale;"/>
 					<Str Str="arrow_cast"/>
 					<Str_Arg Str="None" Arg="1"/>
 					<Str Str="arrow_blow"/>
@@ -832,7 +846,14 @@ end" Arg="1"/>
 					<Num Num="0"/>
 				</Scp>
 				<Scp Scp="C_FORCE_EFT" Client="YES_Time" UseSleep="NO" Time="300">
-					<Str_Arg Str="I_archer_FocusFire_arrow_trailonly" Arg="10"/>
+					<Str_Arg Str="I_archer_FocusFire_arrow_trailonly" Arg="10" UseFunc="1" FuncTxt="local pc = GetMyPCObject() 
+					local name = &quot;I_archer_FocusFire_arrow_trailonly&quot; 
+					local scale = 10.0 
+					if GetExProp(pc, &quot;Ranger_Special_Costume&quot;) > 0 then  
+					name = &quot;I_arrow024_yellow_1&quot; 
+					scale = 1
+					end
+					return name, scale;"/>
 					<Str Str="arrow_cast"/>
 					<Str_Arg Str="None" Arg="1"/>
 					<Str Str="arrow_blow"/>

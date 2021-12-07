@@ -100,6 +100,12 @@ local function _GET_EFFECT_UI_MARGIN()
 end
 
 function GODDESS_EQUIP_MANAGER_OPEN(frame)
+	if TUTORIAL_CLEAR_CHECK(GetMyPCObject()) == false then
+		ui.SysMsg(ClMsg('CanUseAfterTutorialClear'))
+		frame:ShowWindow(0)
+		return
+	end
+	
 	ui.CloseFrame('rareoption')
 	ui.CloseFrame('item_cabinet')
 	for i = 1, #revertrandomitemlist do
@@ -2875,16 +2881,13 @@ function GODDESS_MGR_RANDOMOPTION_APPLY_EXEC(parent, btn)
 		local slot_info = managed_slot_list[i]
 		local ctrlset = GET_CHILD_RECURSIVELY(frame, 'rand_slot_' .. slot_info.SlotName)
 		local tgt_item = session.GetEquipItemBySpot(item.GetEquipSpotNum(slot_info.SlotName))
-		if tgt_item ~= nil then
+		local checkbox = GET_CHILD(ctrlset, 'checkbox')
+		if tgt_item ~= nil and checkbox:IsChecked() == 1 then
 			if tgt_item.isLockState == true then
 				ui.SysMsg(ClMsg('MaterialItemIsLock'))
 				return
 			end
-			
-			local checkbox = GET_CHILD(ctrlset, 'checkbox')
-			if checkbox:IsChecked() == 1 then
-				apply_cnt = apply_cnt + 1
-			end
+			apply_cnt = apply_cnt + 1
 		end
 	end
 	
@@ -2936,21 +2939,18 @@ function _GODDESS_MGR_RANDOMOPTION_APPLY_EXEC()
 		local slot_info = managed_slot_list[i]
 		local ctrlset = GET_CHILD_RECURSIVELY(frame, 'rand_slot_' .. slot_info.SlotName)
 		local tgt_item = session.GetEquipItemBySpot(item.GetEquipSpotNum(slot_info.SlotName))
-		if tgt_item ~= nil then
+		local checkbox = GET_CHILD(ctrlset, 'checkbox')
+		if tgt_item ~= nil and checkbox:IsChecked() == 1 then
 			if tgt_item.isLockState == true then
 				ui.SysMsg(ClMsg('MaterialItemIsLock'))
 				return
 			end
-
-			local checkbox = GET_CHILD(ctrlset, 'checkbox')
-			if checkbox:IsChecked() == 1 then
-				local slot = GET_CHILD(ctrlset, 'slot')
-				local guid = slot:GetUserValue('ITEM_GUID')
-				if guid ~= 'None' then
-					session.AddItemID(guid, 1)
-					arg_list:Add(slot_info.SlotName)
-					apply_cnt = apply_cnt + 1
-				end
+			local slot = GET_CHILD(ctrlset, 'slot')
+			local guid = slot:GetUserValue('ITEM_GUID')
+			if guid ~= 'None' then
+				session.AddItemID(guid, 1)
+				arg_list:Add(slot_info.SlotName)
+				apply_cnt = apply_cnt + 1
 			end
 		end
 	end

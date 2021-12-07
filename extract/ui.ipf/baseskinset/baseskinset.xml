@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by MintPC (Mi) -->
 <skinset name="Base">
 	<skinlist category="frames">
@@ -5323,6 +5323,105 @@
 			<img name="bottomcore" imgrect="578 1221 80 1"/>
 			<img name="bottomright" imgrect="659 1221 192 1"/>
 		</skin>
+		<skin name="ps_title_green" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="0 62 201 1"/>
+			<img name="topcore" imgrect="202 62 131 1"/>
+			<img name="topright" imgrect="334 62 201 1"/>
+			<img name="bodyleft" imgrect="0 0 201 61"/>
+			<img name="bodycore" imgrect="202 0 131 61"/>
+			<img name="bodyright" imgrect="334 0 201 61"/>
+			<img name="bottomleft" imgrect="0 62 201 1"/>
+			<img name="bottomcore" imgrect="202 62 131 1"/>
+			<img name="bottomright" imgrect="334 62 201 1"/>
+		</skin>
+		<skin name="ps_frame1" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="0 67 33 27"/>
+			<img name="topcore" imgrect="34 67 36 27"/>
+			<img name="topright" imgrect="71 67 33 27"/>
+			<img name="bodyleft" imgrect="0 95 33 24"/>
+			<img name="bodycore" imgrect="34 95 36 24"/>
+			<img name="bodyright" imgrect="71 95 33 24"/>
+			<img name="bottomleft" imgrect="0 120 33 27"/>
+			<img name="bottomcore" imgrect="34 120 36 27"/>
+			<img name="bottomright" imgrect="71 120 33 27"/>
+		</skin>
+		<skin name="ps_frame2" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="106 67 26 17"/>
+			<img name="topcore" imgrect="133 67 26 17"/>
+			<img name="topright" imgrect="160 67 26 17"/>
+			<img name="bodyleft" imgrect="106 85 26 17"/>
+			<img name="bodycore" imgrect="133 85 26 17"/>
+			<img name="bodyright" imgrect="160 85 26 17"/>
+			<img name="bottomleft" imgrect="106 103 26 17"/>
+			<img name="bottomcore" imgrect="133 103 26 17"/>
+			<img name="bottomright" imgrect="160 103 26 17"/>
+		</skin>
+		<skin name="ps_frame3" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="106 127 26 6"/>
+			<img name="topcore" imgrect="133 127 26 6"/>
+			<img name="topright" imgrect="160 127 26 6"/>
+			<img name="bodyleft" imgrect="106 134 26 6"/>
+			<img name="bodycore" imgrect="133 134 26 6"/>
+			<img name="bodyright" imgrect="160 134 26 6"/>
+			<img name="bottomleft" imgrect="106 141 26 6"/>
+			<img name="bottomcore" imgrect="133 141 26 6"/>
+			<img name="bottomright" imgrect="160 141 26 6"/>
+		</skin>
+		<skin name="ps_frame4" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="0 198 26 17"/>
+			<img name="topcore" imgrect="27 198 26 17"/>
+			<img name="topright" imgrect="54 198 26 17"/>
+			<img name="bodyleft" imgrect="0 216 26 17"/>
+			<img name="bodycore" imgrect="27 216 26 17"/>
+			<img name="bodyright" imgrect="54 216 26 17"/>
+			<img name="bottomleft" imgrect="0 234 26 17"/>
+			<img name="bottomcore" imgrect="27 234 26 17"/>
+			<img name="bottomright" imgrect="54 234 26 17"/>
+		</skin>
+		<skin name="ps_textframe" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="189 94 14 1"/>
+			<img name="topcore" imgrect="204 94 13 1"/>
+			<img name="topright" imgrect="218 94 14 1"/>
+			<img name="bodyleft" imgrect="189 67 14 26"/>
+			<img name="bodycore" imgrect="204 67 13 26"/>
+			<img name="bodyright" imgrect="218 67 14 26"/>
+			<img name="bottomleft" imgrect="189 94 14 1"/>
+			<img name="bottomcore" imgrect="204 94 13 1"/>
+			<img name="bottomright" imgrect="218 94 14 1"/>
+		</skin>
+		<skin name="ps_gradient" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="0 150 1 14"/>
+			<img name="topcore" imgrect="2 150 156 14"/>
+			<img name="topright" imgrect="0 150 1 14"/>
+			<img name="bodyleft" imgrect="0 165 1 14"/>
+			<img name="bodycore" imgrect="2 165 156 14"/>
+			<img name="bodyright" imgrect="0 165 1 14"/>
+			<img name="bottomleft" imgrect="0 180 1 14"/>
+			<img name="bottomcore" imgrect="2 180 156 14"/>
+			<img name="bottomright" imgrect="0 180 1 14"/>
+		</skin>
+		<skin name="ps_line2" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="160 152 20 1"/>
+			<img name="topcore" imgrect="181 152 25 1"/>
+			<img name="topright" imgrect="207 152 20 1"/>
+			<img name="bodyleft" imgrect="160 150 20 1"/>
+			<img name="bodycore" imgrect="181 150 25 1"/>
+			<img name="bodyright" imgrect="207 150 20 1"/>
+			<img name="bottomleft" imgrect="160 152 20 1"/>
+			<img name="bottomcore" imgrect="181 152 25 1"/>
+			<img name="bottomright" imgrect="207 152 20 1"/>
+		</skin>
+		<skin name="ps_frame_input" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="373 309 22 1"/>
+			<img name="topcore" imgrect="396 309 21 1"/>
+			<img name="topright" imgrect="418 309 22 1"/>
+			<img name="bodyleft" imgrect="373 274 22 34"/>
+			<img name="bodycore" imgrect="396 274 21 34"/>
+			<img name="bodyright" imgrect="418 274 22 34"/>
+			<img name="bottomleft" imgrect="373 309 22 1"/>
+			<img name="bottomcore" imgrect="396 309 21 1"/>
+			<img name="bottomright" imgrect="418 309 22 1"/>
+		</skin>
 	</skinlist>
 	<skinlist category="yiseul_buttons">
 		<skin name="worldmap2_btn_round" texture="\skin\worldmap2.tga">
@@ -5567,6 +5666,204 @@
 			<img name="bottomleft" imgrect="623 480 33 20"/>
 			<img name="bottomcore" imgrect="657 480 89 20"/>
 			<img name="bottomright" imgrect="747 480 33 20"/>
+		</skin>
+		<skin name="ps_listBtn" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="234 67 6 50"/>
+			<img name="topcore" imgrect="241 67 78 50"/>
+			<img name="topright" imgrect="320 67 14 50"/>
+			<img name="bodyleft" imgrect="234 118 6 10"/>
+			<img name="bodycore" imgrect="241 118 78 10"/>
+			<img name="bodyright" imgrect="320 118 14 10"/>
+			<img name="bottomleft" imgrect="234 129 6 10"/>
+			<img name="bottomcore" imgrect="241 129 78 10"/>
+			<img name="bottomright" imgrect="320 129 14 10"/>
+		</skin>
+		<skin name="ps_listBtn_cursoron" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="234 142 6 50"/>
+			<img name="topcore" imgrect="241 142 78 50"/>
+			<img name="topright" imgrect="320 142 14 50"/>
+			<img name="bodyleft" imgrect="234 193 6 10"/>
+			<img name="bodycore" imgrect="241 193 78 10"/>
+			<img name="bodyright" imgrect="320 193 14 10"/>
+			<img name="bottomleft" imgrect="234 204 6 10"/>
+			<img name="bottomcore" imgrect="241 204 78 10"/>
+			<img name="bottomright" imgrect="320 204 14 10"/>
+		</skin>
+		<skin name="ps_listBtn_clicked" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="234 217 6 50"/>
+			<img name="topcore" imgrect="241 217 78 50"/>
+			<img name="topright" imgrect="320 217 14 50"/>
+			<img name="bodyleft" imgrect="234 268 6 10"/>
+			<img name="bodycore" imgrect="241 268 78 10"/>
+			<img name="bodyright" imgrect="320 268 14 10"/>
+			<img name="bottomleft" imgrect="234 279 6 10"/>
+			<img name="bottomcore" imgrect="241 279 78 10"/>
+			<img name="bottomright" imgrect="320 279 14 10"/>
+		</skin>
+		<skin name="ps_tabBtn" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 184 52 1"/>
+			<img name="topcore" imgrect="392 184 44 1"/>
+			<img name="topright" imgrect="437 184 52 1"/>
+			<img name="bodyleft" imgrect="339 67 52 37"/>
+			<img name="bodycore" imgrect="392 67 44 37"/>
+			<img name="bodyright" imgrect="437 67 52 37"/>
+			<img name="bottomleft" imgrect="339 184 52 1"/>
+			<img name="bottomcore" imgrect="392 184 44 1"/>
+			<img name="bottomright" imgrect="437 184 52 1"/>
+		</skin>
+		<skin name="ps_tabBtn_cursoron" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 184 52 1"/>
+			<img name="topcore" imgrect="392 184 44 1"/>
+			<img name="topright" imgrect="437 184 52 1"/>
+			<img name="bodyleft" imgrect="339 106 52 37"/>
+			<img name="bodycore" imgrect="392 106 44 37"/>
+			<img name="bodyright" imgrect="437 106 52 37"/>
+			<img name="bottomleft" imgrect="339 184 52 1"/>
+			<img name="bottomcore" imgrect="392 184 44 1"/>
+			<img name="bottomright" imgrect="437 184 52 1"/>
+		</skin>
+		<skin name="ps_tabBtn_clicked" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 184 52 1"/>
+			<img name="topcore" imgrect="392 184 44 1"/>
+			<img name="topright" imgrect="437 184 52 1"/>
+			<img name="bodyleft" imgrect="339 145 52 37"/>
+			<img name="bodycore" imgrect="392 145 44 37"/>
+			<img name="bodyright" imgrect="437 145 52 37"/>
+			<img name="bottomleft" imgrect="339 184 52 1"/>
+			<img name="bottomcore" imgrect="392 184 44 1"/>
+			<img name="bottomright" imgrect="437 184 52 1"/>
+		</skin>
+		<skin name="ps_menuBtn_search" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 269 24 1"/>
+			<img name="topcore" imgrect="364 269 11 1"/>
+			<img name="topright" imgrect="376 269 9 1"/>
+			<img name="bodyleft" imgrect="339 190 24 24"/>
+			<img name="bodycore" imgrect="364 190 11 24"/>
+			<img name="bodyright" imgrect="376 190 9 24"/>
+			<img name="bottomleft" imgrect="339 269 24 1"/>
+			<img name="bottomcore" imgrect="364 269 11 1"/>
+			<img name="bottomright" imgrect="376 269 9 1"/>
+		</skin>
+		<skin name="ps_menuBtn_search_cursoron" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 269 24 1"/>
+			<img name="topcore" imgrect="364 269 11 1"/>
+			<img name="topright" imgrect="376 269 9 1"/>
+			<img name="bodyleft" imgrect="339 217 24 24"/>
+			<img name="bodycore" imgrect="364 217 11 24"/>
+			<img name="bodyright" imgrect="376 217 9 24"/>
+			<img name="bottomleft" imgrect="339 269 24 1"/>
+			<img name="bottomcore" imgrect="364 269 11 1"/>
+			<img name="bottomright" imgrect="376 269 9 1"/>
+		</skin>
+		<skin name="ps_menuBtn_search_clicked" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 269 24 1"/>
+			<img name="topcore" imgrect="364 269 11 1"/>
+			<img name="topright" imgrect="376 269 9 1"/>
+			<img name="bodyleft" imgrect="339 244 24 24"/>
+			<img name="bodycore" imgrect="364 244 11 24"/>
+			<img name="bodyright" imgrect="376 244 9 24"/>
+			<img name="bottomleft" imgrect="339 269 24 1"/>
+			<img name="bottomcore" imgrect="364 269 11 1"/>
+			<img name="bottomright" imgrect="376 269 9 1"/>
+		</skin>
+		<skin name="ps_menuBtn_register" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 269 24 1"/>
+			<img name="topcore" imgrect="364 269 11 1"/>
+			<img name="topright" imgrect="376 269 9 1"/>
+			<img name="bodyleft" imgrect="388 190 24 24"/>
+			<img name="bodycore" imgrect="413 190 11 24"/>
+			<img name="bodyright" imgrect="425 190 9 24"/>
+			<img name="bottomleft" imgrect="339 269 24 1"/>
+			<img name="bottomcore" imgrect="364 269 11 1"/>
+			<img name="bottomright" imgrect="376 269 9 1"/>
+		</skin>
+		<skin name="ps_menuBtn_register_cursoron" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 269 24 1"/>
+			<img name="topcore" imgrect="364 269 11 1"/>
+			<img name="topright" imgrect="376 269 9 1"/>
+			<img name="bodyleft" imgrect="388 217 24 24"/>
+			<img name="bodycore" imgrect="413 217 11 24"/>
+			<img name="bodyright" imgrect="425 217 9 24"/>
+			<img name="bottomleft" imgrect="339 269 24 1"/>
+			<img name="bottomcore" imgrect="364 269 11 1"/>
+			<img name="bottomright" imgrect="376 269 9 1"/>
+		</skin>
+		<skin name="ps_menuBtn_register_clicked" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="339 269 24 1"/>
+			<img name="topcore" imgrect="364 269 11 1"/>
+			<img name="topright" imgrect="376 269 9 1"/>
+			<img name="bodyleft" imgrect="388 244 24 24"/>
+			<img name="bodycore" imgrect="413 244 11 24"/>
+			<img name="bodyright" imgrect="425 244 9 24"/>
+			<img name="bottomleft" imgrect="339 269 24 1"/>
+			<img name="bottomcore" imgrect="364 269 11 1"/>
+			<img name="bottomright" imgrect="376 269 9 1"/>
+		</skin>
+		<skin name="ps_refuseBtn" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="81 299 19 1"/>
+			<img name="topcore" imgrect="101 299 23 1"/>
+			<img name="topright" imgrect="125 299 19 1"/>
+			<img name="bodyleft" imgrect="81 198 19 32"/>
+			<img name="bodycore" imgrect="101 198 23 32"/>
+			<img name="bodyright" imgrect="125 198 19 32"/>
+			<img name="bottomleft" imgrect="81 299 19 1"/>
+			<img name="bottomcore" imgrect="101 299 23 1"/>
+			<img name="bottomright" imgrect="125 299 19 1"/>
+		</skin>
+		<skin name="ps_refuseBtn_cursoron" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="81 299 19 1"/>
+			<img name="topcore" imgrect="101 299 23 1"/>
+			<img name="topright" imgrect="125 299 19 1"/>
+			<img name="bodyleft" imgrect="81 232 19 32"/>
+			<img name="bodycore" imgrect="101 232 23 32"/>
+			<img name="bodyright" imgrect="125 232 19 32"/>
+			<img name="bottomleft" imgrect="81 299 19 1"/>
+			<img name="bottomcore" imgrect="101 299 23 1"/>
+			<img name="bottomright" imgrect="125 299 19 1"/>
+		</skin>
+		<skin name="ps_refuseBtn_clicked" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="81 299 19 1"/>
+			<img name="topcore" imgrect="101 299 23 1"/>
+			<img name="topright" imgrect="125 299 19 1"/>
+			<img name="bodyleft" imgrect="81 266 19 32"/>
+			<img name="bodycore" imgrect="101 266 23 32"/>
+			<img name="bodyright" imgrect="125 266 19 32"/>
+			<img name="bottomleft" imgrect="81 299 19 1"/>
+			<img name="bottomcore" imgrect="101 299 23 1"/>
+			<img name="bottomright" imgrect="125 299 19 1"/>
+		</skin>
+		<skin name="ps_acceptBtn" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="147 299 19 1"/>
+			<img name="topcore" imgrect="167 299 23 1"/>
+			<img name="topright" imgrect="191 299 19 1"/>
+			<img name="bodyleft" imgrect="147 198 19 32"/>
+			<img name="bodycore" imgrect="167 198 23 32"/>
+			<img name="bodyright" imgrect="191 198 19 32"/>
+			<img name="bottomleft" imgrect="147 299 19 1"/>
+			<img name="bottomcore" imgrect="167 299 23 1"/>
+			<img name="bottomright" imgrect="191 299 19 1"/>
+		</skin>
+		<skin name="ps_acceptBtn_cursoron" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="147 299 19 1"/>
+			<img name="topcore" imgrect="167 299 23 1"/>
+			<img name="topright" imgrect="191 299 19 1"/>
+			<img name="bodyleft" imgrect="147 232 19 32"/>
+			<img name="bodycore" imgrect="167 232 23 32"/>
+			<img name="bodyright" imgrect="191 232 19 32"/>
+			<img name="bottomleft" imgrect="147 299 19 1"/>
+			<img name="bottomcore" imgrect="167 299 23 1"/>
+			<img name="bottomright" imgrect="191 299 19 1"/>
+		</skin>
+		<skin name="ps_acceptBtn_clicked" texture="\skin\party_search.tga">
+			<img name="topleft" imgrect="147 299 19 1"/>
+			<img name="topcore" imgrect="167 299 23 1"/>
+			<img name="topright" imgrect="191 299 19 1"/>
+			<img name="bodyleft" imgrect="147 266 19 32"/>
+			<img name="bodycore" imgrect="167 266 23 32"/>
+			<img name="bodyright" imgrect="191 266 19 32"/>
+			<img name="bottomleft" imgrect="147 299 19 1"/>
+			<img name="bottomcore" imgrect="167 299 23 1"/>
+			<img name="bottomright" imgrect="191 299 19 1"/>
 		</skin>
 	</skinlist>
 	<skinlist category="buttons">
@@ -8362,6 +8659,8 @@
 		<image name="Collar_give_me_silver" file="\skin\Collar_skin.tga" imgrect="93 93 30 30"/>
 		<image name="Collar_give_me_bronze" file="\skin\Collar_skin.tga" imgrect="124 93 30 30"/>
 		<image name="Collar_Event_Kokuma_skin" file="\skin\Collar_skin.tga" imgrect="155 93 30 30" CMM_Caption="고구마 칭호"/>
+		<image name="Collar_skunk01" file="\skin\Collar_skin.tga" imgrect="186 93 30 30" CMM_Caption="스컹크01"/>
+		<image name="Collar_skunk02" file="\skin\Collar_skin.tga" imgrect="217 93 30 30" CMM_Caption="스컹크02"/>
 	</imagelist>
 	<imagelist category="testse_image">
 		<image name="indun_soulcrystal_bg" file="\skin\indun_skin.tga" imgrect="614 552 84 86" CMM_Caption="소울크리스탈 횟수제한 UI"/>
@@ -9073,6 +9372,7 @@
 		<image name="achievement_stage_bg" file="\skin\achievement_ui.tga" imgrect="277 194 96 91" CMM_Caption="업적 스테이지 bg"/>
 		<image name="category_arrow" file="\skin\achievement_ui.tga" imgrect="126 143 13 12" CMM_Caption="카테고리 마크"/>
 		<image name="achievement_goal_list" file="\skin\achievement_ui.tga" imgrect="151 93 14 20" CMM_Caption="업적 목표 리스트 마크"/>
+		<image name="GuideQuest_StartLine3_MiniMap_2" file="\skin\record_paper_skin.tga" imgrect="1132 98 300 240" CMM_Caption="퀘스트용 지도"/>
 	</imagelist>
 	<imagelist category="yiseul_image">
 		<image name="AbillityReset_skin" file="\skin\paid_skin_title.tga" imgrect="0 330 316 165" CMM_Caption="특성 초기화"/>
@@ -9151,6 +9451,12 @@
 		<image name="inventory_weight_pic" file="\skin\pip_test2.tga" imgrect="964 171 27 27" CMM_Caption="무게 아이콘"/>
 		<image name="inventory_coin_gabia_pic" file="\skin\pip_test2.tga" imgrect="992 171 27 27" CMM_Caption="여신의 증표(가비아)"/>
 		<image name="aether_circle" file="\skin\Appraiser_skin.tga" imgrect="0 505 312 312" CMM_Caption="에테르 젬 마법진"/>
+		<image name="logo_eng" file="\skin\logo_eng.tga" imgrect="0 0 450 235" CMM_Caption="로고_영어"/>
+		<image name="ps_icon_refresh" file="\skin\party_search.tga" imgrect="495 126 25 25" CMM_Caption="파티찾기_업데이트아이콘"/>
+		<image name="ps_icon_join" file="\skin\party_search.tga" imgrect="495 156 37 22" CMM_Caption="파티찾기_신청자아이콘"/>
+		<image name="ps_line1" file="\skin\party_search.tga" imgrect="189 99 3 30" CMM_Caption="파티찾기_구분선"/>
+		<image name="ps_icon_input" file="\skin\party_search.tga" imgrect="478 190 20 20" CMM_Caption="파티찾기_입력아이콘"/>
+		<image name="Interaction_SkillCooldown" file="\skin\epicraid.tga" imgrect="198 135 44 44" CMM_Caption="에픽레이드 시계 소스"/>
 	</imagelist>
 	<imagelist category="je_button">
 		<image name="menu_guild_info" file="\skin\guild_skin.tga" imgrect="165 298 45 45" CMM_Caption="길드 정보"/>
@@ -9851,6 +10157,9 @@
 		<image name="achievement_sub_event" file="\skin\achievement_ui.tga" imgrect="0 1153 94 114" CMM_Caption="카테고리_이벤트"/>
 		<image name="achievement_sub_event_cursoron" file="\skin\achievement_ui.tga" imgrect="95 1153 94 114"/>
 		<image name="achievement_sub_event_clicked" file="\skin\achievement_ui.tga" imgrect="190 1153 94 114"/>
+		<image name="achievement_grewup" file="\skin\achievement_ui.tga" imgrect="285 1153 94 114" CMM_Caption="카테고리_성장업적"/>
+		<image name="achievement_grewup_cursoron" file="\skin\achievement_ui.tga" imgrect="380 1153 94 114"/>
+		<image name="achievement_grewup_clicked" file="\skin\achievement_ui.tga" imgrect="475 1153 94 114"/>
 	</imagelist>
 	<imagelist category="yiseul_button">
 		<image name="pvpmine_shop_btn" file="\skin\pip_test.tga" imgrect="2049 61 66 59" CMM_Caption="용병단 증표 ui 버튼"/>
@@ -10009,6 +10318,27 @@
 		<image name="Change_Character_btn" file="\skin\button_small.tga" imgrect="270 245 56 56" CMM_Caption="캐릭터 체인지 버튼"/>
 		<image name="Change_Character_btn_cursoron" file="\skin\button_small.tga" imgrect="327 245 56 56"/>
 		<image name="Change_Character_btn_clicked" file="\skin\button_small.tga" imgrect="384 245 56 56"/>
+		<image name="ps_refreshBtn" file="\skin\party_search.tga" imgrect="438 190 38 38" CMM_Caption="파티찾기_새로고침 버튼"/>
+		<image name="ps_refreshBtn_cursoron" file="\skin\party_search.tga" imgrect="438 230 38 38"/>
+		<image name="ps_refreshBtn_clicked" file="\skin\party_search.tga" imgrect="438 230 38 38"/>
+		<image name="ps_infoBtn" file="\skin\party_search.tga" imgrect="494 67 26 26" CMM_Caption="파티찾기_캐릭터인포버튼"/>
+		<image name="ps_infoBtn_cursoron" file="\skin\party_search.tga" imgrect="494 94 26 26"/>
+		<image name="ps_infoBtn_clicked" file="\skin\party_search.tga" imgrect="494 94 26 26"/>
+		<image name="ps_arrowBtn_l" file="\skin\party_search.tga" imgrect="339 293 14 18" CMM_Caption="파티찾기_화살표_좌"/>
+		<image name="ps_arrowBtn_l_cursoron" file="\skin\party_search.tga" imgrect="339 274 14 18"/>
+		<image name="ps_arrowBtn_l_clicked" file="\skin\party_search.tga" imgrect="339 274 14 18"/>
+		<image name="ps_arrowBtn_r" file="\skin\party_search.tga" imgrect="354 293 14 18" CMM_Caption="파티찾기_화살표_우"/>
+		<image name="ps_arrowBtn_r_cursoron" file="\skin\party_search.tga" imgrect="354 274 14 18"/>
+		<image name="ps_arrowBtn_r_clicked" file="\skin\party_search.tga" imgrect="354 274 14 18"/>
+		<image name="ps_hud_partyBtn" file="\skin\party_search.tga" imgrect="81 302 36 36" CMM_Caption="메인메뉴_파티_파티버튼"/>
+		<image name="ps_hud_partyBtn_cursoron" file="\skin\party_search.tga" imgrect="118 302 36 36"/>
+		<image name="ps_hud_partyBtn_clicked" file="\skin\party_search.tga" imgrect="155 302 36 36"/>
+		<image name="ps_hud_searchBtn" file="\skin\party_search.tga" imgrect="81 339 36 36" CMM_Caption="메인메뉴_파티_파티찾기버튼"/>
+		<image name="ps_hud_searchBtn_cursoron" file="\skin\party_search.tga" imgrect="118 339 36 36"/>
+		<image name="ps_hud_searchBtn_clicked" file="\skin\party_search.tga" imgrect="155 339 36 36"/>
+		<image name="ps_searchUIBtn" file="\skin\party_search.tga" imgrect="194 322 52 53" CMM_Caption="파티창_파티찾기 버튼 "/>
+		<image name="ps_searchUIBtn_cursoron" file="\skin\party_search.tga" imgrect="247 322 52 53"/>
+		<image name="ps_searchUIBtn_clicked" file="\skin\party_search.tga" imgrect="300 322 52 53"/>
 	</imagelist>
 	<imagelist category="worldmap_image">
 		<image name="worldmap2_mainmap" file="\skin\worldmap\worldmap2_mainmap.jpg" imgrect="0 0 1920 1080" CMM_Caption="월드맵배경"/>
@@ -10467,6 +10797,7 @@
 		<image name="companion_pet_arborday_rabbit" file="\icon\companion_Velhider.tga" imgrect="320 400 80 80"/>
 		<image name="companion_pet_ep13dessert" file="\icon\companion_Velhider.tga" imgrect="400 400 80 80"/>
 		<image name="companion_twnocelot" file="\icon\companion_Velhider.tga" imgrect="480 400 80 80"/>
+		<image name="companion_pet_skunk" file="\icon\companion_Velhider.tga" imgrect="560 80 80 80"/>
 		<image name="bg_w" file="\skin\button.tga" imgrect="252 974 50 50"/>
 		<image name="barrack_signboard" file="\skin\barrack.tga" imgrect="356 0 257 192"/>
 		<image name="barrack_attack_icon" file="\skin\barrack.tga" imgrect="59 720 55 61"/>
@@ -12453,6 +12784,10 @@
 		<image name="Paulius_after" file="\npcimg\Paulius_after.png" imgrect="0 0 800 900" CMM_Caption="파울루스 유령"/>
 		<image name="Dlg_port_ElVoladorMascaras" file="\npcimg\ElVoladorMascaras.png" imgrect="0 0 800 900" CMM_Caption="루차도르 마스터"/>
 		<image name="Dlg_port_Saraham" file="\npcimg\Saraham.png" imgrect="0 0 700 950" CMM_Caption="화랑 마스터"/>
+		<image name="Dlg_port_Heoshaa" file="\npcimg\Heoshaa.png" imgrect="0 0 800 900" CMM_Caption="헤오샤"/>
+		<image name="Dlg_port_Kaoneela" file="\npcimg\Kaoneela.png" imgrect="0 0 850 950" CMM_Caption="카오닐라"/>
+		<image name="Dlg_port_Ramin" file="\npcimg\Ramin.png" imgrect="0 0 800 1000" CMM_Caption="라민"/>
+		<image name="Dlg_port_Veliuona" file="\npcimg\Veliuona.png" imgrect="0 0 950 1000" CMM_Caption="벨리우오나"/>
 	</imagelist>
 	<imagelist category="Dlg_boss">
 		<image name="balloon_Skiaclipse" file="\skin\monster_Dlg.tga" imgrect="0 0 220 260" CMM_Caption="스키아클립스"/>
@@ -13080,6 +13415,7 @@
 		<image name="icon_buff_strafe_dodge" file="\icon\buff_icon5.tga" imgrect="128 1280 128 128" CMM_Caption="스트레이프 회피 버프"/>
 		<image name="icon_Steamed_buns" file="\icon\buff_icon5.tga" imgrect="256 1280 128 128" CMM_Caption="호빵"/>
 		<image name="icon_Grilled_Steamed_buns" file="\icon\buff_icon5.tga" imgrect="384 1280 128 128" CMM_Caption="구운호빵"/>
+		<image name="icon_pet_skunk_buff" file="\icon\buff_icon5.tga" imgrect="512 1280 128 128" CMM_Caption="스컹크"/>
 	</imagelist>
 	<imagelist category="housing_bufficon">
 		<image name="icon_Weapon_Klaida" file="\icon\icon_hosing_buff.tga" imgrect="0 0 128 128"/>
@@ -13800,6 +14136,7 @@
 		<image name="plate_achieve_relic_gem_clear" file="\skin\user_title_skin.tga" imgrect="215 924 214 34" CMM_Caption="성물젬 10강_일반"/>
 		<image name="plate_achieve_Saduh" file="\skin\user_title_skin.tga" imgrect="430 924 214 34" CMM_Caption="사두 퀘스트 칭호"/>
 		<image name="plate_achieve_weeklyrank_18" file="\skin\user_title_skin.tga" imgrect="645 924 214 34" CMM_Caption="주보레_디에나"/>
+		<image name="plate_achieve_hwarang_weekraid" file="\skin\user_title_skin.tga" imgrect="860 889 214 34" CMM_Caption="주보레_화랑"/>
 	</imagelist>
 	<imagelist category="skin_hair">
 		<image name="icon_skintone_01_m01" file="\skin\skinhair\icon_skintone_01_m01.png" imgrect="0 0 80 80" CMM_Caption="남성 01"/>
