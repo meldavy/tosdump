@@ -6415,6 +6415,7 @@
         <Key Name="HadVisited_11249" Value="110727"/>
         <Key Name="HadVisited_5001" Value="110790"/>
         <Key Name="IsStartLine3_TutoPass" Value="110789"/>
+        <Key Name="AchieveReward_QA14_ep14_1_f_castle_5" Value="110838"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="Kill_boss_Clymen_Q2" Value="7788"/>
@@ -15676,6 +15677,7 @@
         <Key Name="Hide_3356" Value="110793"/>
         <Key Name="Hide_3357" Value="110808"/>
         <Key Name="Hide_3358" Value="110810"/>
+        <Key Name="EP14_1_FCASTLE5_MQ_9_TRACK" Value="110835"/>
     </KeyIDSpc>
     <KeyIDSpc Name="GuildMember">
         <Key Name="Name" Value="9011"/>
@@ -24625,6 +24627,8 @@
         <Key Name="EP14_3LINE_TUTO_MQ_8" Value="110820"/>
         <Key Name="EP14_3LINE_TUTO_MQ_9" Value="110825"/>
         <Key Name="EP14_3LINE_TUTO_MQ_9_1" Value="110832"/>
+        <Key Name="EP14_1_FCASTLE5_MQ_9" Value="110837"/>
+        <Key Name="TUTO_START_LINE3" Value="110836"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MaxHate" Value="6671"/>

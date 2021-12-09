@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="2.00" soundFile="mon_wendigo_atk_cast"/>
+    <Sound frame="3.00" soundFile="atk_rod"/>
+    <Sound frame="4.00" soundFile="mon_wendigo_atk_shot"/>
+    <Sound frame="4.00" soundFile="hit_rip_1"/>
+</ActionDesc>

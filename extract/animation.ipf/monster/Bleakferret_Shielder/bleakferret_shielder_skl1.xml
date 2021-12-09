@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <ActionDesc>
+    <Sound frame="0.00" soundFile="mon_voice12_cast_3"/>
+    <Particle frame="3" attachNode="Dummy_eff_skl1" particleName="F_light123_red3" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="0" targetPos="false"/>
     <Sound frame="10.00" soundFile="atk_hammerswing"/>
     <Sound frame="10.00" soundFile="skl_eff_body_atk_9"/>
+    <Sound frame="12.00" soundFile="explosion_small"/>
+    <Shockwave frame="13" type="2" intensity="2" frequency="70" duration="0.1" range="1000"/>
+    <Particle frame="13" attachNode="Dummy_eff_skl1" particleName="F_hit027_stone" useAttach="true" hiddenObj="false" changeEffect="None" scale="2.5" pause="true" use2DEffect="false" soft2DValue="0" targetPos="false"/>
+    <Particle frame="13" attachNode="Dummy_eff_skl1" particleName="F_light130_2" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="0" targetPos="false"/>
 </ActionDesc>

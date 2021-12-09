@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="0.00" soundFile="atk_cloth_m_l2"/>
+    <Sound frame="8.00" soundFile="atk_cloth_s_l2"/>
+    <Sound frame="13.00" soundFile="atk_cloth_s_r2"/>
+    <Sound frame="16.00" soundFile="atk_cloth_s_l2"/>
+    <Sound frame="21.00" soundFile="atk_cloth_m_r2"/>
+    <Sound frame="29.00" soundFile="atk_cloth_s_r2"/>
+    <Sound frame="33.00" soundFile="atk_cloth_m_r2"/>
+    <Sound frame="35.00" soundFile="atk_cloth_m_l2"/>
+</ActionDesc>

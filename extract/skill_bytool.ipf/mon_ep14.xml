@@ -67,7 +67,7 @@
                 </Scp>
                 <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="900">
                     <Str_Arg Str="I_archer_canon_force2#Dummy_eff_atk" Arg="1"/>
-                    <Str_Arg Str="I_explosion002_green" Arg="1"/>
+                    <Str_Arg Str="I_explosion002_orange" Arg="1"/>
                     <Str_Arg Str="I_force003_green" Arg="1"/>
                     <Pos Angle="0" Dist="0" PosType="1"/>
                     <Num Num="30"/>
@@ -92,7 +92,7 @@
                 </Scp>
                 <Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1200">
                     <Str_Arg Str="I_archer_canon_force2#Dummy_eff_atk" Arg="1"/>
-                    <Str_Arg Str="I_explosion002_green" Arg="1"/>
+                    <Str_Arg Str="I_explosion002_orange" Arg="1"/>
                     <Str_Arg Str="I_force003_green" Arg="1"/>
                     <Pos Angle="0" Dist="0" PosType="1"/>
                     <Num Num="30"/>
@@ -138,7 +138,7 @@
                 </Scp>
                 <Scp Scp="MSL_THROW" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="700">
                     <Str_Arg Str="I_archer_canon_force2#Dummy_eff_atk" Arg="1"/>
-                    <Str_Arg Str="I_explosion002_green" Arg="1"/>
+                    <Str_Arg Str="I_explosion002_orange" Arg="1"/>
                     <Str_Arg Str="I_force003_green" Arg="1"/>
                     <Pos Angle="0" Dist="0" PosType="1"/>
                     <Num Num="30"/>
@@ -170,7 +170,7 @@
                 <Frame Time="1400" Dist="78.466431" Angle="-0.0052896976" Accel="1" Height="0" MoveType="0" Gravity="600" JumpPower="300"/>
             </MoveList>
             <HitList>
-                <Frame Type="SQUARE" Time="9999" HitCount="1" TermMin="0" TermMax="0" PosType="0" Dist="0" RandDist="0" RandomPerHit="0" Angle="0" Width="30" Length="30" SklAngle="0.17453292" AniTime="10199" RotAngle="0" ForceATK="0"/>
+                <Frame Type="SQUARE" Time="9999" HitCount="1" TermMin="0" TermMax="0" PosType="0" Dist="0" RandDist="0" RandomPerHit="0" Angle="0" Width="30" Length="30" SklAngle="0.17453292" AniTime="10199" RotAngle="0" ForceATK="0" ScriptIndex="0" ScriptName="" SkillType="0"/>
             </HitList>
             <EtcList>
                 <Scp Scp="EFT_AND_HIT_ARROW" Client="NO" UseSleep="YES" Time="0">
@@ -181,7 +181,7 @@
                     <Num Num="0.0099999998"/>
                     <Num Num="0.2"/>
                     <Num Num="500"/>
-                    <Str_Arg Str="I_explosion002_green" Arg="1"/>
+                    <Str_Arg Str="F_explosion125_explosion" Arg="2.2"/>
                     <Num Num="25"/>
                     <Num Num="100"/>
                     <Num Num="0"/>

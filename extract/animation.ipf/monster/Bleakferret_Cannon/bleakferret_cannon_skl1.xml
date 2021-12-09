@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
 <ActionDesc>
-	<Particle frame="16" attachNode="Dummy_eff_atk2" particleName="I_explosion002_orange" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="15" attachNode="Dummy_eff_atk" particleName="I_smoke013_dark2_1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Sound frame="0.00" soundFile="mon_voice_ferret_m_atk_cast"/>
-	<Sound frame="15.00" soundFile="cannon_move_1"/>
+    <BlendOn frame="0" R="0" G="0" B="0" A="50"/>
+    <Sound frame="0.00" soundFile="mon_voice_ferret_m_atk_cast"/>
+    <BlendOn frame="6" R="30" G="40" B="20" A="50"/>
+    <BlendOff frame="8" R="0" G="0" B="0" A="0"/>
+    <Sound frame="13.00" soundFile="cannon_shot_1"/>
+    <Particle frame="15" attachNode="Dummy_eff_atk" particleName="I_smoke013_dark2_1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="15" attachNode="Dummy_eff_atk" particleName="I_smoke013_dark2_1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="15" attachNode="Dummy_eff_atk" particleName="I_smoke013_dark2_1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Sound frame="15.00" soundFile="cannon_move_1"/>
+    <Shockwave frame="17" type="2" intensity="1" frequency="50" duration="0.2" range="1000"/>
+    <Particle frame="17" attachNode="Bip002 Spine1" particleName="F_spread_out042_leaf2" useAttach="false" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="17" attachNode="Dummy_emitter" particleName="F_ground078_smoke2" useAttach="true" hiddenObj="false" changeEffect="None" scale="2.3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="17" attachNode="Dummy_eff_atk2" particleName="F_spread_out055_3_breath4" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
 </ActionDesc>

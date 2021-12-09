@@ -11,6 +11,9 @@
 				<Frame Type="FAN" Time="9999" HitCount="1" TermMin="0" TermMax="0" PosType="0" Dist="0" RandDist="0" RandomPerHit="0" Angle="0" Width="30" Length="30" SklAngle="0.17453292" AniTime="10199" RotAngle="0" ForceATK="0" ScriptIndex="0" ScriptName="" SkillType="0"/>
 			</HitList>
 			<EtcList>
+                <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="0">
+                    <Str Str="mon_move_gresmetruth_skl5"/>
+                </Scp>
 				<Scp Scp="EFT_AND_HIT_ARROW" Client="NO" UseSleep="YES" Time="300">
 					<Pos Angle="0" Dist="0"/>
 					<Pos Angle="0" Dist="180"/>
@@ -84,6 +87,9 @@
 					<Num Num="0"/>
 					<Num Num="0"/>
 				</Scp>
+                <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="0">
+                    <Str Str="mon_move_gresmetruth_skl3"/>
+                </Scp>
 			</EtcList>
 		</MainSkl>
 	</Skill>
@@ -105,6 +111,9 @@
 					<Num Num="0"/>
 					<Num Num="1"/>
 				</Scp>
+                <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="0">
+                    <Str Str="mon_move_gresmetruth_skl2"/>
+                </Scp>
 				<Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="200">
 					<Str_Arg Str="I_force112_dark#Point_prop02" Arg="0.5"/>
 					<Str_Arg Str="F_explosion140_ground_dark_red" Arg="0.60000002"/>
@@ -785,6 +794,9 @@
 					<Num Num="0"/>
 					<Num Num="1"/>
 				</Scp>
+                <Scp Scp="C_SOUND" Client="YES" UseSleep="NO" Time="700">
+                    <Str Str="mon_move_gresmetruth_skl1"/>
+                </Scp>
 				<Scp Scp="MSL_THROW_SYNC" Client="NO" UseSleep="YES" TooltipScp="TOOLTIP_MSL_THROW" Time="1000">
 					<Str_Arg Str="I_force018_trail_black5#Bip001 L Finger32" Arg="2"/>
 					<Str_Arg Str="F_explosion001_dark_Low" Arg="1.5"/>

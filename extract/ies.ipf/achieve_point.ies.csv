@@ -77,6 +77,7 @@ ClassID,ClassName,Name,UseDaily,UseWeekly,Country,StartTime,EndTime,DescTitle
 1051,EPISODE_ACHIEVE_P_12_2,EP 12-2 숙명,NO,NO,,,,
 1052,EPISODE_ACHIEVE_P_13_1,EP 13-1 신수를 노리는 마족,NO,NO,,,,
 1053,EPISODE_ACHIEVE_P_13_2,EP 13-2 대답없는 기도들,NO,NO,,,,
+1054,QP14_ep14_1_f_castle_5,델무어 참전용사,NO,NO,,,,
 1501,F_3CMLAKE26,란코 지역,NO,NO,,,,
 1502,D_FANTASYLIB48,환상도서관 지역,NO,NO,,,,
 2002,ItemRecipe,아이템제작,NO,NO,,,,

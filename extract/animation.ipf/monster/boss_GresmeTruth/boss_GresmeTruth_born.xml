@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="EUC-KR"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by IMCGames Co., Ltd (IMCGames Co., Ltd) -->
 <ActionDesc>
-	<Particle frame="100" attachNode="Bip001 R Finger2" particleName="F_light131" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="100" attachNode="Bip001 R Finger2" particleName="F_smoke198_red_violet" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="100" attachNode="Bip001 R Finger2" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="105" attachNode="Point_prop02" particleName="F_light123_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0.7" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="110" attachNode="Point_prop02" particleName="I_smoke_red4" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="106" attachNode="Point_prop02" particleName="F_hit009_rize_red2" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_root" particleName="F_wizard_InfernalShadow_dark_smoke" useAttach="false" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_root" particleName="F_spread_out004_dark2_nosound" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="5" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="15" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="30" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="45" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="60" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="60" attachNode="Dummy_root" particleName="F_smoke182_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_root" particleName="F_light201_orange" useAttach="false" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="30" attachNode="Dummy_root" particleName="F_light200" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="60" attachNode="Dummy_root" particleName="F_light201_orange" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="80" attachNode="Bip001 Spine2" particleName="F_light199_2" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20"/>
+    <Particle frame="0" attachNode="Dummy_root" particleName="F_wizard_InfernalShadow_dark_smoke" useAttach="false" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_root" particleName="F_spread_out004_dark2_nosound" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_root" particleName="F_light201_orange" useAttach="false" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Sound frame="0.00" soundFile="mon_move_gresmetruth_born"/>
+    <Particle frame="5" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="15" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="30" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="30" attachNode="Dummy_root" particleName="F_light200" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="45" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="60" attachNode="Dummy_root" particleName="F_smoke185_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="60" attachNode="Dummy_root" particleName="F_smoke182_spread_out_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="60" attachNode="Dummy_root" particleName="F_light201_orange" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="80" attachNode="Bip001 Spine2" particleName="F_light199_2" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="100" attachNode="Bip001 R Finger2" particleName="F_light131" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="100" attachNode="Bip001 R Finger2" particleName="F_smoke198_red_violet" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="100" attachNode="Bip001 R Finger2" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="105" attachNode="Point_prop02" particleName="F_light123_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0.7" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="106" attachNode="Point_prop02" particleName="F_hit009_rize_red2" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="110" attachNode="Point_prop02" particleName="I_smoke_red4" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
 </ActionDesc>

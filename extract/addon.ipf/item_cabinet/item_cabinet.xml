@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by imc (imc) -->
 <uiframe name="item_cabinet" x="0" y="0" width="1050" height="720" create="open">
-	<frame layout_gravity="center center" margin="-100 0 0 0" tooltipoverlap="true"/>
+	<frame layout_gravity="center center" margin="-100 0 0 0" tooltipoverlap="true" fasthide="true"/>
 	<option closebutton="false"/>
 	<draw drawframe="false" drawtitlebar="false" drawnotitlebar="false"/>
 	<input moveable="true" hittestframe="true"/>

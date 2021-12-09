@@ -54,6 +54,7 @@ ClassID,DrawRange,DrawTime,ArrowDirCnt,ClassName,DrawType,DrawColor,DrawBlinkCol
 31409,120,0.01,0,Mergen_Zenith,Circle,"0,250,0,255","0,250,0,255",,
 31807,150,0.01,0,Matross_ArtilleryCall,Circle,"180,80,240,255","0,250,0,255",,
 32101,75,0.01,0,Arquebusier_Prediction,Circle,"80,250,0,255","0,250,0,255",,
+31704,50,0.01,0,PiedPiper_HamelnNagetier,Circle,"0,250,0,255","0,250,0,255",,
 41905,85,0.01,0,Crusader_Retaliation,Circle,"0,250,0,255","0,250,0,255",,
 40906,100,0.01,0,Druid_Chortasmata,Circle,"0,250,0,255","0,250,0,255",,
 40909,100,0.01,0,Druid_HengeStone,Circle,"0,250,0,255","0,250,0,255",,

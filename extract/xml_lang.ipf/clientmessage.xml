@@ -7826,6 +7826,7 @@
 		<Class ClassID="60415" ClassName="EP14_3LINE_TUTO_MQ_1_2_EQUIP_1" Data="[방어구 4부위 착용하기] 성공"/>
 		<Class ClassID="60416" ClassName="EP14_3LINE_TUTO_MQ_1_2_EQUIP_2" Data="[주/보조 무기 2부위 착용하기] 성공"/>
 		<Class ClassID="60417" ClassName="SSN_EP14_3LINE_TUTO_MQ_8_MSG_1" Data="피난민에게 마족으로 의심되는 색상이 보였습니다"/>
+		<Class ClassID="60418" ClassName="TUTO_START_LINE3_PASS" Data="튜토리얼을 건너뛴다"/>
 		<Class ClassID="66000" ClassName="MASSIVE_CONTENTS_SHOP_NAME" Data="왕국 보급품"/>
 		<Class ClassID="66001" ClassName="RVR_BK_KAZE_NPC_SEL_EVENT" Data="[이벤트]우르바스 증표 사용"/>
 		<Class ClassID="66002" ClassName="RVR_BK_KAZE_NPC_SEL_MSG_1" Data="우르바스 증표 사용"/>

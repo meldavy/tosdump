@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="11.00" soundFile="skl_move_skl_turret"/>
+    <Sound frame="27.00" soundFile="skl_eff_move_cloth"/>
+    <Sound frame="35.00" soundFile="arrow_shot"/>
+    <Sound frame="46.00" soundFile="skl_eff_atk_move_s_11"/>
+</ActionDesc>

@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\Beauty_Shop_Lens.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\Beauty_Shop_Preview.ies.csv">
           <value>
             <Attribute>
@@ -52,7 +59,49 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\EliteEquipDrop.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\Job_PropertyQuestCheck.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\Monster_BountyHunt.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\Monster_solo_dungeon.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\UserShopPrice.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\account.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\account_ability.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -80,7 +129,49 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\ancient_dungeon_info.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\ancient_slot_extend.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\areaname.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\bonescale.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\bookcollectiongimmick.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\boss_pattern_table.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\bountyhunt.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -115,6 +206,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\buff_ignore.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\buff_monster.ies.csv">
           <value>
             <Attribute>
@@ -136,7 +234,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\cardbattle.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\chat_balloon.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\chatmacro_default.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\colony_guild_ban_list.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -157,7 +276,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\contents_alert_table.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\cooldown.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\customcommand.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\d_solo_MonsterList.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\earthTowerRecipe.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -171,7 +318,77 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\episode_reward.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\equipbosscard.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\equipbosscard_goddess.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\event_new_season_server_content_clear_coin_reward.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\exchangeWeaponTypeList.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\fieldboss_worldevent_reward_count.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\fixanim.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\gemtyperate.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\giftitem.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\goddess_evolve.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\goddess_recipe.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -185,6 +402,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\guildagitraid_reward.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\help.ies.csv">
           <value>
             <Attribute>
@@ -192,7 +416,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\hidenpc.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\housing_furniture.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\housing_place.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\indun_reward_item.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\inven_baseid.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -248,6 +500,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\item_Reputation.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\item_equip_default.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\item_event.ies.csv">
           <value>
             <Attribute>
@@ -263,6 +529,13 @@
           </value>
         </entry>
         <entry key="\extract\ies.ipf\item_gem_bernice.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\item_grade.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -290,6 +563,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\item_seal_option.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\item_sends.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\item_skillmake_costume.ies.csv">
           <value>
             <Attribute>
@@ -297,7 +584,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\item_transcend.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\itemtradeshop.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\itemtradeshop_month.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\jansori.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -325,6 +633,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\legend_setitem.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\locale.ies.csv">
           <value>
             <Attribute>
@@ -332,7 +647,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\mainquest_startnpcwarp.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\map.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\map_area.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\massive_contents.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -360,6 +696,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\monster_Ancient.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\monster_const.ies.csv">
           <value>
             <Attribute>
@@ -374,7 +717,56 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\monster_guild.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\monster_housing.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\monster_item.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\monster_item_summon.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\monster_mgame.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\monster_npc.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\monster_pcsummon.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\monster_pet.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -416,7 +808,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\pc_nonbattle.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\questprogresscheck.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\questprogressnpc.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\rank_system\KOR_rank_system_season_table.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -444,7 +857,84 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\repairableshoplist.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\reputation_quest.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\rest_point.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\resurrect_return_control.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\reward_attendance.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\reward_indun.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\reward_property.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\rvr_setting_info.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\sessionobject.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\sessionobject_main.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\sessionobject_monster.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\sessionobject_timesave.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -465,7 +955,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\sharedconst_system.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\shop.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\skill.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\skill_Simony.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -480,6 +991,13 @@
           </value>
         </entry>
         <entry key="\extract\ies.ipf\skill_attribute.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\skill_buff_condition.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -521,6 +1039,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\skill_reduce_overheat.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\skill_restrict.ies.csv">
           <value>
             <Attribute>
@@ -542,7 +1067,91 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\socketprice.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\stance.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\statbase_armor.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\statbase_monster.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\statbase_monster_type.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\statbase_shield.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\statbase_weapon.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\statue_position.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\throwmove.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\tp_event_attendance.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\tpitem.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\tradeselectitem.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\transformtomonster.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -563,6 +1172,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\warp.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\wiki_recipe.ies.csv">
           <value>
             <Attribute>
@@ -570,7 +1186,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies.ipf\worldmap2_submap_data.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\xp_combo.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies.ipf\xp_job.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies.ipf\xp_teamlevel.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -605,7 +1242,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies_client.ipf\animconfig_pc.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_client.ipf\cheat.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_client.ipf\dialogexceptiontext.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies_client.ipf\dialogtext.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_client.ipf\iesmanager.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -633,7 +1298,1092 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_VIVID_c_Klaipe.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_VIVID_c_fedimian.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_VIVID_c_orsha.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_abbey_22_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_abbey_22_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_abbey_35_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_abbey_35_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_abbey_39_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_castle_19_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_catacomb_80_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_catacomb_80_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_cathedral_53.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_cathedral_56.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_cathedral_78_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_chapel_57_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_chapel_57_6.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_chapel_57_7.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_fantasylibrary_48_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_fantasylibrary_48_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_fantasylibrary_48_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_fantasylibrary_48_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_firetower_61_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_firetower_61_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_irredians_113_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_limestonecave_52_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_limestonecave_52_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_limestonecave_52_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_prison_75_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_prison_79.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_prison_80.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_60_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_76_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_76_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_88.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_89.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_90.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_91.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_startower_92.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_thorn_39_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_thorn_39_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underaqueduct.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_30_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_30_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_59_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_59_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_59_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_65.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_67.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_underfortress_69.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_velniasprison_51_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_velniasprison_51_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_velniasprison_51_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_d_velniasprison_77_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_ep13_2_d_prison_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_ep13_2_d_prison_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_ep13_f_siauliai_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_ep14_1_f_castle_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_26_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_26_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_27_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_27_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_85.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_86.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_3cmlake_87.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_bracken_42_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_bracken_42_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_bracken_43_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_bracken_43_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_102.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_20_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_20_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_20_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_97.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_98.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_castle_99.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_coral_32_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_coral_32_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_coral_44_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_coral_44_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_dcapital_103.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_dcapital_105.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_dcapital_107.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_dcapital_20_6.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_farm_47_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_farm_47_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_farm_47_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_farm_49_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_farm_49_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_farm_49_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_flash_29_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_flash_58.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_flash_60.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_flash_61.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_flash_63.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_flash_64.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_gele_57_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_gele_57_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_huevillage_58_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_katyn_45_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_maple_23_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_maple_24_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_maple_24_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_maple_24_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_maple_25_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_maple_25_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_nicopolis_81_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_nicopolis_81_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_orchard_34_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_orchard_34_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_41_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_41_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_41_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_41_5.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_46.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_49.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_pilgrimroad_55.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_remains_37_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_remains_37_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_siauliai_35_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_siauliai_47_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_siauliai_50_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_tableland_28_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_tableland_70.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_tableland_71.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_tableland_72.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_tableland_74.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_whitetrees_21_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_whitetrees_22_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_whitetrees_22_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_whitetrees_23_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_whitetrees_23_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_f_whitetrees_56_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_id_catacomb_38_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\Anchor_mission_groundtower_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_VIVID_c_Klaipe.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_VIVID_c_orsha.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_d_abbey_39_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_d_castle_agario.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_d_underfortress_30_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_d_underfortress_69.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_ep13_f_siauliai_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_ep13_f_siauliai_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_3cmlake_26_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_3cmlake_27_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_bracken_43_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_castle_95.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_desolated_capital_53_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_farm_47_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_maple_25_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_nicopolis_81_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_orchard_34_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_pilgrimroad_52.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_rokas_36_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_siauliai_35_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_tableland_72.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_f_tableland_74.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -647,6 +2397,328 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_id_catacomb_38_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\GenType_pvp_Mine_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_catacomb_80_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_cmine_02.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_cmine_6.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_firetower_42.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_prison_80.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_prison_82.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_underfortress_68.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_d_velniasprison_51_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_3cmlake_84.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_bracken_42_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_bracken_43_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_castle_20_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_coral_44_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_huevillage_58_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_orchard_34_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_pilgrimroad_52.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_siauliai_15.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_siauliai_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\SmartGen\smartgen_f_tableland_70.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_c_Klaipe.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_c_fedimian.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_c_voodoo.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_cmine_9.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_firetower_41.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_firetower_43.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_thorn_20.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_thorn_21.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_thorn_22.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_zachariel_32.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_zachariel_33.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_zachariel_35.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_d_zachariel_36.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_flash_59.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_katyn_13.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_katyn_14.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_katyn_45_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_pilgrimroad_47.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_remains_38.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_remains_39.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_remains_40.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_rokas_25.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_rokas_28.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_rokas_29.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_rokas_30.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies_mongen.ipf\anchor_f_siauliai_2.ies.csv">
           <value>
             <Attribute>
@@ -654,7 +2726,140 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_siauliai_46_4.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_siauliai_west.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_f_tableland_11_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_id_catacomb_02.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_id_catacomb_04.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\anchor_test_zone.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\extract\ies_mongen.ipf\gentype_c_Klaipe.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\gentype_d_thorn_23.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\gentype_d_zachariel_36.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\gentype_f_katyn_7_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\gentype_f_siauliai_out.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\resurrect_d_underfortress_30_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\resurrect_f_tableland_28_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_d_firetower_69_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_d_firetower_69_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_f_3cmlake_27_2.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_f_3cmlake_27_3.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_f_castle_97.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_f_maple_24_1.ies.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\extract\ies_mongen.ipf\smartgen_id_catacomb_25_4.ies.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

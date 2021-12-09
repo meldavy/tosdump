@@ -574,6 +574,9 @@
 		<Effect Name="EP14_1_FCASTLE5_MQ_7_MGAME"/>
 		<Effect Name="EP14_1_FCASTLE5_MQ_8_MGAME"/>
 		<Effect Name="F_smoke183_smoke_dark"/>
+        <Effect Name="F_light096_red_loop2#Dummy_eye"/>
+        <Effect Name="skl_eff_forge_shot"/>
+        <Effect Name="boom_shot"/>
 	</Category>
 	<Category ID="132">
 		<Effect Name="I_arrow005_mash2_red#Dummy_back_arrow04"/>

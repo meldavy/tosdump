@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="0.00" soundFile="skl_eff_cloth_cast"/>
+    <Sound frame="0.00" soundFile="mon_move_blackman_dead"/>
+    <Sound frame="3.37" soundFile="skl_eff_landing_m"/>
+</ActionDesc>

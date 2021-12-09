@@ -351,7 +351,7 @@ function WORLDMAP2_TOKEN_WARP(mapName)
         return
     end
     
-    if TUTORIAL_CLEAR_CHECK(pc) == false then
+    if TUTORIAL_CLEAR_CHECK(GetMyPCObject()) == false then
 		ui.SysMsg(ClMsg("CanUseAfterTutorialClear"))
 		return
 	end
