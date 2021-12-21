@@ -237,7 +237,7 @@ function GODDESS_MGR_TAB_CHANGE(parent, tab)
 	local frame = parent:GetTopParentFrame()
 	CLEAR_GODDESS_EQUIP_MANAGER(frame)
 
-	local index = tab:GetSelectItemIndex()
+	local index = tab:GetSelectItemIndex()	
 	TOGGLE_GODDESS_EQUIP_MANAGER_TAB(frame, index)
 end
 
@@ -313,13 +313,13 @@ function GODDESS_MGR_REFORGE_CLEAR(frame)
 end
 
 -- 재련 탭 아이템 등록
-function GODDESS_MGR_REFORGE_INV_RBTN(item_obj, slot, guid)	
+function GODDESS_MGR_REFORGE_INV_RBTN(item_obj, slot, guid)			
 	local frame = ui.GetFrame('goddess_equip_manager')
 
 	local inv_item = session.GetInvItemByGuid(guid)
 	if inv_item ~= nil then
 		local reforge_tab = GET_CHILD_RECURSIVELY(frame, 'reforge_tab')
-		local index = reforge_tab:GetSelectItemIndex()
+		local index = reforge_tab:GetSelectItemIndex()		
 		
 		if index == 3 then
 			local obj = GetIES(inv_item:GetObject())
@@ -336,12 +336,12 @@ function GODDESS_MGR_REFORGE_INV_RBTN(item_obj, slot, guid)
 		local main_slot = GET_CHILD_RECURSIVELY(frame, 'ref_slot')
 		local main_guid = main_slot:GetUserValue('ITEM_GUID')		
 		if index == 1 then
-			if main_guid ~= 'None' then
+			if main_guid ~= 'None' then				
 				GODDESS_MGR_REFORGE_ENCHANT_REG_MAT_ITEM(frame, inv_item, item_obj)
 				return
 			end
 		end
-
+		
 		GODDESS_MGR_REFORGE_REG_ITEM(frame, inv_item, item_obj)
 	end
 end
@@ -370,14 +370,32 @@ end
 function GODDESS_MGR_REFORGE_REG_ITEM(frame, inv_item, item_obj)
 	if inv_item == nil or item_obj == nil then return end
 
-	if CHECK_JEWELL_COMMON_CONSTRAINT(item_obj) == false then
-		return
-	end
-
 	if TryGetProp(item_obj, 'ItemGrade', 0) < 6 then
 		ui.SysMsg(ClMsg('GoddessGradeItemOnly'))
 		return
 	end
+
+	local reforge_tab = GET_CHILD_RECURSIVELY(frame, 'reforge_tab')
+	local index = reforge_tab:GetSelectItemIndex()
+	
+	if index == 0 then  -- 강화
+		if IS_ABLE_TO_REINFORCE_GODDESS(item_obj) == false then		
+			return
+		end
+	elseif index == 1 then  -- 인챈트
+		local msg = item_goddess_transcend.is_able_to_enchant(item_obj)
+		if msg ~= 'YES' then
+			ui.SysMsg(ClMsg(msg))
+			return
+		end
+	elseif index == 2 then  -- 초월
+		local msg = item_goddess_transcend.is_able_to_transcend(item_obj)
+		if msg ~= 'YES' then
+			ui.SysMsg(ClMsg(msg))
+			return
+		end
+	end
+
 
 	local slot = GET_CHILD_RECURSIVELY(frame, 'ref_slot')
 	SET_SLOT_ITEM(slot, inv_item)
@@ -400,9 +418,8 @@ function GODDESS_MGR_REFORGE_REG_ITEM(frame, inv_item, item_obj)
 	local ref_item_trans_text = GET_CHILD_RECURSIVELY(frame, 'ref_item_trans_text')
 	ref_item_trans_text:SetTextByKey('value', TryGetProp(item_obj, 'Transcend', 0))
 
-	local reforge_tab = GET_CHILD_RECURSIVELY(frame, 'reforge_tab')
-	local index = reforge_tab:GetSelectItemIndex()
-	if index == 0 then
+	
+	if index == 0 then		
 		GODDESS_MGR_REFORGE_REINFORCE_UPDATE(frame)
 	elseif index == 1 then
 		GODDESS_MGR_REFORGE_ENCHANT_UPDATE(frame)
@@ -731,6 +748,9 @@ function GODDESS_MGR_REINFORCE_MAT_UPDATE(frame)
 		local class_type = TryGetProp(item_obj, 'ClassType', 'None')
 		local reinf_value = TryGetProp(item_obj, 'Reinforce_2', 0)
 		local dic = item_goddess_reinforce.get_material_list(use_lv, class_type, reinf_value + 1)
+		if dic == nil then
+			return
+		end
 		for mat_name, mat_count in pairs(dic) do
 			_REFORGE_REINFORCE_ADD_MAT_CTRL(reinf_main_mat_bg, mat_name, mat_count)
 		end
@@ -847,6 +867,11 @@ function GODDESS_MGR_REINFORCE_EXTRA_MAT_UPDATE(frame)
 				local class = GetClassByType('Item', inv_item.type)
 				SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, inv_item, obj, inv_item.count)
 				ICON_SET_INVENTORY_TOOLTIP(icon, inv_item, 'poisonpot', class)
+				if arg_str == 'normal' then
+					local lv_txt = slot:CreateOrGetControl('richtext', 'lv_txt', 0, 0, slot:GetWidth(), slot:GetHeight() * 0.3)
+					local lv_str = string.format('{@sti1c}{s16}Lv.%d', TryGetProp(obj, 'NumberArg1', 0))
+					lv_txt:SetText(lv_str)
+				end
 			end
 		end, false, slotset, use_lv)
 	else
@@ -988,7 +1013,7 @@ function _GODDESS_MGR_REFORGE_REINFORCE_EXEC()
 	end
 
 	local result_list = session.GetItemIDList()
-
+	
 	item.DialogTransaction('GODDESS_REINFORCE', result_list)
 
 	local ref_do_reinforce = GET_CHILD_RECURSIVELY(frame, 'ref_do_reinforce')
@@ -1324,7 +1349,7 @@ function GODDESS_MGR_REFORGE_ENCHANT_OPEN(frame)
 	GODDESS_MGR_REFORGE_ENCHANT_CLEAR(frame)
 end
 
-function GODDESS_MGR_REFORGE_ENCHANT_UPDATE(frame)
+function GODDESS_MGR_REFORGE_ENCHANT_UPDATE(frame)	
 	local ref_enchant_before_sub = GET_CHILD_RECURSIVELY(frame, 'ref_enchant_before_sub')
 	ref_enchant_before_sub:RemoveAllChild()
 
@@ -1334,6 +1359,11 @@ function GODDESS_MGR_REFORGE_ENCHANT_UPDATE(frame)
 		local inv_item = session.GetInvItemByGuid(guid)
 		if inv_item ~= nil then
 			local item_obj = GetIES(inv_item:GetObject())
+			if item_goddess_transcend.is_able_to_enchant(item_obj) ~= 'YES' then
+				CLEAR_REFORGE_MAIN_SLOT(frame)
+				return
+			end
+
 			_GODDESS_MGR_MAKE_ENCHANT_OPTION(ref_enchant_before_sub, item_obj)
 		end
 	end
@@ -1717,6 +1747,14 @@ function GODDESS_MGR_REFORGE_TRANSCEND_MAT_UPDATE(frame, count)
 	local use_lv = ref_slot:GetUserIValue('ITEM_USE_LEVEL')
 	local class_type = TryGetProp(item_obj, 'ClassType', 'None')
 	local mat_list = item_goddess_transcend.get_material_list(use_lv, class_type, cur_lv, goal_lv)
+	if mat_list == nil then		
+			ref_slot:ClearIcon()
+			ref_slot:SetUserValue('ITEM_GUID', 'None')		
+			local transcend_slot = GET_CHILD_RECURSIVELY(frame, 'ref_transcend_slot')
+			transcend_slot:ClearIcon()
+		return
+	end
+
 	local need_count = mat_list[mat_name]
 	local have_count = 0
 	if mat_item ~= nil and is_max_lv == false then
@@ -1766,9 +1804,14 @@ function GODDESS_MGR_REFORGE_TRANSCEND_UPDATE(frame)
 		local inv_item = session.GetInvItemByGuid(equip_guid)
 		if inv_item == nil then return end
 
+		local item_obj = GetIES(inv_item:GetObject())
+		if item_goddess_transcend.is_able_to_enchant(item_obj) ~= 'YES' then
+			CLEAR_REFORGE_MAIN_SLOT(frame)
+			return
+		end
+
 		SET_SLOT_ITEM(transcend_slot, inv_item)
 		
-		local item_obj = GetIES(inv_item:GetObject())
 		local cur_lv = TryGetProp(item_obj, 'Transcend', 0)
 		
 		local mat_name = GET_TRANSCEND_MATERIAL_ITEM(item_obj)
@@ -1964,7 +2007,7 @@ local function GODDESS_EVOLUTION_MAT_SLOT_UPDATE(frame, inv_item, item_obj)
 end
 
 function GODDESS_MGR_REFORGE_EVOLUTION_UPDATE(frame)
-	local ref_slot = GET_CHILD_RECURSIVELY(frame, 'ref_slot')
+	local ref_slot = GET_CHILD_RECURSIVELY(frame, 'ref_slot')	
 	local slot_pic = GET_CHILD_RECURSIVELY(frame, 'ref_slot_bg_image')
 	local ref_item_name = GET_CHILD_RECURSIVELY(frame, 'ref_item_name')
 	local ref_item_text = GET_CHILD_RECURSIVELY(frame, 'ref_item_text')
@@ -2003,6 +2046,8 @@ function GODDESS_MGR_REFORGE_EVOLUTION_UPDATE(frame)
 			slot_pic:ShowWindow(1)
 			ref_item_name:ShowWindow(0)
 			ref_item_text:ShowWindow(1)
+			local ref_item_reinf_text = GET_CHILD_RECURSIVELY(frame, 'ref_item_reinf_text')
+			ref_item_reinf_text:SetTextByKey('value', 0)	
 		else
 			SET_SLOT_ITEM(target_slot, inv_item)
 
@@ -4006,23 +4051,25 @@ local function GODDESS_MAKE_INIT_RECIPE_LIST()
 	local clslist, cnt = GetClassList('goddessrecipe')
 	for i = 0, cnt - 1 do
 		local cls = GetClassByIndexFromList(clslist, i)
-		if _goddessRecipeTable[cls.DropGroupName] == nil then
-			_goddessRecipeTable[cls.DropGroupName] = {}
-		end
+		if TryGetProp(cls, "DropGroupName", "None") ~= "None" then
+			if _goddessRecipeTable[cls.DropGroupName] == nil then
+				_goddessRecipeTable[cls.DropGroupName] = {}
+			end
 
-		local recipe_list = _goddessRecipeTable[cls.DropGroupName]
-		_goddessRecipeTable[cls.DropGroupName][#recipe_list + 1] = cls.ClassName
+			local recipe_list = _goddessRecipeTable[cls.DropGroupName]
+			_goddessRecipeTable[cls.DropGroupName][#recipe_list + 1] = cls.ClassName
 
-		local target_cls = GetClass('Item', cls.TargetItem)
-		if _goddessRecipeTableByGroupName[target_cls.GroupName] == nil then
-			_goddessRecipeTableByGroupName[target_cls.GroupName] = {}
-		end
+			local target_cls = GetClass('Item', cls.TargetItem)
+			if _goddessRecipeTableByGroupName[target_cls.GroupName] == nil then
+				_goddessRecipeTableByGroupName[target_cls.GroupName] = {}
+			end
 
-		local nameList = _goddessRecipeTableByGroupName[target_cls.GroupName]
-		_goddessRecipeTableByGroupName[target_cls.GroupName][#nameList + 1] = cls.ClassName
+			local nameList = _goddessRecipeTableByGroupName[target_cls.GroupName]
+			_goddessRecipeTableByGroupName[target_cls.GroupName][#nameList + 1] = cls.ClassName
 
-		if target_cls.GroupName == 'Armor' and _goddessArmorTable[target_cls.Material] == nil then
-			_goddessArmorTable[target_cls.Material] = true
+			if target_cls.GroupName == 'Armor' and _goddessArmorTable[target_cls.Material] == nil then
+				_goddessArmorTable[target_cls.Material] = true
+			end
 		end
 	end
 end
@@ -4033,9 +4080,11 @@ local function GODDESS_MAKE_DROPLIST_INIT(frame)
     local group_index = 1
     group_list:AddItem(0, '{@st42b}'..ClMsg('PartyShowAll')..'{/}')
 	for _group, list in pairsByKeys(_goddessRecipeTable) do
-    	group_list:AddItem(group_index, '{@st42b}'.._group..'{/}')
-    	group_list:SetUserValue('GROUP_INDEX_' .. group_index, _group)
-    	group_index = group_index + 1
+		if _group ~= 'None' then
+			group_list:AddItem(group_index, '{@st42b}'.._group..'{/}')
+			group_list:SetUserValue('GROUP_INDEX_' .. group_index, _group)
+			group_index = group_index + 1
+		end
    	end
     
     local type_list = GET_CHILD_RECURSIVELY(frame, 'make_item_type_droplist')
@@ -4124,6 +4173,10 @@ local function IS_NEED_TO_SHOW_GODDESS_RECIPE(frame, recipeCls, checkGroup, chec
 		if IS_HAVE_LEGEND_CRAFT_MATERIAL(recipeCls) == false then
 			return false
 		end
+	end
+	
+	if TryGetProp(recipeCls, "DropGroupName", "None") == "None" then -- 제작 예외처리 체크
+		return false
 	end
 
 	return true
@@ -4553,6 +4606,7 @@ function GODDESS_MGR_INHERIT_INV_RBTN(item_obj, slot, guid)
 	end
 end
 
+-- 계승 등록
 function GODDESS_MGR_INHERIT_REG_ITEM(frame, inv_item, item_obj)
 	local ret, msg = item_goddess_craft.check_enable_inherit_item(item_obj)
 	if ret == false then		
@@ -4690,6 +4744,12 @@ function GODDESS_MGR_INHERIT_EXEC(parent, btn)
 	local selected_cls = GetClassByType("Item", selected_id)
 	if selected_cls == nil then return end
 
+	local is_acc = false
+	if TryGetProp(item_obj, 'ClassType', 'None') == 'Neck' or TryGetProp(item_obj, 'ClassType', 'None') == 'Ring' then
+		is_acc = true
+	end
+	local grade = TryGetProp(item_obj, 'ItemGrade', 0)
+
 	local selected_lv = TryGetProp(selected_cls, "UseLv", 1)
 	if TryGetProp(GetMyPCObject(), 'Lv', 1) < tonumber(selected_lv) then
 		ui.SysMsg(ScpArgMsg("CannotBecauseLowLevel{LEVEL}", "LEVEL", selected_lv))
@@ -4697,8 +4757,16 @@ function GODDESS_MGR_INHERIT_EXEC(parent, btn)
 	end
 
 	local clmsg = 'AllItemPropertyResetAlert'
+	if is_acc == false then
+		if grade < 6 then
 	if TryGetProp(item_obj, 'Transcend', 'None') == 10 and TryGetProp(item_obj, 'Reinforce_2', 'None') > 10 then
 		clmsg = 'AllItemPropertyAlert'
+	end
+		else
+			clmsg = 'AccItemPropertyAlert'	
+		end
+	else
+		clmsg = 'AccItemPropertyAlert'
 	end
 
 	local item_classtype = TryGetProp(item_obj, 'ClassType', 'None')
@@ -4983,10 +5051,15 @@ function GODDESS_MGR_CONVERT_REG_TARGET(frame)
 	after_pic:ShowWindow(0)
 
 	local after_slot = GET_CHILD_RECURSIVELY(frame, 'convert_slot_after')
-	SET_SLOT_ITEM_CLS(after_slot, target_cls)
 
+	local img =	GET_EQUIP_ITEM_IMAGE_NAME(target_cls, "TooltipImage")
+	SET_SLOT_IMG(after_slot, img)
+	SET_ITEM_TOOLTIP_ALL_TYPE(after_slot:GetIcon(), nil, target_cls.ClassName, '', target_cls.ClassID, 0)
+	if TryGetProp(item_obj, 'CharacterBelonging', 0) == 1 then
+		after_slot:GetIcon():SetTooltipStrArg('char_belonging')
+	end
+	
 	local after_name = GET_CHILD_RECURSIVELY(frame, 'convert_after_item_name')
-
 	local name_str = dic.getTranslatedStr(TryGetProp(target_cls, 'Name', 'None'))
 	if reinf_value > 0 then
 		name_str = string.format('+%d %s', reinf_value, name_str)
@@ -5055,6 +5128,16 @@ function GODDESS_MGR_CONVERT_REG_ITEM(frame, inv_item, item_obj)
 		ui.SysMsg(ClMsg('IMPOSSIBLE_ITEM'))
 		return
 	end
+	
+	local msg = 'IMPOSSIBLE_ITEM'
+    local _ret = false
+	local targetGruop = TryGetProp(item_obj, 'ExchangeGroup', 'None')
+	
+    _ret, msg = item_goddess_craft.is_able_to_convert(item_obj, targetGruop)
+	if _ret == false then
+		ui.SysMsg(ClMsg(msg))
+		return
+    end
 
 	local before_slot = GET_CHILD_RECURSIVELY(frame, 'convert_slot_before')
 	SET_SLOT_ITEM(before_slot, inv_item)
@@ -5166,3 +5249,15 @@ function ON_SUCCESS_GODDESS_CONVERT_EXEC(frame, msg, arg_str, arg_num)
 	GODDESS_MGR_CONVERT_CLEAR(frame)
 end
 -- 계열 변경 끝
+
+function CLEAR_REFORGE_MAIN_SLOT(frame)
+	local ref_slot = GET_CHILD_RECURSIVELY(frame, 'ref_slot')
+	ref_slot:ClearIcon()
+	ref_slot:SetUserValue('ITEM_GUID', 'None')	
+	local ref_item_name = GET_CHILD_RECURSIVELY(frame, 'ref_item_name')
+	ref_item_name:ShowWindow(0)
+	local ref_item_text = GET_CHILD_RECURSIVELY(frame, 'ref_item_text')
+	ref_item_text:ShowWindow(1)		
+	local ref_item_reinf_text = GET_CHILD_RECURSIVELY(frame, 'ref_item_reinf_text')
+	ref_item_reinf_text:SetTextByKey('value', 0)	
+end

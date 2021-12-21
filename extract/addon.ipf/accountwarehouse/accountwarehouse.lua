@@ -427,7 +427,7 @@ function ON_ACCOUNT_WAREHOUSE_ITEM_LIST(frame, msg, argStr, argNum, tab_index)
             icon:SetTooltipArg("accountwarehouse", invItem.type, invItem:GetIESID());
             SET_ITEM_TOOLTIP_TYPE(icon, itemCls.ClassID, itemCls, "accountwarehouse");
 
-            if invItem.hasLifeTime == true or TryGetProp(obj, 'ExpireDateTime', 'None') ~= 'None' then
+            if invItem.hasLifeTime == true or GET_ITEM_EXPIRE_TIME(obj) ~= 'None' then
                 ICON_SET_ITEM_REMAIN_LIFETIME(icon, IT_ACCOUNT_WAREHOUSE);
                 slot:SetFrontImage('clock_inven');
             else

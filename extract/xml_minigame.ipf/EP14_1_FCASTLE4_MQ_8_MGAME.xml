@@ -659,7 +659,7 @@
 						<condList>
 							<ToolScp Scp="MGAME_EVT_COND_MONHP" Client="NO" UseSleep="NO">
 								<MGameObj List="DefGroup/36"/>
-								<Num Num="80"/>
+								<Num Num="45"/>
 								<Str Str="UNDER"/>
 								<Num Num="1"/>
 								<Str Str="OVER"/>
@@ -678,7 +678,7 @@
 						<condList>
 							<ToolScp Scp="MGAME_EVT_COND_MONHP" Client="NO" UseSleep="NO">
 								<MGameObj List="DefGroup/36"/>
-								<Num Num="75"/>
+								<Num Num="40"/>
 								<Str Str="UNDER"/>
 								<Num Num="1"/>
 								<Str Str="OVER"/>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by imc (imc) -->
+<ActionDesc>
+	<Particle frame="0" particleName="boss_DelmoreCastleGate_kruvina2_dead" attachNode="Dummy_dead" scale="5" useAttach="true" pause="false" targetPos="false"/>
+</ActionDesc>

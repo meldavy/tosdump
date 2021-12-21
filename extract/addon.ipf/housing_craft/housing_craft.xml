@@ -27,7 +27,7 @@
 		<tabitem name="Itembox1" parent="craftTab" caption="{@st66b}재화{/}" width="150" layout_gravity="left top"/>
 		
 		<groupbox name="titlebox" parent="leftgbox" rect="0 0 590 50" margin="0 20 30 0" layout_gravity="right top" draw="true" scrollbar="false" hittestbox="false" resizebyparent="false" skin="housing_workroom_maintitle"/>
-		<richtext name="titletext" parent="titlebox" rect="0 0 590 100" margin="0 0 0 0" layout_gravity="center center" format="%s" param1="title" param1_def="명성도 생산" drawbackground="false" fixwidth="true" fontname="white_20_ol" maxwidth="0" resizebytext="true" slideshow="false" spacey="0" textalign="center center" updateparent="false"/>
+		<richtext name="titletext" parent="titlebox" rect="0 0 590 100" margin="0 0 0 0" layout_gravity="center center" format="%s" param1="title" param1_def="재화 생산" drawbackground="false" fixwidth="true" fontname="white_20_ol" maxwidth="0" resizebytext="true" slideshow="false" spacey="0" textalign="center center" updateparent="false"/>
 		
 
 		<!--재화 카테고리 그룹박스-->

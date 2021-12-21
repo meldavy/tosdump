@@ -319,7 +319,23 @@ function ADVENTURE_BOOK_RENEW_MAP()
 end
 
 function ADVENTURE_BOOK_RENEW_ACHIEVE_SEARCH()
-    ADVENTURE_BOOK_ACHIEVE.RENEW("search", 1);
+	ADVENTURE_BOOK_ACHIEVE.RENEW("search", 1);
+	
+	-- checkbox pos
+	local frame = ui.GetFrame("adventure_book")
+	local gb_achieve = GET_CHILD(frame, "gb_achieve")
+	local page_achieve_list_search = GET_CHILD(gb_achieve, "page_achieve_list_search")
+	local page_achieve_list_search_left = GET_CHILD(page_achieve_list_search, "page_achieve_list_search_left")
+	local checklist = {
+		GET_CHILD(page_achieve_list_search_left, "check_option_reward"),
+		GET_CHILD(page_achieve_list_search_left, "check_option_name"),
+		GET_CHILD(page_achieve_list_search_left, "check_option_period")
+	}
+	local x = 0
+	for i = 2, #checklist do
+		x = checklist[i - 1]:GetMargin().left + checklist[i - 1]:GetWidth() + 10
+		checklist[i]:SetMargin(x, checklist[i]:GetMargin().top, 0, 0)
+	end
 end
 
 function ADVENTURE_BOOK_RENEW_ACHIEVE_MAINCONT()
@@ -1647,6 +1663,10 @@ function ADVENTURE_BOOK_ACHIEVE_UPDATE_LEVEL_REWARD(clsID, ctrlset)
 			disable_shadow:SetVisible(1)
 		end
 		icon_receive_complete:SetVisible(0)
+	end
+
+	if GetServerNation() ~= "KOR" then
+		icon_receive_complete:SetImage('receive_complete_eng')
 	end
 
 	local NeedAchieveLevel = TryGetProp(cls, "AchieveLevel")

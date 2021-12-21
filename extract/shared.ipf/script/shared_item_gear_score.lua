@@ -51,6 +51,20 @@ function GET_RANDOM_ICOR_PORTION(item)
     return math.floor(portion / max + 0.5) / 100
 end
 
+function GET_EARRING_GEAR_SCORE(item)
+    local lv = TryGetProp(item, 'UseLv', 0)
+    local score = lv
+    local sum = 0
+    for i = 1, item_earring_max_stats_option_count do
+        local op_name = 'RandomOptionValue_' .. i
+        sum = sum + TryGetProp(item, op_name, 0)
+    end
+    
+    score = score + math.floor(sum / 20)
+    score = score + (shared_item_earring.get_earring_grade(item) * 15)
+    return score
+end
+
 function GET_ENCHANT_OPTION_PORTION(item)
     if item == nil then
         return 0
@@ -137,7 +151,7 @@ function GET_GEAR_SCORE(item, pc)
 
         check_slot_list['SEAL'] = 1
         check_slot_list['ARK'] = 1        
-        --check_slot_list['RELIC'] = 1        
+        check_slot_list['EARRING'] = 1
     end
 
     local type = TryGetProp(item, 'DefaultEqpSlot', 'None')
@@ -200,6 +214,12 @@ function GET_GEAR_SCORE(item, pc)
         end
         local ret = (0.2*(50*ark_lv)+((100*grade)+(1*use_lv)) * 0.8)*0.6 * quest_ark_penalty
         return math.floor(ret + 0.5)
+    elseif type == 'EARRING' then
+        if TryGetProp(item, 'ClassName', 'None') == 'EP13_SampleGabijaEarring' then
+            return 450
+        else
+            return GET_EARRING_GEAR_SCORE(item)
+        end
     else -- 무기/방어구/악세서리
         local icor_lv = use_lv
         local random_icor_lv = 0
@@ -318,6 +338,8 @@ function GET_GEAR_SCORE(item, pc)
             if base_acc == false then
                 if TryGetProp(item, 'StringArg', 'None') == 'Luciferi' then
                     add_acc = 80
+                elseif TryGetProp(item, 'StringArg', 'None') == 'Isdavi' then
+                    add_acc = 100
                 elseif TryGetProp(item, 'StringArg', 'None') == 'Acc_EP12' then
                     add_acc = 70
                 else
@@ -353,6 +375,10 @@ function GET_GEAR_SCORE(item, pc)
             end
         end
         
+        if TryGetProp(item, 'ItemGrade', 1) >= 6 and TryGetProp(item, 'UseLv', 0) >= 470 then
+            transcend = 10
+        end
+
         set_option = 1 - random_option_penalty - enchant_option_penalty        
         local ret = 0.5 * ( (4*transcend) + (3*reinforce)) + ( (30*grade) + (1.66*avg_lv) )*0.5
         ret = ret * set_option * set_advantage + add_acc + gem_point        
@@ -364,7 +390,7 @@ function GET_GEAR_SCORE(item, pc)
 end
 
 function GET_PLAYER_GEAR_SCORE(pc)        
-    local total = 13
+    local total = 14
     local score = 0
 
     if IsServerSection() ~= 1 then -- client
@@ -378,22 +404,31 @@ function GET_PLAYER_GEAR_SCORE(pc)
             end            
         end        
         
-        local item_sub_rh = session.GetEquipItemBySpot(30) -- RH_SUB
-        local item_sub_lh = session.GetEquipItemBySpot(31) -- LH_SUB
+        local item_sub_rh = session.GetEquipItemBySpot(item.GetEquipSpotNum('RH_SUB')) -- RH_SUB
+        local item_sub_lh = session.GetEquipItemBySpot(item.GetEquipSpotNum('LH_SUB')) -- LH_SUB
 
+        local missing_count = 0
         if item_sub_rh ~= nil and item_sub_rh:GetIESID() == '0' then
-            total = total - 1
+            missing_count = missing_count + 1
         end
 
         if item_sub_lh ~= nil and item_sub_lh:GetIESID() == '0' then
-            total = total - 1
+            missing_count = missing_count + 1
         end
-
+        
         if total < 1 then
             total = 1
         end
-
-        return math.floor((score / total) + 0.5)
+        
+        local add = 0
+        if missing_count > 0 then
+            local div = total - missing_count
+            if div > 0 then
+                add = math.floor(score / div * missing_count)                 
+            end
+        end
+        score = score + add
+        return math.floor(score + 0.5)
     else
         local equipList = GetEquipItemList(pc)        
         for i = 1, #equipList do
@@ -402,20 +437,28 @@ function GET_PLAYER_GEAR_SCORE(pc)
                 score = score + GET_GEAR_SCORE(itemobj, pc)
             end
         end
-
+        local missing_count = 0
         if IsNoneItem(pc, "RH_SUB") == 1 then
-            total = total - 1
+            missing_count = missing_count + 1
         end
 
         if IsNoneItem(pc, "LH_SUB") == 1 then            
-            total = total - 1
+            missing_count = missing_count + 1
         end
-
+        
         if total < 1 then
             total = 1
         end
 
-        return math.floor((score / total) + 0.5)
+        local add = 0
+        if missing_count > 0 then
+            local div = total - missing_count
+            if div > 0 then
+                add = math.floor(score / div * missing_count)                 
+            end
+        end
+        score = score + add
+        return math.floor(score + 0.5)
     end
 end
 
@@ -601,8 +644,8 @@ function GET_PLAYER_ABILITY_SCORE(pc)
     end    
 
     local ret = use_point / total_score * 100
-        if ret >= 100 then
-            ret = 100
-        end
+    if ret >= 100 then
+        ret = 100
+    end
     return string.format('%.2f', ret)
 end

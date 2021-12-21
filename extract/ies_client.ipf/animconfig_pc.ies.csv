@@ -1536,3 +1536,6 @@ ClassID,BlendIn,BlendOut,Priority,OffsetValue,ClassName,Main,Loop,Freeze,Additiv
 1581,0,0,4,0,SKL_ARROWRAIN_LOOP,YES,YES,NO,NO,YES,NO,NO,,NO,Attack
 1582,0,0,4,0,SKL_ARROWRAIN_SHOT,YES,YES,NO,NO,YES,NO,NO,,NO,Attack
 1583,0,0,4,0,SKL_CANNONSHOT_ARTS,YES,YES,NO,NO,YES,NO,NO,,NO,Attack
+1584,0,0,4,0,raid_ballista_cast,YES,NO,NO,NO,YES,NO,NO,,NO,Stand
+1585,0,0,4,0,raid_ballista_loop,YES,YES,NO,NO,YES,NO,NO,,NO,Stand
+1586,0,0,4,0,raid_ballista_shot,YES,NO,NO,NO,YES,NO,NO,,NO,Stand

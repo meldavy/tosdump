@@ -30,7 +30,7 @@ local invenTitleName = nil
 local clickedLockItemSlot = nil
 
 g_shopList = {"companionshop", "housing_shop", "shop", "exchange", "oblation_sell", "reputation_shop"};
-g_invenTypeStrList = {"All", "Equip", "Consume", "Recipe", "Card", "Etc", "Gem", "Premium", "Housing", "Quest"};
+g_invenTypeStrList = {"All", "Equip", "Consume", "Recipe", "Card", "Etc", "Gem", "Premium", "Housing", "Pharmacy", "Quest"};
 
 local _invenCatOpenOption = {}; -- key: cid, value: {key: CategoryName, value: IsToggle}
 local _invenTreeOpenOption = {}; -- key: cid, value: {key: TreegroupName, value: IsToggle}
@@ -2729,7 +2729,7 @@ function INV_ICON_SETINFO(frame, slot, invItem, customFunc, scriptArg, count)
 		DESTROY_CHILD_BYNAME(slot, "itemlock")
 	end
 
-    if invItem.hasLifeTime == true or TryGetProp(itemobj, 'ExpireDateTime', 'None') ~= 'None' then
+    if invItem.hasLifeTime == true or GET_ITEM_EXPIRE_TIME(itemobj) ~= 'None' then
         ICON_SET_ITEM_REMAIN_LIFETIME(icon)
         slot:SetFrontImage('clock_inven');
     end
@@ -2760,6 +2760,9 @@ function IS_EQUIPPED_WEAPON_SWAP_SLOT(invItem)
 end
 
 function STATUS_SLOT_DROP(frame, icon, argStr, argNum)
+	local openFrame = ui.GetFrame("fragmentation_earring")
+	if openFrame ~= nil and openFrame:IsVisible() == 1 then return end
+
 	local liftIcon = ui.GetLiftIcon();
 	local FromFrame = liftIcon:GetTopParentFrame();
 	local toFrame = frame:GetTopParentFrame();
@@ -4216,10 +4219,10 @@ end
 function IS_LIFETIME_OVER(itemobj)
 	if itemobj.LifeTime == nil then
 		return 0;
-	elseif 0 ~= tonumber(itemobj.LifeTime) or TryGetProp(itemobj, 'ExpireDateTime', 'None') ~= 'None' then					
+	elseif 0 ~= tonumber(itemobj.LifeTime) or GET_ITEM_EXPIRE_TIME(itemobj) ~= 'None' then
 		local endTime = imcTime.GetSysTimeByStr(itemobj.ItemLifeTime);		
-		if TryGetProp(itemobj, 'ExpireDateTime', 'None') ~= 'None' then
-			local exprie_str = TryGetProp(itemobj, 'ExpireDateTime', 'None')
+		if GET_ITEM_EXPIRE_TIME(itemobj) ~= 'None' then
+			local exprie_str = GET_ITEM_EXPIRE_TIME(itemobj)
 			endTime = imcTime.GetSysTimeByYYMMDDHHMMSS(exprie_str);
 		end
 
@@ -5655,4 +5658,47 @@ function STEAMED_BUNS_OPEN_BASIC_MSG(invItem)
 	ui.MsgBox_NonNested(textmsg, itemobj.Name, 'REQUEST_SUMMON_BOSS_TX', "None");
 
 	return;
+end
+
+-- 업힐/차붕 토큰 교환
+local multiple_token_id = '0'
+function CLIENT_CONVERT_CONVERT_MULTIPLE_TOKEN(item_obj)
+	multiple_token_id = '0'
+	local item = GetIES(item_obj:GetObject())	
+	
+	if GetCraftState() == 1 then
+		return;
+	end
+
+	if true == BEING_TRADING_STATE() then
+		return;
+	end
+	
+	local invItem = session.GetInvItemByGuid(item_obj:GetIESID())	
+	if nil == invItem then
+		return;
+	end
+	
+	if true == invItem.isLockState then
+		ui.SysMsg(ClMsg("MaterialItemIsLock"));
+		return;
+	end
+
+	multiple_token_id = invItem:GetIESID()
+	local yesscp = string.format('CHECK_CLIENT_CONVERT_MULTIPLE_TOKEN("%s")', invItem:GetIESID());
+	WARNINGMSGBOX_FRAME_OPEN(ScpArgMsg('ConvertMultipleTokenWarning{NAME}', 'NAME', TryGetProp(item, 'Name', 'None')), yesscp, 'None', nil, ScpArgMsg('WarningTeamBelonging'));
+end
+
+function CHECK_CLIENT_CONVERT_MULTIPLE_TOKEN(item_id)
+	local invItem = session.GetInvItemByGuid(multiple_token_id)	
+	local titleText = ScpArgMsg("INPUT_CNT_D_D", "Auto_1", 1, "Auto_2", invItem.count);
+	INPUT_NUMBER_BOX(nil, titleText, "RUN_CLIENT_CONVERT_MULTIPLE_TOKEN", 1, 1, invItem.count);		
+end
+
+function RUN_CLIENT_CONVERT_MULTIPLE_TOKEN(count)	
+	session.ResetItemList();
+    local pc = GetMyPCObject();
+	session.AddItemID(multiple_token_id, count)
+    local resultlist = session.GetItemIDList()
+    item.DialogTransaction("CONVERT_MULTIPLE_TOKEN", resultlist)
 end

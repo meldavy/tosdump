@@ -6,6 +6,8 @@ function PARTYINFO_ON_INIT(addon, frame)
 	addon:RegisterMsg("PARTY_OUT", "ON_PARTYINFO_DESTROY");
 	addon:RegisterMsg("PARTY_INVITE_CANCEL", "ON_PARTY_INVITE_CANCEL");
 	addon:RegisterMsg("GAME_START", "PARTYINFO_CONTROL_INIT");
+	addon:RegisterMsg("PARTY_MEMBER_INTERACTION_SUCCESS", "PARTYINFO_INTERACTION_SUCCESS_EFFECT");
+	addon:RegisterMsg("PARTY_MEMBER_INTERACTION_END", "PARTYINFO_INTERACTION_END");
 end
 
 function PARTYINFO_CONTROL_INIT()
@@ -1091,4 +1093,30 @@ end
 function PARTYINFO_CONTROLSET_AUTO_ALIGN(frame)
 	GBOX_AUTO_ALIGN(frame, 10, 0, 0, true, false);
 	frame:Invalidate();
+end
+
+function PARTYINFO_INTERACTION_SUCCESS_EFFECT(frame, msg, arg_str, arg_num)
+	if frame == nil then return; end
+	local party = session.party.GetPartyInfo();
+	if party == nil then return; end
+	local ctrl_set = GET_CHILD_RECURSIVELY(frame, "PTINFO_"..arg_str);
+	if ctrl_set ~= nil then
+		local hp = GET_CHILD_RECURSIVELY(ctrl_set, "hp");
+		if hp ~= nil then
+			ctrl_set:PlayUIEffect("UI_success002", 6.0, "interaction_success_effect");
+		end
+	end
+end
+
+function PARTYINFO_INTERACTION_END(frame, msg, arg_str, arg_num)
+	if frame == nil then return; end
+	local party = session.party.GetPartyInfo();
+	if party == nil then return; end
+	local ctrl_set = GET_CHILD_RECURSIVELY(frame, "PTINFO_"..arg_str);
+	if ctrl_set ~= nil then
+		local hp = GET_CHILD_RECURSIVELY(ctrl_set, "hp");
+		if hp ~= nil then
+			ctrl_set:StopUIEffect("interaction_success_effect", true, 0.5);
+		end
+	end
 end

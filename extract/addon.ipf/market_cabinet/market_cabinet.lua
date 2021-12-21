@@ -110,8 +110,13 @@ function ON_CABINET_ITEM_LIST(frame)
             SET_SLOT_COUNT_TEXT(pic, count, font);
 		end
 	    -- pic:SetImage(itemImage);
-		local name = ctrlSet:GetChild("name");
-		name:SetTextByKey("value", GET_FULL_NAME(itemObj));
+        local name = ctrlSet:GetChild("name");
+        local name_text = GET_FULL_NAME(itemObj)
+        local grade = shared_item_earring.get_earring_grade(itemObj)		
+		if grade > 0 then
+			name_text = name_text .. '(' .. grade .. ClMsg('Grade') .. ')'
+		end
+		name:SetTextByKey("value", name_text);
 
 		-- etc box
 		local etcBox = GET_CHILD_RECURSIVELY(ctrlSet, 'etcBox');

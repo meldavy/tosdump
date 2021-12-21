@@ -48,6 +48,8 @@ function EVENT_STAMP_TOUR_CREATE_PAGE(frame)
 		local controlsetName = 'event_stamp_tour_mission_block'
 		if groupName == "EVENT_STAMP_TOUR_SUMMER" then
 			controlsetName = 'event_stamp_tour_mission_block_summer'
+		elseif groupName == "EVENT_STAMP_TOUR_CHRISTMAS" then
+			controlsetName = 'event_stamp_tour_mission_block_christmas'
 		end
 		local ctrlSet = misson_gb:CreateOrGetControlSet(controlsetName, 'MISSIONBLOCK_'..i, 0, misson_gb_y);
 		ctrlSet = tolua.cast(ctrlSet, 'ui::CControlSet');	
@@ -151,7 +153,11 @@ function EVENT_STAMP_TOUR_SET_PAGE(frame)
 			local itemname = TryGetProp(itemcls, 'Name', 'None');
 
 			local rewardtext = reward_bg:CreateOrGetControl('richtext', 'REWARD_TEXT_'..(math.floor(j/2)), 0, reward_Y, 100, 10);
-			rewardtext:SetText(itemname.." "..rewardliststr[j+1]..ClMsg("Piece"));
+			if GetServerNation() == "GLOBAL" then
+				rewardtext:SetText(itemname.." "..ClMsg("Piece")..rewardliststr[j+1]);
+			else
+				rewardtext:SetText(itemname.." "..rewardliststr[j+1]..ClMsg("Piece"));
+			end
 			rewardtext:SetFontName(REWARD_TEXT_FONT)
 			rewardtext:SetGravity(gravity_horz, gravity_vert);
 
@@ -219,6 +225,8 @@ function EVENT_STAMP_TOUR_SET_PAGE(frame)
 					time = imcTime.GetSysTimeByStr(time)
 					isHidden = EVENT_STAMP_IS_VALID_WEEK_SUMMER(weekNum, time) == false or EVENT_STAMP_IS_HIDDEN_SUMMER(accObj,(3 * currentpage) + i) == true
 				end				
+			elseif groupName == "EVENT_STAMP_TOUR_CHRISTMAS" then
+				isHidden = EVENT_STAMP_IS_VALID_CHRISTMAS(weekNum) == false
 			end
 			
 			if isHidden == true then
@@ -414,15 +422,55 @@ end
 function SCR_EVENT_STAMP_OPEN_WEEKLY_BOSS_UI()
 	local frame = ui.GetFrame('induninfo')
 	frame:ShowWindow(1)
-	local tab = GET_CHILD_RECURSIVELY(frame, "tab");
-	tab:SelectTab(1);
+	INDUNINFO_UI_OPEN(frame, 3)
 	INDUNINFO_TAB_CHANGE(frame)
 end
 
 function SCR_EVENT_STAMP_OPEN_ADVENTURE_BOOK_MAP()
 	local frame = ui.GetFrame('adventure_book')
 	frame:ShowWindow(1)
+	local mainTab = GET_CHILD(frame, "mainTab")
+	mainTab:SelectTab(1)
 	local gb_adventure = GET_CHILD(frame, "gb_adventure");
 	local tab = GET_CHILD(gb_adventure, "bookmark");
 	tab:SelectTab(7);
+end
+
+function SCR_EVENT_STAMP_OPEN_INDUNINFO_DIVISION()
+	local frame = ui.GetFrame("induninfo")
+	frame:ShowWindow(1)
+	INDUNINFO_UI_OPEN(frame, 1, "Challenge_Division_Auto_1")
+end
+
+function SCR_EVENT_STAMP_OPEN_INDUNINFO_CHALLENGE()
+	local frame = ui.GetFrame("induninfo")
+	frame:ShowWindow(1)
+	INDUNINFO_UI_OPEN(frame, 1, "Challenge_Auto_Hard_Party")
+end
+
+function SCR_EVENT_STAMP_OPEN_INDUNINFO_MYSTIC()
+	local frame = ui.GetFrame("induninfo")
+	frame:ShowWindow(1)
+	local pattern_info = mythic_dungeon.GetPattern(mythic_dungeon.GetCurrentSeason())
+	local mapCls = GetClassByType("Map",pattern_info.mapID)
+	INDUNINFO_UI_OPEN(frame, 2, TryGetProp(mapCls,"ClassName"))
+end
+
+function SCR_EVENT_STAMP_OPEN_INDUNINFO_TOSHERO()
+	local frame = ui.GetFrame("induninfo")
+	frame:ShowWindow(1)
+	INDUNINFO_UI_OPEN(frame, 1, "TOSHero")
+end
+
+function SCR_EVENT_STAMP_OPEN_INDUNINFO_BERNIKE()
+	local frame = ui.GetFrame("induninfo")
+	frame:ShowWindow(1)
+	INDUNINFO_UI_OPEN(frame, 1, "Solo_dungeon")
+end
+
+function SCR_EVENT_STAMP_PVP()
+	local frame = ui.GetFrame("induninfo")
+	frame:ShowWindow(1)
+	INDUNINFO_UI_OPEN(frame, 6)
+	INDUNINFO_TAB_CHANGE(frame)
 end

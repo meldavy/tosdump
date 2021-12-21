@@ -1929,4 +1929,86 @@ function DoNotRetreat_Arts_LEAVE(actor, obj, buff)
     actor:GetEffect():SetColorBlink(0,0,0,0,0,0,0,0, 0 , 1);
 end
 
+---- EarringRaid PartyLeaderSkill Buff
+function PartyLeaderBuff_NoDamage_ENTER(actor, obj, buff)
+    actor:SetAuraInfo("Champion_Buff");
+end
 
+function PartyLeaderBuff_NoDamage_LEAVE(actor, obj, buff)
+    actor:SetAuraInfo("");
+end
+
+function PartyLeaderBuff_CoolDown_ENTER(actor, obj, buff)
+    actor:SetAuraInfo("Dragonoid_Color");
+end
+
+function PartyLeaderBuff_CoolDown_LEAVE(actor, obj, buff)
+    actor:SetAuraInfo("");
+end
+
+function PartyLeaderBuff_DamageUp_ENTER(actor, obj, buff)
+    actor:SetAuraInfo("Mythic_Link");
+end
+
+function PartyLeaderBuff_DamageUp_LEAVE(actor, obj, buff)
+    actor:SetAuraInfo("");
+end
+
+---- DelmoreCatleGate Raid
+function Gresme_Raven_FlyBuff_ENTER(actor, obj, buff)
+    if actor ~= nil then
+        actor:SetAuraInfo("EliteBuff");
+        actor:GetAnimation():SetSTDAnim("raid_flying");
+        actor:GetAnimation():SetWLKAnim("raid_flying");
+        actor:GetAnimation():SetRUNAnim("raid_flying");
+    end
+end
+
+function Gresme_Raven_FlyBuff_LEAVE(actor, obj, buff)
+    if actor ~= nil then
+        actor:SetAuraInfo("");
+        actor:GetAnimation():ResetSTDAnim();
+        actor:GetAnimation():ResetWLKAnim();
+        actor:GetAnimation():ResetRUNAnim();
+    end
+end
+
+-- EarringRaid Party Buff 여신의 전언 파티 버프 스킬-- 
+function PartyLeaderBuff_NoDamage_ENTER(actor, obj, buff)
+    imcSound.PlaySoundEvent("monster_state_1")
+    actor:GetEffect():SetColorBlink(0,0,0.1,0,0,0.1,0.4,0, 1.5, 1);
+    actor:SetAuraInfo("PartyLeaderBuff_NoDamage");
+    actor:GetTitle():UpdateCaption();
+end
+
+function PartyLeaderBuff_NoDamage_LEAVE(actor, obj, buff)
+    actor:SetAuraInfo("");
+    actor:GetTitle():UpdateCaption();
+    actor:GetEffect():SetColorBlink(0,0,0,0,1,0,0,1, 0 , 1);
+end
+
+function PartyLeaderBuff_CoolDown_ENTER(actor, obj, buff)
+    imcSound.PlaySoundEvent("monster_state_1")
+    actor:GetEffect():SetColorBlink(0.2,0.17,0.05,0,0.5,0.4,0.15,0, 1.5, 1);
+    actor:SetAuraInfo("PartyLeaderBuff_CoolDown");
+    actor:GetTitle():UpdateCaption();
+end
+
+function PartyLeaderBuff_CoolDown_LEAVE(actor, obj, buff)
+    actor:SetAuraInfo("");
+    actor:GetTitle():UpdateCaption();
+    actor:GetEffect():SetColorBlink(0,0,0,0,1,0,0,1, 0 , 1);
+end
+
+function PartyLeaderBuff_DamageUp_ENTER(actor, obj, buff)
+    imcSound.PlaySoundEvent("monster_state_1")
+    actor:GetEffect():SetColorBlink(0.2,0,0,0,0.45,0.05,0,0, 1.5, 1);
+    actor:SetAuraInfo("PartyLeaderBuff_DamageUp");
+    actor:GetTitle():UpdateCaption();
+end
+
+function PartyLeaderBuff_DamageUp_LEAVE(actor, obj, buff)
+    actor:SetAuraInfo("");
+    actor:GetTitle():UpdateCaption();
+    actor:GetEffect():SetColorBlink(0,0,0,0,1,0,0,1, 0 , 1);
+end

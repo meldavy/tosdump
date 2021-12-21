@@ -23,28 +23,39 @@ end
 
 local function SHOW_MINIMIZED_BUTTON(frame)
 	local pvp_button = ui.GetFrame('minimized_pvpmine_shop_button')
-	local ceritificate_button = ui.GetFrame('minimized_certificate_shop_button')
+	local certificate_button = ui.GetFrame('minimized_certificate_shop_button')
+	local market_button = ui.GetFrame('minimized_market_button')
 
 	if frame ~= nil and frame:IsVisible() == 1 then
 		frame:ShowWindow(0)	
 		pvp_button:ShowWindow(0)
-		ceritificate_button:ShowWindow(0)
+		certificate_button:ShowWindow(0)
+		market_button:ShowWindow(0)
 	else
 		frame:ShowWindow(1)
-		frame:GetMargin()
-		frame:SetMargin(0, 71, 355, 0)
-
 		pvp_button:ShowWindow(1)
-		ceritificate_button:ShowWindow(1)
-
+		certificate_button:ShowWindow(1)
+		market_button:ShowWindow(1)
+		
+		local frame_margin = frame:GetMargin()
+		local pvp_margin = pvp_button:GetMargin()
+		local certificate_margin = certificate_button:GetMargin()
+		local market_margin = market_button:GetMargin()
+		
 		local mapprop = session.GetCurrentMapProp()
 		local mapCls = GetClassByType("Map", mapprop.type)
-	
+		
 		local housingPlaceClass = GetClass("Housing_Place", mapCls.ClassName)
 		if housingPlaceClass ~= nil then
-			frame:SetMargin(0, 177, 355, 0)
-			pvp_button:SetMargin(0, 183, 413, 0)
-			ceritificate_button:SetMargin(0, 183, 458, 0)
+			frame:SetMargin(frame_margin.left, 177, frame_margin.right, frame_margin.bottom)
+			pvp_button:SetMargin(pvp_margin.left, 183, pvp_margin.right, pvp_margin.bottom)
+			certificate_button:SetMargin(certificate_margin.left, 183, certificate_margin.right, certificate_margin.bottom)
+			market_button:SetMargin(market_margin.left, 183, market_margin.right, market_margin.bottom)
+		else
+			frame:SetMargin(frame_margin.left, 71, frame_margin.right, frame_margin.bottom)
+			pvp_button:SetMargin(pvp_margin.left, 76, pvp_margin.right, pvp_margin.bottom)
+			certificate_button:SetMargin(certificate_margin.left, 76, certificate_margin.right, certificate_margin.bottom)
+			market_button:SetMargin(market_margin.left, 76, market_margin.right, market_margin.bottom)
 		end
 	end
 

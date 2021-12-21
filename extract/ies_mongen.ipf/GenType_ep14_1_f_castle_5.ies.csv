@@ -15,6 +15,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 14,14,1,40,1,60000,1,1,0,0,0,0,0,npc_Ramin,[왕국군 대장군]{nl}라민,,,,,,,EP14_1_FCASTLE5_MQ_8_NPC1,,,NO,YES,NO,Neutral,,,,
 15,15,1,40,1,60000,1,1,0,0,0,0,0,npc_pajauta_1,파야우타,,,,,,,EP14_1_FCASTLE5_MQ_8_NPC2,,,NO,YES,NO,Neutral,,,,
 16,16,1,40,200,20000,19,0,0,0,1,0,0,rootcrystal_05,나무뿌리 수정,,,,MON_TORCH,,,,,,NO,YES,NO,RootCrystal,,,,
+17,17,1,40,1,60000,1,1,0,0,0,0,0,Hiddennpc_Q2,델무어 격전지,,,,,,PORTAL_GREEN,GODDESS_RAID_DELMORE_PORTAL,,,NO,YES,NO,Neutral,,,,
 1001,1001,1,60,1,30000,1,0,0,0,1,0,0,TransmutationPeople,,,,,,,,,,,NO,YES,NO,Monster,,,,
 1002,1002,1,60,1,30000,1,0,0,0,1,0,0,TransmutationPeople,,,,,,,,,,,NO,YES,NO,Monster,,,,
 1003,1003,1,60,1,30000,1,0,0,0,1,0,0,TransmutationPeople,,,,,,,,,,,NO,YES,NO,Monster,,,,

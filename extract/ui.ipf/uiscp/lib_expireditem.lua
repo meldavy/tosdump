@@ -42,20 +42,30 @@ function IS_SCHEDULED_TO_EXPIRED_ITEM_BY_SYSTIME(itemGuid, sysTime)
         return false;
     end
     local itemObj = GetIES(invitem:GetObject());
-    local lifeTime = TryGetProp(itemObj, "ItemLifeTime");
-    if lifeTime == nil or lifeTime == "None" then
-        return false;
-    end
-    local expirationSysTime = imcTime.GetSysTimeByStr(lifeTime);
-    
     if TryGetProp(itemObj, "ItemLifeTimeOver") == 1 then
         return false;
     end
+    local lifeTime = TryGetProp(itemObj, "ItemLifeTime");
+    local expireDateTime = GET_ITEM_EXPIRE_TIME(itemObj)
+    if (lifeTime == nil or lifeTime == "None") and expireDateTime == 'None' then
+        return false
+    end
 
-    if 1 == imcTime.IsLaterThan(sysTime, expirationSysTime) then
-        return true;
+    if expireDateTime == 'None' then
+        local expirationSysTime = imcTime.GetSysTimeByStr(lifeTime);
+        if 1 == imcTime.IsLaterThan(sysTime, expirationSysTime) then
+            return true;
+        else
+            return false;
+        end
     else
-        return false;
+        local expired_time = GET_ITEM_EXPIRE_TIME(itemObj)
+        local expirationSysTime = imcTime.GetSysTimeByYYMMDDHHMMSS(expired_time)
+        if 1 == imcTime.IsLaterThan(sysTime, expirationSysTime) then
+            return true;
+        else
+            return false;
+        end
     end
 end
 
@@ -77,7 +87,7 @@ end
 function GET_ITEM_REMAIN_LIFETIME_BY_SEC(itemObj)
     local lifeTime = TryGetProp(itemObj, "ItemLifeTime");
     local lifeTimeOver = TryGetProp(itemObj, "ItemLifeTimeOver");
-    local expireDateTime = TryGetProp(itemObj, 'ExpireDateTime', 'None') 
+    local expireDateTime = GET_ITEM_EXPIRE_TIME(itemObj)
 
     if lifeTimeOver == 1 then
         return "Expired"
@@ -93,7 +103,7 @@ function GET_ITEM_REMAIN_LIFETIME_BY_SEC(itemObj)
             local diffSec = imcTime.GetDifSec(expirationSysTime, nowSysTime);
             return diffSec;
         else
-            local expired_time = TryGetProp(itemObj, 'ExpireDateTime', 'None')
+            local expired_time = GET_ITEM_EXPIRE_TIME(itemObj)
             local expirationSysTime = imcTime.GetSysTimeByYYMMDDHHMMSS(expired_time);
             local nowSysTime = geTime.GetServerSystemTime();
             local diffSec = imcTime.GetDifSec(expirationSysTime, nowSysTime);
@@ -128,6 +138,11 @@ function GET_REMAIN_ITEM_LIFE_TIME(item)
         local expirationSysTime = imcTime.GetSysTimeByStr(item.ItemLifeTime);    
         local diffSec = imcTime.GetDifSec(expirationSysTime, nowSysTime);
         return diffSec;
+    elseif GET_ITEM_EXPIRE_TIME(item) ~= "None" then
+        local expired_time = GET_ITEM_EXPIRE_TIME(item)
+        local expirationSysTime = imcTime.GetSysTimeByYYMMDDHHMMSS(expired_time)
+        local diffSec = imcTime.GetDifSec(expirationSysTime, nowSysTime)
+        return diffSec
     end
     return nil;
 end

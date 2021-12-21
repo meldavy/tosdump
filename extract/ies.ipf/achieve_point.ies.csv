@@ -107,6 +107,12 @@ ClassID,ClassName,Name,UseDaily,UseWeekly,Country,StartTime,EndTime,DescTitle
 2518,Vasilissa_clear_gold,[성자의 기도소: 가디스] 3분 이내 클리어,NO,NO,,,,
 2519,Vasilissa_clear_silver,[성자의 기도소: 가디스] 10분 이내 클리어,NO,NO,,,,
 2520,Vasilissa_clear_bronze,[성자의 기도소: 가디스] 클리어,NO,NO,,,,
+2521,Raid_Delmore_gold,[델무어 격전지: 가디스] 3분 이내에 클리어,NO,NO,,,,
+2522,Raid_Delmore_silver,[델무어 격전지: 가디스] 10분 이내에 클리어,NO,NO,,,,
+2523,Raid_Delmore_bronze,[델무어 격전지: 가디스] 클리어,NO,NO,,,,
+2524,Raid_Delmore_first_kill,[델무어 격전지: 가디스] 파티 난이도를 누적 310회 클리어,NO,NO,,,,
+2525,Goddess_Raid_Delmore_Auto,"델무어 격전지(1인,자동매칭) 클리어",NO,NO,,,,
+2526,Goddess_Raid_Delmore_Party,"델무어 격전지(파티,익스트림) 클리어",NO,NO,,,,
 3001,HairShop,미용실,NO,NO,,,,
 3002,Connection,접속 횟수,NO,NO,,,,
 3003,INDUN,인던입장횟수,NO,NO,,,,
@@ -125,7 +131,12 @@ ClassID,ClassName,Name,UseDaily,UseWeekly,Country,StartTime,EndTime,DescTitle
 4012,LETIARII_UNLOCK,레티아리이 마스터 기믹 클리어,NO,NO,,,,
 4013,PIEDPIPER_UNLOCK,파이드 파이퍼 마스터 기믹 클리어,NO,NO,,,,
 4014,CHAPLAIN_UNLOCK,채플린 마스터 기믹 클리어,NO,NO,,,,
+4501,Archeology_Lv470,고고학자,NO,NO,,,,
 5001,MapReveal,세계 탐색 점수,NO,NO,,,,
+5500,pharmacy_Tuto,튜토리얼,NO,NO,,,,
+5501,pharmacy_assess470,470 조제법 감정,NO,NO,,,,
+5502,Pharmacy_470_Counteractive,중화제 사용,NO,NO,,,,
+5503,pharmacy_Reward470,비약 연성술을 통해 비약 획득,NO,NO,,,,
 6001,PlayCBT1,CBT1 참여,NO,NO,,,,
 6002,PlayCBT3_RANK6_1,아우슈리네의 화신,NO,NO,,,,
 6003,PlayCBT3_RANK6_10,아우슈리네의 영웅,NO,NO,KOR,,,
@@ -500,6 +511,9 @@ ClassID,ClassName,Name,UseDaily,UseWeekly,Country,StartTime,EndTime,DescTitle
 70000,Achieve_Solo_dungeon_1,베르니케 던전 특정 단계 1회 클리어,NO,NO,,,,
 70001,Achieve_Solo_dungeon_st80,베르니케 던전 80단계 누적 클리어,NO,NO,,,,
 70002,Achieve_Ancient_Solo_dungeon_1,어시스터 던전 특정 단계 클리어,NO,NO,,,,
+70003,Earring_Raid_Achieve_Solo,여신의 전언 : 불꽃의 기억 (1인) 클리어,NO,NO,,,,
+70004,Earring_Raid_Achieve_Nomal,여신의 전언 : 불꽃의 기억 (Nomal) 클리어,NO,NO,,,,
+70005,Earring_Raid_Achieve_Hard,여신의 전언 : 불꽃의 기억 (Hard) 클리어,NO,NO,,,,
 80000,GuideQuest_1,,NO,NO,,,,성장 업적 : 챕터 1
 80001,GuideQuest_1_1,,NO,NO,,,,[캐릭터] 캐릭터 Lv 455 이상 달성
 80002,GuideQuest_1_2,,NO,NO,,,,[퀘스트] 에피소드 12-2 클리어 후 에피소드 보상 획득
@@ -533,4 +547,4 @@ ClassID,ClassName,Name,UseDaily,UseWeekly,Country,StartTime,EndTime,DescTitle
 80030,GuideQuest_6_2,,NO,NO,,,,[캐릭터] 캐릭터 Lv 470 이상 달성
 80031,GuideQuest_6_3,,NO,NO,,,,[퀘스트] 에피소드 14-1 클리어
 80032,GuideQuest_6_4,,NO,NO,,,,[장비] 카드첩(3)
-80033,GuideQuest_6_5,,NO,NO,,,,[콘텐츠] 델무어 총력전 10회 클리어
+80033,GuideQuest_6_5,,NO,NO,,,,[콘텐츠] 델무어 격전지 10회 클리어

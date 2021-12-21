@@ -70,10 +70,40 @@ function EXTRACT_LUCIFERI_PROPERTY_INV_RBTN(itemobj, invSlot, invItemGuid)
 		EXTRACT_LUCIFERI_PROPERTY_UI_CLEAR();
 	else
 		local frame = ui.GetFrame("extract_luciferi_property")
-		if EXTRACT_LUCIFERI_PROPERTY_GET_SLOT_ITEM_OBJECT(frame, 1) == nil then
+		local slotItemObj, slotItemGuid = EXTRACT_LUCIFERI_PROPERTY_GET_SLOT_ITEM_OBJECT(frame, 1)
+		if slotItemObj == nil then
 			_ADD_ITEM_TO_EXTRACT_LUCIFERI_PROPERTY_FROM_INV(frame, itemobj, invSlot, invItemGuid, 1);
 		else
-			EXTRACT_LUCIFERI_PROPERTY_UI_CLEAR();
+			if slotItemGuid ~= invItemGuid then
+				EXTRACT_LUCIFERI_PROPERTY_UI_CLEAR();
+				_ADD_ITEM_TO_EXTRACT_LUCIFERI_PROPERTY_FROM_INV(frame, itemobj, invSlot, invItemGuid, 1);
+			end
+		end
+	end
+end
+
+function EXTRACT_LUCIFERI_PROPERTY_DROP(parent, ctrl, argStr, argNum)
+	local lifticon = ui.GetLiftIcon()
+	local fromframe = lifticon:GetTopParentFrame()
+	if fromframe:GetName() == 'inventory' then
+		local iconinfo = lifticon:GetInfo()
+		local invSlot = lifticon:GetParent()
+        local invItemGuid = iconinfo:GetIESID()
+        local invitem = session.GetInvItemByGuid(invItemGuid)
+		if invitem == nil then return end
+		
+		local itemobj = GetIES(invitem:GetObject())
+		if itemobj == nil then return end
+		
+		local frame = ui.GetFrame("extract_luciferi_property")
+		local slotItemObj, slotItemGuid = EXTRACT_LUCIFERI_PROPERTY_GET_SLOT_ITEM_OBJECT(frame, 1)
+		if slotItemObj == nil then
+			_ADD_ITEM_TO_EXTRACT_LUCIFERI_PROPERTY_FROM_INV(frame, itemobj, invSlot, invItemGuid, 1);
+		else
+			if slotItemGuid ~= invItemGuid then
+				EXTRACT_LUCIFERI_PROPERTY_UI_CLEAR();
+				_ADD_ITEM_TO_EXTRACT_LUCIFERI_PROPERTY_FROM_INV(frame, itemobj, invSlot, invItemGuid, 1);
+			end
 		end
 	end
 end

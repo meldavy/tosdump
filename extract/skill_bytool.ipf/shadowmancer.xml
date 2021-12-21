@@ -287,7 +287,7 @@
 					<Num FuncTxt="return obj.Level;" Num="0" UseFunc="1" />
 					<Num Num="0" />
                     <Num FuncTxt="
-                    local value = obj.Level * 2000
+                    local value = SCR_GET_ShadowFatter_Bufftime(obj) * 1000
                             if IsPVPServer(self) == 1 or IsPVPField(self) == 1 then
                                 value = value / 2
                             end

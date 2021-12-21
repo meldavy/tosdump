@@ -111,9 +111,6 @@
                 </StageEvents>
             </Stage>
             <Stage Name="End" AutoStart="0">
-                <ObjList>
-                    <Obj Type="Monster" MonType="160063" Pos="-1064.98#28.56#248.69" genCount="1" genTime="20000" autoGen="0" objectKey="0" propList="&apos;Name&apos; &apos;모드 종료&apos; "/>
-                </ObjList>
                 <StageEvents>
                     <Event execCount="1" eventName="Reward">
                         <condList>
@@ -162,24 +159,6 @@
                             <ToolScp Scp="MGAME_EVT_SCP_TO_MON_CMD" Client="NO" UseSleep="NO">
                                 <MGameObj List="Start/0"/>
                                 <Str Str="SCR_AUTO_CHALLENGE_END"/>
-                            </ToolScp>
-                        </execList>
-                    </Event>
-                    <Event execCount="1" eventName="EndPortal">
-                        <condList>
-                            <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
-                                <Num Num="5"/>
-                            </ToolScp>
-                        </condList>
-                        <execList>
-                            <ToolScp Scp="MGAME_EVT_EXEC_CREMON" Client="NO" UseSleep="NO">
-                                <MGameObjIndex List="End/0"/>
-                                <Num Num="1"/>
-                                <Num Num="0"/>
-                            </ToolScp>
-                            <ToolScp Scp="MGAME_EVT_SCP_TO_MON_CMD" Client="NO" UseSleep="NO">
-                                <MGameObj List="End/0"/>
-                                <Str Str="SCR_AUTO_CHALLENGE_EXIT_PORTAL"/>
                             </ToolScp>
                         </execList>
                     </Event>

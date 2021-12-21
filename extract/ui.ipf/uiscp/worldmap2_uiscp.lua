@@ -265,10 +265,11 @@ end
 
 -- 월드맵 종료 함수
 function WORLDMAP2_CLOSE()
+	ui.CloseFrame("worldmap2_archeology")
 	ui.CloseFrame("worldmap2_colonymap")
 	ui.CloseFrame("worldmap2_minimap")
 	ui.CloseFrame("worldmap2_mainmap")
-	ui.CloseFrame("worldmap2_submap")
+    ui.CloseFrame("worldmap2_submap")
 end
 
 -- 퀘스트 서치 함수

@@ -286,7 +286,7 @@ function SET_SLOT_STYLESET(slot, itemCls, itemGrade_Flag, itemLevel_Flag, itemAp
 		if isInventory ~= nil and isInventory == 1 and config.GetXMLConfig("ViewGradeStyle") == 0 then
 			
 		else
-			SET_SLOT_BG_BY_ITEMGRADE(slot, itemCls.ItemGrade)
+			SET_SLOT_BG_BY_ITEMGRADE(slot, itemCls)
 		end
 	end
 
@@ -300,9 +300,11 @@ function SET_SLOT_STYLESET(slot, itemCls, itemGrade_Flag, itemLevel_Flag, itemAp
 
 	local needAppraisal = nil
 	local needRandomOption = nil
+	local isPharmacyItem = false
 	if itemCls ~= nil then
 		needAppraisal = TryGetProp(itemCls, "NeedAppraisal");
 		needRandomOption = TryGetProp(itemCls, "NeedRandomOption");
+		isPharmacyItem = (string.find(TryGetProp(itemCls, 'StringArg', 'None'), 'pharmacy') ~= nil)
 	end
 
 	if itemAppraisal_Flag == nil or itemAppraisal_Flag == 1 then
@@ -331,6 +333,10 @@ function SET_SLOT_STYLESET(slot, itemCls, itemGrade_Flag, itemLevel_Flag, itemAp
 
 	if TryGetProp(itemCls, "Dur") ~= nil then
 		SET_SLOT_DURATION(slot, itemCls)
+	end
+
+	if isPharmacyItem == true then
+		SET_SLOT_PHARMACY_MARK(slot)
 	end
 end
 
@@ -364,11 +370,18 @@ function SET_SLOT_TRANSCEND_LEVEL(slot, transcendLv)
 	
 end
 
-function SET_SLOT_BG_BY_ITEMGRADE(slot, itemgrade)
+function SET_SLOT_BG_BY_ITEMGRADE(slot, itemCls)
 	local skinName = "invenslot_nomal"
 	if slot == nil then
 		return
 	end
+
+	local string_arg = TryGetProp(itemCls, 'StringArg', 'None')
+	if string.find(string_arg, 'pharmacy') ~= nil then
+		skinName = 'invenslot_alchemy'
+	end
+
+	local itemgrade = TryGetProp(itemCls, 'ItemGrade', 0)
 	if itemgrade == nil or itemgrade == 0 or itemgrade == 1 or itemgrade == "None" then
 		slot:SetSkinName(skinName)
 		return
@@ -493,7 +506,7 @@ function SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, invItem, obj, count, font)
 					font = "{s14}{ol}{b}";
 				end
 
-				if TryGetProp(obj, 'ExpireDateTime', 'None') ~= 'None' then
+				if GET_ITEM_EXPIRE_TIME(obj) ~= 'None' then
 					if 1000 <= count then	-- 6자리 수 폰트 크기 조정
 						font = "{s12}{ol}{b}";
 					end
@@ -506,7 +519,7 @@ function SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, invItem, obj, count, font)
 					font = "{s14}{ol}{b}";
 				end
 
-				if TryGetProp(obj, 'ExpireDateTime', 'None') ~= 'None' then					
+				if GET_ITEM_EXPIRE_TIME(obj) ~= 'None' then					
 					if 1000 <= invItem.count then	-- 6자리 수 폰트 크기 조정
 						font = "{s12}{ol}{b}";
 					end
@@ -604,4 +617,11 @@ function GET_SLOT_ITEM_TYPE(slot)
 		return 0;
 	end
 	return iconinfo.type;
+end
+
+function SET_SLOT_PHARMACY_MARK(slot)
+	local pharmacy_icon = slot:CreateOrGetControl('picture', slot:GetName() .. '_PharmacyIcon', 58, 58, ui.RIGHT, ui.TOP, 0, 0, 0, 0)
+	AUTO_CAST(pharmacy_icon, 'ui::CPicture')
+	pharmacy_icon:SetImage('itemslot_alchemy_mark')
+	pharmacy_icon:EnableHitTest(0)
 end

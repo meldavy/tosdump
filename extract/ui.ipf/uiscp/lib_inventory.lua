@@ -640,7 +640,7 @@ function UPDATE_ETC_ITEM_SLOTSET(slotset, etcType, tooltipType)
 		-- 아이커 종류 표시	
 		SET_SLOT_ICOR_CATEGORY(slot, itemCls);
 
-		if invItem.hasLifeTime == true then
+		if invItem.hasLifeTime == true or GET_ITEM_EXPIRE_TIME(itemCls) ~= 'None' then
 			ICON_SET_ITEM_REMAIN_LIFETIME(icon, etcType);
 			slot:SetFrontImage('clock_inven');
 		else
@@ -685,13 +685,14 @@ function SET_SLOT_INFO_FOR_WAREHOUSE(slot, invItem, tooltipType)
 	icon:SetTooltipArg(tooltipType, invItem.type, invItem:GetIESID());
 	SET_ITEM_TOOLTIP_TYPE(icon, itemCls.ClassID, itemCls, tooltipType);		
 
-	if invItem.hasLifeTime == true or TryGetProp(itemCls, 'ExpireDateTime', 'None') ~= 'None' then
+	if invItem.hasLifeTime == true or GET_ITEM_EXPIRE_TIME(itemCls) ~= 'None' then
 		ICON_SET_ITEM_REMAIN_LIFETIME(icon, IT_WAREHOUSE);
 		slot:SetFrontImage('clock_inven');
 	else
 		CLEAR_ICON_REMAIN_LIFETIME(slot, icon);
 	end
 end
+
 
 function GET_INVENTORY_TREEGROUP(baseidcls)
 	local invenTabName = "All"

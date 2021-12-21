@@ -96,6 +96,7 @@ local MARKET_DETAIL_SETTING_LIST = {
 	"Transcend",
 	"Reinforce_2",
 	"PR",
+	"Grade"
 };
 
 local MARKET_ITEM_COUNT_PER_PAGE = {

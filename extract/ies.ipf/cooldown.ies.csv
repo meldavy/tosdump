@@ -1459,3 +1459,4 @@ ClassID,OverHeatResetTime,ClassName,IsOverHeat,ReducePlayOnly,ForceReset
 4198,6000,Ptati,NO,FALSE,NO
 4199,6000,Moksha,NO,FALSE,NO
 4200,6000,SoulMaster,NO,FALSE,NO
+4208,5000,secret_medicine,NO,FALSE,NO

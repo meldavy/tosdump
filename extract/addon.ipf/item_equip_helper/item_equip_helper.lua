@@ -140,11 +140,15 @@ function GET_ITEM_EQUIP_HELPER_WARNING_TEXT(item, spot)
 	end
 
 	--초월
-	if REINFORCE_ABLE_131014(item) == 1 and TryGetProp(item, "Transcend") == 0 then
+	if IS_TRANSCEND_ABLE_ITEM(item) == 1 and TryGetProp(item, "Transcend") == 0 then
 		concat_string("Transcend")
 	end
-	--강화
-	if IS_TRANSCEND_ABLE_ITEM(item) == 1 and TryGetProp(item, "Reinforce_2") == 0 then
+	--강화	
+	if REINFORCE_ABLE_131014(item) == 1 and TryGetProp(item, "Reinforce_2") == 0 then
+		concat_string("Reinforce_2")
+	end
+	-- 가디스 강화 체크
+	if TryGetProp(item, 'Reinforce_Type', 'None') == 'goddess' and TryGetProp(item, "Reinforce_2") == 0 then
 		concat_string("Reinforce_2")
 	end
 

@@ -363,11 +363,7 @@ function UPDATE_PREMIUM_BOOST_TOOLTIP(tooltipframe, handle, buff_id, numarg2)
 	local pc = GetMyPCObject()
 
 	local weekly_up = tooltipframe:GetChild("weekly_up");
-	weekly_up:SetTextByKey('value', GET_COMMAED_STRING(GET_PVP_MINE_MISC_BOOST_COUNT(pc)))
-	local uphill = tooltipframe:GetChild("uphill");
-	uphill:SetTextByKey('value', GET_COMMAED_STRING(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST(pc, 'uphill')))
-	local rift = tooltipframe:GetChild("rift");
-	rift:SetTextByKey('value', GET_COMMAED_STRING(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST(pc, 'rift')))
+	weekly_up:SetTextByKey('value', GET_COMMAED_STRING(GET_PVP_MINE_MISC_BOOST_COUNT(pc)))	
 	local solo_dun = tooltipframe:GetChild("solo_dun");
 	solo_dun:SetTextByKey('value', GET_COMMAED_STRING(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST(pc, 'solo_dun')))
 	local weekly_boss = tooltipframe:GetChild("weekly_boss");

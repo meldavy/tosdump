@@ -28,7 +28,6 @@
 		<tab name="rankingTab" parent="gb_adventure" rect="0 0 120 500" margin="0 140 35 0" layout_gravity="right top" itemspc="25" vertical="true" skin="tab3"/>
 		<tabitem name="adventureBookRankingTab" parent="rankingTab" layout_gravity="left top" skinspace="20" width="100" skin="tab2" normalimage="adventure_rankingbtn" overimage="adventure_rankingbtn_cursoron" selectimage="adventure_rankingbtn_clicked" texttooltip="{@st59}모험일지 랭킹{/}"/>
 		<tabitem name="teamBattleRankingTab" parent="rankingTab" layout_gravity="left top" skinspace="20" width="100" skin="tab2" normalimage="adventure_teambattle" overimage="adventure_teambattle_cursoron" selectimage="adventure_teambattle_clicked" texttooltip="{@st59}팀배틀리그 랭킹{/}"/>
-		<tabitem name="upHillRankingTab" parent="rankingTab" layout_gravity="left top" skinspace="20" width="100" skin="tab2" normalimage="adventure_uphill" overimage="adventure_uphill_cursoron" selectimage="adventure_uphill_clicked" texttooltip="{@st59}업힐디펜스 랭킹{/}"/>
 		<!-- 모험일지 탭 - 공용 탭 -->
 		<tab name="bookmark" parent="gb_adventure" rect="0 0 100 520" margin="87 140 0 0" layout_gravity="left top" clicksound="inven_arrange" imagetype="false" itemspc="25" oversound="button_cursor_over_2" vertical="true" skin="tab3"/>
 		<tabitem name="tab_main" parent="bookmark" layout_gravity="left top" caption="" skinspace="20" width="100" skin="tab2" normalimage="adventure_main" overimage="adventure_main_cursoron" selectimage="adventure_main_clicked" texttooltip="{@st59}메인{/}"/>

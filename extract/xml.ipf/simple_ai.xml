@@ -6819,6 +6819,16 @@
             </ToolScp>
         </List>
     </AI>
+    <AI Name="Ep14_Raid_Eyes_EffectMonAI" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_REVIVAL_PAULIUS_EYES_LOOKAT_TARGET_AI"/>
+            </ToolScp>
+        </List>
+        <StartList>
+            <ToolScp Scp="EnableAIOutOfPC" Client="NO" UseSleep="NO"/>
+        </StartList>
+    </AI>
     <AI Name="FANTASYLIB481_MQ_3_NPC_AI" ActiveMessageMapInBattle="1">
         <StartList>
             <ToolScp Scp="S_AI_EFFECT_ATTACH" Client="NO" UseSleep="NO">
@@ -27855,6 +27865,20 @@ return GET_RATE_MHP(self, damage) * 100"/>
                 <Num Num="11"/>
             </ToolScp>
         </HitList>
+    </AI>
+    <AI Name="DELMORE_CASTLE_GATE_GRESME_RAVEN" UpdateMS="2000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="SCR_DELMORE_CATLE_GATE_GRESME_RAVEN_AI"/>
+            </ToolScp>
+        </List>
+    </AI>
+    <AI Name="DLEMORE_CASTLE_GATE_EYES" UpdateMS="1000" ActiveMessageMapInBattle="1">
+        <List>
+            <ToolScp Scp="SAI_FUNC2_DIRECT" Client="NO" UseSleep="NO">
+                <Str Str="DLEMORE_CASTLE_GATE_EYES_AI"/>
+            </ToolScp>
+        </List>
     </AI>
 	<AI Name="F_Moringponia_Summon_AI" ActiveMessageMapInBattle="1">
 		<List>

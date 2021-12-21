@@ -4,7 +4,7 @@
         <StageList>
             <Stage Name="DefGroup">
                 <ObjList>
-					<Obj Type="Monster" MonType="59708" Pos="976.27#193.56#-1430.29" range="50" genCount="1" genTime="20000" autoGen="0" objectKey="0" searchRange="300" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
+                    <Obj Type="Monster" MonType="59708" Pos="976.27#193.56#-1430.29" range="50" genCount="1" genTime="20000" autoGen="0" objectKey="0" searchRange="300" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
                         <SelfAI ActiveMessageMapInBattle="1">
                             <List>
                                 <ToolScp Scp="S_AI_ATTACK_NEAR_MAXHATECOUNT_CHECK" Client="NO" UseSleep="NO">
@@ -31,7 +31,7 @@
                             </StartList>
                         </SelfAI>
                     </Obj>
-					<Obj Type="Monster" MonType="59708" Pos="930.52#193.56#-1525.68" range="50" genCount="1" genTime="20000" autoGen="0" objectKey="1" searchRange="300" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
+                    <Obj Type="Monster" MonType="59708" Pos="930.52#193.56#-1525.68" range="50" genCount="1" genTime="20000" autoGen="0" objectKey="1" searchRange="300" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
                         <SelfAI ActiveMessageMapInBattle="1">
                             <List>
                                 <ToolScp Scp="S_AI_ATTACK_NEAR_MAXHATECOUNT_CHECK" Client="NO" UseSleep="NO">
@@ -220,7 +220,7 @@
                             </StartList>
                         </SelfAI>
                     </Obj>
-					<Obj Type="Monster" MonType="59707" Pos="958.14#193.56#-1619.86" range="50" genCount="1" genTime="20000" autoGen="0" objectKey="8" searchRange="300" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
+                    <Obj Type="Monster" MonType="59707" Pos="958.14#193.56#-1619.86" range="50" genCount="1" genTime="20000" autoGen="0" objectKey="8" searchRange="300" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
                         <SelfAI ActiveMessageMapInBattle="1">
                             <List>
                                 <ToolScp Scp="S_AI_ATTACK_NEAR_MAXHATECOUNT_CHECK" Client="NO" UseSleep="NO">
@@ -479,6 +479,15 @@
                                 <Num Num="1"/>
                             </ToolScp>
                         </execList>
+                        <listSet>
+                            <ToolScp Scp="MGAME_LIST_PC_ALL" Client="NO" UseSleep="NO"/>
+                        </listSet>
+                        <listExec>
+                            <ToolScp Scp="MLIST_E_RUNSCRIPT" Client="NO" UseSleep="NO">
+                                <Str Str="SCR_EP14_1_FCASTLE5_MGAME_CLEAR_MSG"/>
+                                <Num Num="0"/>
+                            </ToolScp>
+                        </listExec>
                     </Event>
                     <Event eventName="FailCheck">
                         <condList>

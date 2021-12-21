@@ -289,7 +289,6 @@ function JOIN_WORLDPVP_BY_TYPE(frame, pvpType)
 				ui.MsgBox(msg);
 				 return;
 			end
-
 			worldPVP.ReqJoinPVP(pvpType, PVP_STATE_FINDING);
 			join:SetEnable(0);
 		else

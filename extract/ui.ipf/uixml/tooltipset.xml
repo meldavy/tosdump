@@ -262,9 +262,7 @@
 			<groupbox name="gbox" margin="0 0 0 0" scrollbar="false" rect="0 0 400 250" hittestbox="false" skin="test_skin_01_btn_clicked" layout_gravity="left top"/>
 			<labelline name="labelline_1" margin="10 35 0 0" rect="0 0 380 2" skin="labelline_def" layout_gravity="left top"/>
 			<richtext name="richtext_1" margin="9 10 0 0" rect="0 0 380 24" format="{@st42}용병단 증표 부스트 혜택 적용{/}" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="white_18_ol" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
-			<richtext name="weekly_up" margin="10 70 0 0" rect="0 0 380 24" format="주간 획득량 제한 {img green_up_arrow 14 14}%s" param1="value" param1_def="100" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
-			<richtext name="uphill" margin="10 95 0 0" rect="0 0 380 24" format="업힐 디펜스 1회 획득량 {img green_up_arrow 14 14}%s" param1="value" param1_def="20000" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
-			<richtext name="rift" margin="10 95 0 0" rect="0 0 380 24" format="차원 붕괴 지점 1회 획득량 {img green_up_arrow 14 14}%s" param1="value" param1_def="20000" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
+			<richtext name="weekly_up" margin="10 70 0 0" rect="0 0 380 24" format="주간 획득량 제한 {img green_up_arrow 14 14}%s" param1="value" param1_def="100" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>			
 			<richtext name="solo_dun" margin="10 95 0 0" rect="0 0 380 24" format="베르니케 파편 던전 획득량 {img green_up_arrow 14 14}%s" param1="value" param1_def="20000" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
 			<richtext name="weekly_boss" margin="10 45 0 0" rect="0 0 380 24" format="주간 보스 레이드 125K 대미지 보상 획득량 {img green_up_arrow 14 14}%s" param1="value" param1_def="20000" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
 			<richtext name="field" margin="10 280 0 0" rect="0 0 380 24" format="필드 사냥시 획득량 {img green_up_arrow 14 14}%s%" param1="value" param1_def="100" textalign="left top" resizebytext="true" spacey="0" maxwidth="0" fontname="brown_16" fixwidth="false" updateparent="false" drawbackground="false" slideshow="false" layout_gravity="left top"/>
@@ -399,6 +397,28 @@
 			<richtext name="title" parent="titleBox" rect="0 0 440 30" margin="5 5 0 0" fixwidth="false" fixheight="false" updateparent="true" caption="{@st43}{s16}기어 스코어 이상 및 특정 조건에 만족해야 입장이 가능합니다.{/}" resizebytext="true"/>
 		</controls>
 	</tooltip>
+	<tooltip name="dungeonRestrictList" x="0" y="0" width="480" height="100" fixwidth="true" fixheight="false" moveable="false" frameskin="downbox" UpdateScp="UPDATE_DUNGEON_RESTRICT_INFO_TOOLTIP">
+		<userconfig INNER_X="5" INNER_Y="5" ICON_SIZE="23"/>
+		<controls>
+			<groupbox name="titleBox" rect="0 0 640 30" margin="5 5 0 0" fixwidth="true" fixheight="false" draw="false" updateparent="true" scrollbar="false"/>
+			<richtext name="title" parent="titleBox" rect="0 0 440 30" margin="5 5 0 0" fixwidth="false" fixheight="false" updateparent="true" caption="{@st43}{s16}현재 던전에 적용된 요소를 나타냅니다.{/}" resizebytext="true"/>
+		</controls>
+	</tooltip>
+<tooltip name="skill_pubcreatechar" x="0" y="0" frameskin="None" marginy="10" fixwidth="true" width="500" height="1000" moveable="false" blendtime="" UpdateScp="UPDATE_SKILL_PUB_CREATECHAR_TOOLTIP">
+		<controls>
+			<groupbox name="skill_desc" margin="0 0 500 50" rect="0 0 500 50" skin="custom_box_bg" hittest="false" draw="true" updateparent="true" scrollbar="false" layout_gravity="left top"/>
+			<picture name="icon_frame" image="skilltooltip_skill_image_slot" layout_gravity="left top" rect="0 0 100 100" stretch="true" margin="20 70 0 0" parent="skill_desc"/>
+			<picture name="icon" layout_gravity="left top" rect="0 0 85 85" stretch="true" margin="28 78 0 0" parent="skill_desc"/>
+			<groupbox name="weapon_box" margin="0 170 0 0" rect="0 0 500 40" hittest="false" draw="false" updateparent="true" scrollbar="false" layout_gravity="center top" parent="skill_desc"/>
+			<groupbox name="stance_pic" margin="120 0 0 0" rect="0 0 380 50" hittest="false" draw="false" updateparent="true" scrollbar="false" layout_gravity="left top" parent="weapon_box"/>
+			<richtext name="name" layout_gravity="center top" fontname="yellow_18_ol" rect="0 0 494 60" fixwidth="true" textalign="center center" margin="1 2 0 0" resizebytext="false" hittest="false" updateparent="true" parent="skill_desc"/>
+			<richtext name="type" layout_gravity="center top" rect="0 0 160 20" fixwidth="false" margin="0 70 0 0" hittest="false" updateparent="true" parent="skill_desc"/>
+			<richtext name="desc" layout_gravity="left top" fontname="white_16_b" rect="0 0 350 20" fixwidth="true" margin="130 80 0 0" resizebytext="true" hittest="false" updateparent="true" parent="skill_desc"/>
+			<richtext name="trade_text" format="총 거래 불가: %s개" param1="count" layout_gravity="right top" fontname="brown_16_b" rect="0 0 150 20" fixwidth="true" textalign="right center" margin="0 70 20 0" hittest="false" updateparent="true" parent="skill_desc"/>
+			<richtext name="weapon_text" format="{@st66d}착용 무기" layout_gravity="left center" fontname="white_18_ol" rect="0 0 100 50" fixwidth="true" textalign="left center" margin="30 -5 0 0" hittest="false" updateparent="true" parent="weapon_box"/>
+			<groupbox name="ability_desc" margin="500 0 0 50" rect="0 0 500 50" hittest="false" skin="custom_box_bg" draw="true" updateparent="true" scrollbar="false" layout_gravity="left top"/>
+		</controls>
+	</tooltip>
 	<tooltip name="ancient_card" x="0" y="0" frameskin="None" marginy="10" fixwidth="true" width="280" height="650" moveable="false" blendtime="" UpdateScp="UPDATE_ANCIENT_CARD_TOOLTIP">
 		<userconfig NORMAL_GRADE_TEXT="{@st42b}{s14}{#ffffff}노말" MAGIC_GRADE_TEXT="{@st42b}{s14}{#0e7fe8}매직" UNIQUE_GRADE_TEXT="{@st42b}{s14}{#d92400}유니크" LEGEND_GRADE_TEXT="{@st42b}{s14}{#ffa800}레전드"/>
 		<controls>
@@ -437,21 +457,6 @@
 			<richtext name="combo_passive" rect="0 0 461 20" margin="15 0 0 0" parent="combo_passive_gbox" layout_gravity="left top" updateparent="true" fontname="white_20_ol_ds" caption="{@st42b}{s14}{ds}◆조합 패시브" resizebytext="true"/>
 			<richtext name="combo_passive_help" rect="0 0 461 20" margin="25 38 0 0" layout_gravity="left top" parent="combo_passive_gbox" updateparent="true" fontname="white_16_ol" caption="aaaaa" resizebytext="true"/>
 			<groupbox name="combo_passive_list_gbox" rect="0 0 461 20" margin="0 30 0 0" layout_gravity="left top" parent="combo_passive_gbox" draw="false" updateparent="true" scrollbar="false"/>
-		</controls>
-	</tooltip>
-<tooltip name="skill_pubcreatechar" x="0" y="0" frameskin="None" marginy="10" fixwidth="true" width="500" height="1000" moveable="false" blendtime="" UpdateScp="UPDATE_SKILL_PUB_CREATECHAR_TOOLTIP">
-		<controls>
-			<groupbox name="skill_desc" margin="0 0 500 50" rect="0 0 500 50" skin="custom_box_bg" hittest="false" draw="true" updateparent="true" scrollbar="false" layout_gravity="left top"/>
-			<picture name="icon_frame" image="skilltooltip_skill_image_slot" layout_gravity="left top" rect="0 0 100 100" stretch="true" margin="20 70 0 0" parent="skill_desc"/>
-			<picture name="icon" layout_gravity="left top" rect="0 0 85 85" stretch="true" margin="28 78 0 0" parent="skill_desc"/>
-			<groupbox name="weapon_box" margin="0 170 0 0" rect="0 0 500 40" hittest="false" draw="false" updateparent="true" scrollbar="false" layout_gravity="center top" parent="skill_desc"/>
-			<groupbox name="stance_pic" margin="120 0 0 0" rect="0 0 380 50" hittest="false" draw="false" updateparent="true" scrollbar="false" layout_gravity="left top" parent="weapon_box"/>
-			<richtext name="name" layout_gravity="center top" fontname="yellow_18_ol" rect="0 0 494 60" fixwidth="true" textalign="center center" margin="1 2 0 0" resizebytext="false" hittest="false" updateparent="true" parent="skill_desc"/>
-			<richtext name="type" layout_gravity="center top" rect="0 0 160 20" fixwidth="false" margin="0 70 0 0" hittest="false" updateparent="true" parent="skill_desc"/>
-			<richtext name="desc" layout_gravity="left top" fontname="white_16_b" rect="0 0 350 20" fixwidth="true" margin="130 80 0 0" resizebytext="true" hittest="false" updateparent="true" parent="skill_desc"/>
-			<richtext name="trade_text" format="총 거래 불가: %s개" param1="count" layout_gravity="right top" fontname="brown_16_b" rect="0 0 150 20" fixwidth="true" textalign="right center" margin="0 70 20 0" hittest="false" updateparent="true" parent="skill_desc"/>
-			<richtext name="weapon_text" format="{@st66d}착용 무기" layout_gravity="left center" fontname="white_18_ol" rect="0 0 100 50" fixwidth="true" textalign="left center" margin="30 -5 0 0" hittest="false" updateparent="true" parent="weapon_box"/>
-			<groupbox name="ability_desc" margin="500 0 0 50" rect="0 0 500 50" hittest="false" skin="custom_box_bg" draw="true" updateparent="true" scrollbar="false" layout_gravity="left top"/>
 		</controls>
 	</tooltip>
 <tooltip name="chatballoon_skin_info" x="0" y="0" frameskin="test_Item_tooltip_normal" width="410" height="255" UpdateScp="UPDATE_CHATBALLOON_SKIN_INFO" moveable="false" blendtime="" marginy="10" fixwidth="true">

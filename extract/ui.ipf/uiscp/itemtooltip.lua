@@ -279,10 +279,10 @@ function DRAW_REMAIN_LIFE_TIME(tooltipframe, invitem, yPos, mainframename)
 	local tooltip_lifeTimeinfo_CSet = gBox:CreateControlSet('tooltip_lifeTimeinfo', 'tooltip_lifeTimeinfo', 0, yPos);
 	tolua.cast(tooltip_lifeTimeinfo_CSet, "ui::CControlSet");
 
-	local expire_datetime = TryGetProp(invitem, 'ExpireDateTime', 'None')
-
+	local expire_datetime = GET_ITEM_EXPIRE_TIME(invitem)
+	
 	local lifeTime_text = GET_CHILD(tooltip_lifeTimeinfo_CSet,'lifeTime','ui::CRichText');
-	if string.find(invitem.ItemLifeTime, "None") ~= nil and expire_datetime == 'None'  then
+	if string.find(invitem.ItemLifeTime, "None") ~= nil and expire_datetime == 'None' then
 		local timeTxt = GET_TIME_TXT(invitem.LifeTime);
 		lifeTime_text:SetTextByKey("p_LifeTime", timeTxt );				
 	else

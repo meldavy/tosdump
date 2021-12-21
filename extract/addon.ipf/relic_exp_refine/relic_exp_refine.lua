@@ -45,25 +45,23 @@ function RELIC_EXP_REFINE_SET_COUNT(frame, slot)
 
 	requireCount:SetTextByKey('value', refine_count * 10)
 	resultCount:SetTextByKey('value', refine_count)
-
+	
 	local refineBtn = GET_CHILD_RECURSIVELY(frame, 'refineBtn')
+	local price_gauge = GET_CHILD_RECURSIVELY(frame, 'price_gauge')
 	if refine_count > 0 then
-		refineBtn:SetEnable(1)
+		local totalPrice = tonumber(RELIC_EXP_REFINE_TOTAL_PRICE()) / 100000
+		local discountPrice = tonumber(RELIC_EXP_REFINE_TOTAL_DISCOUNT_PRICE()) / 100000
+		price_gauge:SetPoint(discountPrice, totalPrice)
+		price_gauge:ShowWindow(1)
+		if discountPrice >= totalPrice then
+			refineBtn:SetEnable(1)
+		else
+			refineBtn:SetEnable(0)
+		end
 	else
+		price_gauge:ShowWindow(0)
 		refineBtn:SetEnable(0)
 	end
-
-    local totalPrice = RELIC_EXP_REFINE_TOTAL_PRICE()
-    local discountPrice = RELIC_EXP_REFINE_TOTAL_DISCOUNT_PRICE()
-    local discountedPrice = SumForBigNumberInt64(totalPrice, '-'..discountPrice)
-
-    local price = GET_CHILD_RECURSIVELY(frame, 'price')
-	price:SetTextByKey('value', GET_COMMAED_STRING(discountedPrice))
-
-	local cur_money_str = GET_TOTAL_MONEY_STR()
-	local result_money = SumForBigNumberInt64(cur_money_str, '-' .. discountedPrice)
-	local inven_money = GET_CHILD_RECURSIVELY(frame, 'inven_money')
-	inven_money:SetTextByKey('value', GET_COMMAED_STRING(result_money))
 
 	SET_MATERIAL_COUNT_INFO_LIST(frame)
 end

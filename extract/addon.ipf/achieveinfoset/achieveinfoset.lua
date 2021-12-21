@@ -111,7 +111,8 @@ local CTRLSET_MARGIN_BOTTOM = 10
 local SCROLL_WIDTH = 30
 local SCROLL_WIDTH_TITLE = 90
 function MAKE_ACHIEVE_INFO_BASE_CTRL(gBox, ctrlname, x, y, cls)
-	local info = ADVENTURE_BOOK_ACHIEVE_CONTENT.ACHIEVE_INFO(cls.ClassID)
+	local clsID = cls.ClassID
+	local info = ADVENTURE_BOOK_ACHIEVE_CONTENT.ACHIEVE_INFO(clsID)
 
 	local ctrlset = gBox:CreateOrGetControlSet('emptyset2', ctrlname, x, y);
 	tolua.cast(ctrlset, 'ui::CControlSet');
@@ -164,7 +165,18 @@ function MAKE_ACHIEVE_INFO_BASE_CTRL(gBox, ctrlname, x, y, cls)
 	gauge:SetStatFont(0,"white_14_ol");	-- 폰트
 	gauge:SetStatAlign(0, ui.CENTER_HORZ, ui.CENTER_VERT); -- 정렬
 	gauge:SetSkinName("gauge_produce_gold");
-	gauge:SetPoint(info['point'], info['need_count']);
+	local point = 0
+	local maxpoint = 0
+	if info['level_group_name'] ~= nil then
+		local prev_needpoint = GetPrevLevelAchieveNeedCount(clsID)
+		point = math.max(0, info['point'] - prev_needpoint)
+		maxpoint = info['need_count'] - prev_needpoint
+	else
+		point = info['point']
+		maxpoint = info['need_count']
+	end
+
+	gauge:SetPoint(point, maxpoint);
 	y = y + gauge:GetHeight();
 
 	local iconX = 22;

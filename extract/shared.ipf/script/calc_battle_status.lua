@@ -50,6 +50,16 @@ function get_hp_recovery_ratio(pc, value)
         end
     end
 
+    if IsBuffApplied(pc, "PAULIUS_RAGE_HEAL_REDUCE_DEBUFF") == "YES" then
+        local add_rate = GetExProp(pc, "DelmoreRaidReduceHpRecoveryAddRate");
+        if add_rate ~= 0 then
+            if add_rate <= -1.0 then
+                add_rate = -1.0;
+            end
+            ratio = ratio + (ratio * add_rate);
+        end
+    end
+
     return math.floor(ratio)
 end
 

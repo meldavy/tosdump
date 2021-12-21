@@ -8,6 +8,13 @@ function MARKET_ON_INIT(addon, frame)
 end
 
 function ON_OPEN_MARKET(frame)
+	local mapClsName = session.GetMapName()
+    local mapCls = GetClass('Map', mapClsName)
+    if TryGetProp(mapCls, 'MapType', 'None') ~= 'City' then
+        ui.SysMsg(ClMsg('AllowedInTown'))
+        return
+	end
+	
 	MARKET_BUYMODE(frame)
 	MARKET_FIRST_OPEN(frame);
 	ui.OpenFrame("inventory");
@@ -304,7 +311,13 @@ function MARKET_DRAW_CTRLSET_DEFAULT(frame, isShowLevel)
 		end
 
 		local name = ctrlSet:GetChild("name");
-		name:SetTextByKey("value", GET_FULL_NAME(itemObj));
+		local name_text = GET_FULL_NAME(itemObj)
+		local grade = shared_item_earring.get_earring_grade(itemObj)		
+		if grade > 0 then
+			name_text = name_text .. '(' .. grade .. ClMsg('Grade') .. ')'
+		end
+
+		name:SetTextByKey("value", name_text);
 
 		local level = ctrlSet:GetChild("level");
 		local levelValue = ""
@@ -383,7 +396,26 @@ local function _CREATE_SEAL_OPTION(ctrlSet, itemObj)
 	end
 end
 
-function MARKET_DRAW_CTRLSET_EQUIP(frame, isShowSocket)      
+local function _CREATE_EARRING_OPTION(ctrlSet, itemObj)	
+	if TryGetProp(itemObj, 'GroupName') ~= 'Earring' then
+		return;
+	end
+	
+	for i = 1, shared_item_earring.get_max_special_option_count(TryGetProp(itemObj, 'ItemLv', 0)) do
+		local ctrl = TryGetProp(itemObj, 'EarringSpecialOption_' .. i, 'None')
+		if ctrl ~= 'None' then
+			local cls = GetClass('Job', ctrl)
+			local ctrl = TryGetProp(cls, 'Name', 'None')
+			
+			local rank = TryGetProp(itemObj, 'EarringSpecialOptionRankValue_' .. i, 0)			
+			local lv = TryGetProp(itemObj, 'EarringSpecialOptionLevelValue_' .. i, 0)			
+			local text = ScpArgMsg('EarringSpecialOption{ctrl}{rank}{lv}', 'ctrl', ctrl, 'rank', rank, 'lv', lv)
+			SET_MARKET_EQUIP_CTRLSET_OPTION_TEXT(ctrlSet, text);
+		end
+	end
+end
+
+function MARKET_DRAW_CTRLSET_EQUIP(frame, isShowSocket)     	
 	local itemlist = GET_CHILD_RECURSIVELY(frame, "itemListGbox");
 	itemlist:RemoveAllChild();
 	local mySession = session.GetMySession();
@@ -425,7 +457,13 @@ function MARKET_DRAW_CTRLSET_EQUIP(frame, isShowSocket)
 		MARKET_CTRLSET_SET_ICON(ctrlSet, itemObj, marketItem);
 
 		local name = GET_CHILD_RECURSIVELY(ctrlSet, "name");
-		name:SetTextByKey("value", GET_FULL_NAME(itemObj));
+		local name_text = GET_FULL_NAME(itemObj)
+		local grade = shared_item_earring.get_earring_grade(itemObj)	
+		if grade > 0 then
+			name_text = name_text .. '(' .. grade .. ClMsg('Grade') .. ')'
+		end
+
+		name:SetTextByKey("value", name_text);
 
 		local level = GET_CHILD_RECURSIVELY(ctrlSet, "level");
 		level:SetTextByKey("value", itemObj.UseLv);
@@ -662,6 +700,7 @@ function MARKET_DRAW_CTRLSET_EQUIP(frame, isShowSocket)
 		end
 
 		_CREATE_SEAL_OPTION(ctrlSet, itemObj);
+		_CREATE_EARRING_OPTION(ctrlSet, itemObj);
 
 		for i = 1 , #list2 do
 			local propName = list2[i];
@@ -750,7 +789,7 @@ function SET_MARKET_EQUIP_CTRLSET_OPTION_TEXT(ctrlSet, str)
     if optionText == nil then
         return
     end
-
+	
 	optionText:SetTextByKey("value", str)
 	if index < 7 then
 		ctrlSet:SetUserValue("optionIndex", index + 1)

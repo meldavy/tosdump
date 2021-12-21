@@ -379,3 +379,11 @@ function igbore_skill_list_check(sklName, list)
 	end
 	return 1;
 end
+
+function ignore_skill_hit_check(target)
+	if IsBuffApplied(target, 'InfernalShadow_Debuff') == "YES" then
+		return 1;
+	end
+
+	return 0;
+end

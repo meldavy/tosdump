@@ -914,7 +914,7 @@ function EXEC_SELL_RECYCLE_ITEM()
 			if invitem ~= nil then 
 				local itemobj = GetIES(invitem:GetObject());
 				if itemobj ~= nil then
-					if itemobj["HatPropName_1"] ~= "None" then
+					if TryGetProp(itemobj, "HatPropName_1", "None") ~= "None" then
 						isHatOption = 1
 					end
 				end

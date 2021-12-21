@@ -4453,10 +4453,9 @@ function GET_MAXHATE_COUNT(self)
 	            byBuff = 0;
 	        end
 	        
-	        maxHateCount = defaultMaxHateCount + byBuff;
+            maxHateCount = defaultMaxHateCount + byBuff;
 	    end
     end
-    
     return maxHateCount;
 end
 

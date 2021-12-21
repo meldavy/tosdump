@@ -39,7 +39,7 @@
                             </StartList>
                         </SelfAI>
                     </Obj>
-					<Obj Type="Monster" MonType="59702" Pos="1245.38#58.91#-1096.39" angle="-86" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " range="200" genCount="1" maxStackCount="10" genTime="1" autoGen="0" objectKey="1" searchRange="1000" tendency="1">
+                    <Obj Type="Monster" MonType="59702" Pos="1245.38#58.91#-1096.39" angle="-86" range="200" genCount="1" maxStackCount="10" genTime="1" autoGen="0" objectKey="1" searchRange="1000" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
                         <SelfAI ActiveMessageMapInBattle="1">
                             <List>
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
@@ -61,7 +61,7 @@
                             </StartList>
                         </SelfAI>
                     </Obj>
-					<Obj Type="Monster" MonType="59702" Pos="1253.40#58.91#-1672.96" angle="79" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " range="200" genCount="1" maxStackCount="10" genTime="1" autoGen="0" objectKey="2" searchRange="1000" tendency="1">
+                    <Obj Type="Monster" MonType="59702" Pos="1253.40#58.91#-1672.96" angle="79" range="200" genCount="1" maxStackCount="10" genTime="1" autoGen="0" objectKey="2" searchRange="1000" propList="&apos;GiveEXP&apos; &apos;NO&apos; &apos;DropItemList&apos; &apos;None&apos; " tendency="1">
                         <SelfAI ActiveMessageMapInBattle="1">
                             <List>
                                 <ToolScp Scp="S_AI_ATTACK_NEAR" Client="NO" UseSleep="NO">
@@ -135,6 +135,15 @@
                             </ToolScp>
                             <ToolScp Scp="GAME_EVT_OFF" Client="NO" UseSleep="NO"/>
                         </execList>
+                        <listSet>
+                            <ToolScp Scp="MGAME_LIST_PC_ALL" Client="NO" UseSleep="NO"/>
+                        </listSet>
+                        <listExec>
+                            <ToolScp Scp="MLIST_E_RUNSCRIPT" Client="NO" UseSleep="NO">
+                                <Str Str="SCR_EP14_1_FCASTLE5_MGAME_CLEAR_MSG"/>
+                                <Num Num="0"/>
+                            </ToolScp>
+                        </listExec>
                     </Event>
                     <Event eventName="FailCheck">
                         <condList>

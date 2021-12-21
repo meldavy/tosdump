@@ -494,6 +494,45 @@
         <Key Name="Fail_Goddess_Reinforce_Revision" Value="109424"/>
         <Key Name="ReinforceRevision" Value="109644"/>
         <Key Name="UsageDesc" Value="110560"/>
+        <Key Name="CurrentPos" Value="110950"/>
+        <Key Name="EarringSpecialOptionLevelValue_1" Value="110933"/>
+        <Key Name="EarringSpecialOptionLevelValue_2" Value="110943"/>
+        <Key Name="EarringSpecialOptionLevelValue_3" Value="110935"/>
+        <Key Name="EarringSpecialOptionRankValue_1" Value="110945"/>
+        <Key Name="EarringSpecialOptionRankValue_2" Value="110934"/>
+        <Key Name="EarringSpecialOptionRankValue_3" Value="110929"/>
+        <Key Name="EarringSpecialOption_1" Value="110936"/>
+        <Key Name="EarringSpecialOption_2" Value="110932"/>
+        <Key Name="EarringSpecialOption_3" Value="110930"/>
+        <Key Name="ExpireTime" Value="110937"/>
+        <Key Name="GoalPos_1" Value="110951"/>
+        <Key Name="GoalPos_2" Value="110926"/>
+        <Key Name="GoalPos_3" Value="110938"/>
+        <Key Name="GoalPos_4" Value="110946"/>
+        <Key Name="GoalReward_1" Value="110918"/>
+        <Key Name="GoalReward_2" Value="110922"/>
+        <Key Name="GoalReward_3" Value="110939"/>
+        <Key Name="GoalReward_4" Value="110917"/>
+        <Key Name="Grade" Value="110953"/>
+        <Key Name="HurdlePos_1" Value="110947"/>
+        <Key Name="HurdlePos_10" Value="110927"/>
+        <Key Name="HurdlePos_11" Value="110921"/>
+        <Key Name="HurdlePos_12" Value="110919"/>
+        <Key Name="HurdlePos_13" Value="110923"/>
+        <Key Name="HurdlePos_14" Value="110928"/>
+        <Key Name="HurdlePos_15" Value="110944"/>
+        <Key Name="HurdlePos_16" Value="110940"/>
+        <Key Name="HurdlePos_2" Value="110949"/>
+        <Key Name="HurdlePos_3" Value="110920"/>
+        <Key Name="HurdlePos_4" Value="110924"/>
+        <Key Name="HurdlePos_5" Value="110925"/>
+        <Key Name="HurdlePos_6" Value="110948"/>
+        <Key Name="HurdlePos_7" Value="110916"/>
+        <Key Name="HurdlePos_8" Value="110941"/>
+        <Key Name="HurdlePos_9" Value="110952"/>
+        <Key Name="NeutralizeCount" Value="110931"/>
+        <Key Name="RecipeSize" Value="110954"/>
+        <Key Name="TryCount" Value="110942"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Party">
         <Key Name="P_PARTY_Q_040" Value="53"/>
@@ -6416,6 +6455,85 @@
         <Key Name="HadVisited_5001" Value="110790"/>
         <Key Name="IsStartLine3_TutoPass" Value="110789"/>
         <Key Name="AchieveReward_QA14_ep14_1_f_castle_5" Value="110838"/>
+        <Key Name="AchieveReward_Archeology_Lv470_1" Value="110873"/>
+        <Key Name="AchieveReward_Archeology_Lv470_2" Value="110897"/>
+        <Key Name="AchieveReward_Archeology_Lv470_3" Value="110902"/>
+        <Key Name="AchieveReward_Archeology_Lv470_4" Value="110900"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Hard_1" Value="110860"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Hard_2" Value="110870"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Hard_3" Value="110872"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Hard_4" Value="110867"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Nomal_1" Value="110888"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Nomal_2" Value="110911"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Nomal_3" Value="110868"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Nomal_4" Value="110861"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Solo_1" Value="110876"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Solo_2" Value="110886"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Solo_3" Value="110889"/>
+        <Key Name="AchieveReward_Earring_Raid_Achieve_Solo_4" Value="110883"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Auto_1" Value="110885"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Auto_2" Value="110879"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Auto_3" Value="110901"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Auto_4" Value="110893"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Party_1" Value="110864"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Party_2" Value="110874"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Party_3" Value="110892"/>
+        <Key Name="AchieveReward_Goddess_Raid_Delmore_Party_4" Value="110880"/>
+        <Key Name="AchieveReward_Pharmacy_470_Counteractive_1" Value="110912"/>
+        <Key Name="AchieveReward_Pharmacy_470_Counteractive_2" Value="110877"/>
+        <Key Name="AchieveReward_Raid_Delmore_bronze" Value="110862"/>
+        <Key Name="AchieveReward_Raid_Delmore_gold" Value="110891"/>
+        <Key Name="AchieveReward_Raid_Delmore_silver" Value="110882"/>
+        <Key Name="AchieveReward_pharmacy_Reward470_1" Value="110914"/>
+        <Key Name="AchieveReward_pharmacy_Reward470_2" Value="110895"/>
+        <Key Name="AchieveReward_pharmacy_Reward470_3" Value="110865"/>
+        <Key Name="AchieveReward_pharmacy_Reward470_4" Value="110909"/>
+        <Key Name="AchieveReward_pharmacy_Tuto" Value="110899"/>
+        <Key Name="AchieveReward_pharmacy_assess470_1" Value="110913"/>
+        <Key Name="AchieveReward_pharmacy_assess470_2" Value="110887"/>
+        <Key Name="AchieveReward_pharmacy_assess470_3" Value="110906"/>
+        <Key Name="EVENT_2112_6TH_DAY_REWARD_TICKET" Value="110894"/>
+        <Key Name="EVENT_2112_6TH_TIME_REWARD_TICKET" Value="110863"/>
+        <Key Name="EarringRaidEnableEntryCount" Value="110871"/>
+        <Key Name="HOUSING_CRAFT_VALUE_2" Value="110881"/>
+        <Key Name="HadVisited_11251" Value="110910"/>
+        <Key Name="InDunCountType_820" Value="110896"/>
+        <Key Name="InDunCountType_821" Value="110890"/>
+        <Key Name="InDunCountType_822" Value="110878"/>
+        <Key Name="InDunCountType_823" Value="110905"/>
+        <Key Name="IndunWeeklyEnteredCount_820" Value="110875"/>
+        <Key Name="IndunWeeklyEnteredCount_821" Value="110908"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_1" Value="110869"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_2" Value="110915"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_3" Value="110903"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_4" Value="110884"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_5" Value="110898"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_6" Value="110907"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_7" Value="110904"/>
+        <Key Name="PHARMACY_BOUNTY_SHOP_8" Value="110866"/>
+        <Key Name="HadVisited_11250" Value="110972"/>
+        <Key Name="archeology_lv" Value="110968"/>
+        <Key Name="archeology_map_1" Value="110973"/>
+        <Key Name="archeology_map_1_complete" Value="110971"/>
+        <Key Name="archeology_map_1_pos_1" Value="110963"/>
+        <Key Name="archeology_map_1_pos_2" Value="110976"/>
+        <Key Name="archeology_map_1_pos_3" Value="110966"/>
+        <Key Name="archeology_map_2" Value="110974"/>
+        <Key Name="archeology_map_2_complete" Value="110967"/>
+        <Key Name="archeology_map_2_pos_1" Value="110978"/>
+        <Key Name="archeology_map_2_pos_2" Value="110980"/>
+        <Key Name="archeology_map_2_pos_3" Value="110970"/>
+        <Key Name="archeology_map_3" Value="110969"/>
+        <Key Name="archeology_map_3_complete" Value="110975"/>
+        <Key Name="archeology_map_3_pos_1" Value="110977"/>
+        <Key Name="archeology_map_3_pos_2" Value="110965"/>
+        <Key Name="archeology_map_3_pos_3" Value="110964"/>
+        <Key Name="archeology_next_reset_time" Value="110979"/>
+        <Key Name="archeology_try_count" Value="110962"/>
+        <Key Name="Delmore_Raid_EnableEntryCount" Value="110987"/>
+        <Key Name="PHARMACY_GIVE_TUTORIAL_ITEM" Value="110988"/>
+        <Key Name="UITUTO_PHARMACY" Value="110989"/>
+        <Key Name="EVENT_CPQ_CHALLENGE_COUNT" Value="110993"/>
     </KeyIDSpc>
     <KeyIDSpc Name="PCEtc">
         <Key Name="Kill_boss_Clymen_Q2" Value="7788"/>
@@ -15678,6 +15796,35 @@
         <Key Name="Hide_3357" Value="110808"/>
         <Key Name="Hide_3358" Value="110810"/>
         <Key Name="EP14_1_FCASTLE5_MQ_9_TRACK" Value="110835"/>
+        <Key Name="HadVisited_11251" Value="110851"/>
+        <Key Name="InDunCountType_820" Value="110854"/>
+        <Key Name="InDunCountType_821" Value="110847"/>
+        <Key Name="InDunCountType_822" Value="110857"/>
+        <Key Name="InDunCountType_823" Value="110845"/>
+        <Key Name="IndunWeeklyEnteredCount_820" Value="110852"/>
+        <Key Name="IndunWeeklyEnteredCount_821" Value="110844"/>
+        <Key Name="Kill_Earring_boss_Asiomage" Value="110850"/>
+        <Key Name="Kill_Earring_boss_Glacier" Value="110848"/>
+        <Key Name="Kill_Earring_boss_Moringponia" Value="110859"/>
+        <Key Name="Kill_Earring_boss_Pbeta" Value="110858"/>
+        <Key Name="Kill_Earring_boss_Skiaclipse" Value="110856"/>
+        <Key Name="Kill_Earring_boss_Tantaliser" Value="110849"/>
+        <Key Name="Kill_Earring_boss_Velcoffer" Value="110846"/>
+        <Key Name="Kill_Earring_boss_Wastrel" Value="110853"/>
+        <Key Name="Kill_Earring_boss_froster_lord" Value="110855"/>
+        <Key Name="Kill_Earring_boss_ignas" Value="110842"/>
+        <Key Name="Kill_Earring_boss_kucarry_balzermancer" Value="110843"/>
+        <Key Name="HadVisited_11250" Value="110955"/>
+        <Key Name="Hide_3359" Value="110956"/>
+        <Key Name="InteractionRideTargetClassName" Value="110960"/>
+        <Key Name="InteractionTargetClassName" Value="110958"/>
+        <Key Name="Kill_boss_DelmoreCastleGate" Value="110959"/>
+        <Key Name="Kill_boss_RevivalPaulius" Value="110961"/>
+        <Key Name="Kill_boss_RevivalPaulius_pattern_mon" Value="110957"/>
+        <Key Name="BountyHunt_Trade_Pharmacy_Shop" Value="110986"/>
+        <Key Name="BalanceCare_Give_Reset_211226" Value="110990"/>
+        <Key Name="Kill_boss_DelmoreCastleGate_Auto" Value="110992"/>
+        <Key Name="Kill_boss_DelmoreCastleGate_Solo" Value="110991"/>
     </KeyIDSpc>
     <KeyIDSpc Name="GuildMember">
         <Key Name="Name" Value="9011"/>
@@ -24629,6 +24776,14 @@
         <Key Name="EP14_3LINE_TUTO_MQ_9_1" Value="110832"/>
         <Key Name="EP14_1_FCASTLE5_MQ_9" Value="110837"/>
         <Key Name="TUTO_START_LINE3" Value="110836"/>
+        <Key Name="MG_Last_EARRING_RAID" Value="110841"/>
+        <Key Name="MG_Last_EARRING_RAID_Hard" Value="110839"/>
+        <Key Name="MG_Last_EARRING_RAID_Normal" Value="110840"/>
+        <Key Name="EP14_F_CASTLE_5_RAID_1" Value="110982"/>
+        <Key Name="EP14_F_CASTLE_5_RAID_2" Value="110983"/>
+        <Key Name="MG_Last_Goddess_Raid_Delmore_Auto" Value="110985"/>
+        <Key Name="MG_Last_Goddess_Raid_Delmore_Party" Value="110981"/>
+        <Key Name="MG_Last_Goddess_Raid_Delmore_Solo" Value="110984"/>
     </KeyIDSpc>
     <KeyIDSpc Name="Monster">
         <Key Name="MaxHate" Value="6671"/>

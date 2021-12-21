@@ -20,7 +20,10 @@ function WEEKLYBOSS_DPS_INIT(frame,strArg,appTime)
     local is_practice = stringList[2]
 
     local stageGiveUp = GET_CHILD_RECURSIVELY(frame,'stageGiveUp')
-    stageGiveUp:SetEnable(BoolToNumber(is_practice == "PRACTICE"))
+
+    if is_practice ~= "PRACTICE" then
+        stageGiveUp:SetEventScript(ui.LBUTTONUP, "DAMAGE_METER_REQ_GIVEUP");
+    end
 
     DAMAGE_METER_SET_WEEKLY_BOSS(frame,handle);
 
@@ -225,4 +228,16 @@ end
 
 function DAMAGE_METER_REQ_RETURN_YSE()
     RUN_GAMEEXIT_TIMER("RaidReturn")
+end
+
+function DAMAGE_METER_REQ_GIVEUP()
+    local yesscp = 'DAMAGE_METER_REQ_GIVEUP_YES()';
+	ui.MsgBox(ClMsg('WeeklyBoss_GiveUp_MSG2'), yesscp, 'None');
+end
+
+function DAMAGE_METER_REQ_GIVEUP_YES()
+    -- RUN_GAMEEXIT_TIMER("RaidReturn")
+    local frame = ui.GetFrame('damage_meter')
+    WEEKLY_BOSS_DPS_END(frame)
+    pc.ReqExecuteTx("SCR_REQ_WEEEKLY_BOSSRAID_GIVEUP","None")
 end

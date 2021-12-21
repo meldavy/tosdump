@@ -194,7 +194,7 @@ function INDUNINFO_CREATE_CATEGORY(frame, selectIndun)
     local favorite_indunlist = INDUNINFO_GET_FAVORITE_INDUN_LIST();
 
     local enableCreate = function(dungeonType)
-        local isRaid = (dungeonType == 'UniqueRaid' or dungeonType == 'Raid' or dungeonType == 'GTower' or dungeonType == "MythicDungeon_Auto" or dungeonType == "MythicDungeon_Auto_Hard")
+        local isRaid = (dungeonType == 'UniqueRaid' or dungeonType == 'Raid' or dungeonType == 'GTower' or dungeonType == "MythicDungeon_Auto" or dungeonType == "MythicDungeon_Auto_Hard") or dungeonType == "EarringRaid"
         return ((isRaid == true and isRaidTab == true) or (isRaid == false and isRaidTab == false) or isFavoriteTab == true)
     end
     -- 카테고리 버튼 생성 함수
@@ -630,6 +630,9 @@ function GET_CURRENT_ENTERANCE_COUNT(resetGroupID)
         if indunCls.UnitPerReset == 'PC' then
             return(etc['IndunWeeklyEnteredCount_'..resetGroupID]) --매주 남은 횟수
         else     
+            if indunCls.DungeonType == "EarringRaid" then
+                return acc_obj[TryGetProp(indunCls, "CheckCountName", "None")];
+            end
             return(acc_obj['IndunWeeklyEnteredCount_'..resetGroupID]) --매주 남은 횟수
         end        
     else 
@@ -770,6 +773,8 @@ function GET_RESET_CYCLE_PIC_TYPE(cls,postFix)
         elseif string.find(dungeonType, "MythicDungeon") ~= nil then
             cyclePicType = "week";
         elseif string.find(dungeonType, "TOSHero") ~= nil then
+            cyclePicType = "None";
+        elseif indunCls.DungeonType == "EarringRaid" then
             cyclePicType = "None";
         end
     elseif idSpace == 'PVPIndun' then
@@ -1330,6 +1335,7 @@ function INDUNINFO_MAKE_DETAIL_COMMON_INFO(frame, indunCls, resetGroupID)
     else
         local raid_time_box = GET_CHILD_RECURSIVELY(frame, "raid_time_box");
         raid_time_box:ShowWindow(0);
+        
         local mapList = StringSplit(TryGetProp(indunCls, "StartMap", ""), '/');
     
         -- 챌린지 분열 특이점 모드 & 분열 특이점 모드 자동매칭 예외처리
@@ -1355,7 +1361,6 @@ function INDUNINFO_MAKE_DETAIL_COMMON_INFO(frame, indunCls, resetGroupID)
 
         posBox:ShowWindow(1);
     end
-   
     INDUNINFO_SET_BUTTONS(frame,indunCls)
     INDUNINFO_MAKE_PATTERN_BOX(frame,indunCls)
 end
@@ -1411,7 +1416,7 @@ function INDUNINFO_SET_ENTERANCE_COUNT(frame, resetGroupID)
     --todo
     local countData = GET_CHILD_RECURSIVELY(frame, 'countData');
     local countData2 = GET_CHILD_RECURSIVELY(frame, 'countData2');
-    if resetGroupID == -101 or resetGroupID == 816 or resetGroupID == 817 or resetGroupID == 807 or resetGroupID == 5000 then
+    if resetGroupID == -101 or resetGroupID == 816 or resetGroupID == 817 or resetGroupID == 807 or resetGroupID == 5000 or resetGroupID == 820 then
         countData2:SetTextByKey('now', GET_CURRENT_ENTERANCE_COUNT(resetGroupID))
         countData:ShowWindow(0)
         countData2:ShowWindow(1)
@@ -1426,7 +1431,8 @@ end
 
 function INDUNINFO_SET_RESTRICT(frame,indunCls)
 	INDUNINFO_SET_RESTRICT_SKILL(frame,indunCls)
-	INDUNINFO_SET_RESTRICT_ITEM(frame,indunCls)
+    INDUNINFO_SET_RESTRICT_ITEM(frame,indunCls)
+    INDUNINFO_SET_RESTRICT_DUNGEON(frame,indunCls)
     local restrictBox = GET_CHILD_RECURSIVELY(frame, 'restrictBox');
     restrictBox:EnableScrollBar(0);
     GBOX_AUTO_ALIGN(restrictBox, 2, 2, 0, true, true,true);
@@ -1467,6 +1473,21 @@ function INDUNINFO_SET_RESTRICT_ITEM(frame,indunCls)
 		restrictItemBox:SetPosTooltip(TOOLTIP_POSX, TOOLTIP_POSY);
 		restrictItemBox:SetTooltipType("itemRestrictList");
 		restrictItemBox:SetTooltipArg(indunCls.ClassName);
+    end
+end
+
+function INDUNINFO_SET_RESTRICT_DUNGEON(frame,indunCls)
+    local restrictDungeonBox = GET_CHILD_RECURSIVELY(frame, 'restrictDungeonBox');
+    restrictDungeonBox:ShowWindow(0);
+    local cls = GetClassByStrProp("dungeon_restrict", "Category", indunCls.ClassName)    
+    if cls ~= nil then
+		restrictDungeonBox:ShowWindow(1);
+		restrictDungeonBox:SetTooltipOverlap(1);
+		local TOOLTIP_POSX = frame:GetUserConfig("TOOLTIP_POSX");
+		local TOOLTIP_POSY = frame:GetUserConfig("TOOLTIP_POSY");
+		restrictDungeonBox:SetPosTooltip(TOOLTIP_POSX, TOOLTIP_POSY);
+		restrictDungeonBox:SetTooltipType("dungeonRestrictList");
+		restrictDungeonBox:SetTooltipArg(indunCls.ClassName);
     end
 end
 
@@ -1516,10 +1537,23 @@ function INDUNINFO_SET_BUTTONS(frame, indunCls)
     local dungeonType = TryGetProp(indunCls, "DungeonType", "None");
     local btnInfoCls = GetClassByStrProp("IndunInfoButton", "DungeonType", dungeonType);
 
+    GET_CHILD_RECURSIVELY(buttonBox, 'recordButton'):ShowWindow(0);
+
     if dungeonType == "TOSHero" then
         GET_CHILD_RECURSIVELY(buttonBox, 'tinyButton'):ShowWindow(1);
     else
         GET_CHILD_RECURSIVELY(buttonBox, 'tinyButton'):ShowWindow(0);
+    end
+
+    local mGameName = TryGetProp(indunCls, "MGame", "None")
+    local raidCls = GetClass("raid_record_list", mGameName)
+
+    if raidCls ~= nil then
+        local recordBtn = GET_CHILD_RECURSIVELY(buttonBox, 'recordButton');
+        recordBtn:ShowWindow(1)
+        recordBtn:SetEventScript(ui.LBUTTONUP, TryGetProp(raidCls, "ButtonScp", "None"));
+        recordBtn:SetEventScriptArgString(ui.LBUTTONUP, mGameName);
+        INDUNINFO_RESIZE_BY_BUTTONS(frame,1)
     end
 
     if btnInfoCls == nil then
@@ -1529,7 +1563,9 @@ function INDUNINFO_SET_BUTTONS(frame, indunCls)
             local button = GET_CHILD_RECURSIVELY(buttonBox,'Button'..i)
             button:ShowWindow(0)
         end
+        if raidCls == nil then
         INDUNINFO_RESIZE_BY_BUTTONS(frame,0)
+        end
         return;
     end
     
@@ -1541,7 +1577,9 @@ function INDUNINFO_SET_BUTTONS(frame, indunCls)
                 local button = GET_CHILD_RECURSIVELY(buttonBox,'Button'..i)
                 button:ShowWindow(0)
             end
+            if raidCls == nil then
             INDUNINFO_RESIZE_BY_BUTTONS(frame,0)
+            end
             return;
         end
         btnInfoCls = INDUNINFO_SET_BUTTONS_FIND_CLASS(indunCls);
@@ -1601,7 +1639,7 @@ function INDUNINFO_SET_ADMISSION_ITEM(frame,indunCls)
     local nowAdmissionItemCount = GET_INDUN_ADMISSION_ITEM_COUNT(indunCls)
     if nowAdmissionItemCount <= 0 then
         countText:SetText(ScpArgMsg("IndunAdmissionItemReset"))
-        if indunCls.DungeonType == 'ChallengeMode_HardMode' or string.find(indunCls.ClassName, "Challenge_Division_Auto") ~= nil or indunCls.DungeonType == "MythicDungeon_Auto_Hard" or indunCls.DungeonType == "MythicDungeon" or TryGetProp(indunCls, "PlayPerResetType",-1) == 807 or indunCls.DungeonType == 'TOSHero' then
+        if indunCls.DungeonType == 'ChallengeMode_HardMode' or string.find(indunCls.ClassName, "Challenge_Division_Auto") ~= nil or indunCls.DungeonType == "MythicDungeon_Auto_Hard" or indunCls.DungeonType == "MythicDungeon" or TryGetProp(indunCls, "PlayPerResetType",-1) == 807 or indunCls.DungeonType == 'TOSHero' or indunCls.DungeonType == "EarringRaid" then
             countData:ShowWindow(0);
             countData2:ShowWindow(1);
         else
@@ -3785,4 +3823,35 @@ end
 
 function PVP_INDUNINFO_CHARACTER_REGIST(parent, btn)
     CHARACTER_CHANGE_REGISTER_OPEN();
+end
+
+function REQ_EARRING_RAID_UI_OPEN(frame, ctrl)
+    if session.world.IsIntegrateServer() == true or IsPVPField(pc) == 1 or IsPVPServer(pc) == 1 then
+        ui.SysMsg(ScpArgMsg('ThisLocalUseNot'));
+        return;
+    end
+
+    if world.GetLayer() ~= 0 then
+        ui.SysMsg(ScpArgMsg('ThisLocalUseNot'));
+        return;
+    end
+
+    local map = GetClass('Map', session.GetMapName());
+    local keyword = TryGetProp(map, 'Keyword', 'None');
+    local keyword_table = StringSplit(keyword, ';');
+    if table.find(keyword_table, 'IsRaidField') > 0 or table.find(keyword_table, 'WeeklyBossMap') > 0 then
+        ui.SysMsg(ScpArgMsg('ThisLocalUseNot'));
+        return;
+    end
+
+    local indun_classid = tonumber(ctrl:GetUserValue("MOVE_INDUN_CLASSID"));
+    local indun_cls = GetClassByType("Indun", indun_classid);
+    local dungeon_type = TryGetProp(indun_cls, "DungeonType", "None");
+    local sub_type = TryGetProp(indun_cls, "SubType", "None");
+    if dungeon_type ~= "EarringRaid" then
+        return;
+    end
+
+    ui.CloseFrame("induninfo");
+    ReqEarringRaidEnter(indun_classid);
 end

@@ -1,8 +1,9 @@
 ﻿function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_ON_INIT(addon, frame)
 	addon:RegisterMsg("GAME_START", "MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_INIT");
+	addon:RegisterMsg("ACCEPT_STAMPTOUR", "MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_INIT");
 end
 
-function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_INIT(frame)
+function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_INIT(frame, msg)
 	local btn1_gb = GET_CHILD(frame, "btn1_gb");
 	btn1_gb:ShowWindow(0);
 	local btn2_gb = GET_CHILD(frame, "btn2_gb");
@@ -17,7 +18,7 @@ function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_INIT(frame)
 	end
 
 	MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON1(frame, btn1_gb);
-	MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON2(frame, btn2_gb);
+	MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON2(frame, btn2_gb, msg);
 end
 
 function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON1(frame, gb)
@@ -54,7 +55,7 @@ function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON1(frame, gb)
 	-- gb:ShowWindow(1);
 end
 
-function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON2(frame, gb)
+function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON2(frame, gb, msg)
 	local btn = GET_CHILD(gb, "openBtn2");
 	local title = GET_CHILD(gb, "title2");
 	
@@ -70,7 +71,18 @@ function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON2(frame, gb)
     -- btn:SetEventScript(ui.LBUTTONUP, "MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_CLICK");
 	-- btn:SetEventScriptArgNumber(ui.LBUTTONUP, 5);
 	-- title:SetTextByKey("value", ClMsg("EVENT_2009_FULLMOON_TITLE"));
-    -- gb:ShowWindow(1);
+	-- gb:ShowWindow(1);
+	
+	-- EVENT_2112_CHRISTMAS
+	local aObj = GetMyAccountObj()
+	local stampTourCheck = TryGetProp(aObj, "REGULAR_EVENT_STAMP_TOUR", 0);
+	if stampTourCheck == 1 or msg == "ACCEPT_STAMPTOUR" then
+		btn:SetImage("event_btn");
+		btn:SetEventScript(ui.LBUTTONUP, "ON_EVENT_STAMP_TOUR_UI_OPEN_COMMAND_CHRISTMAS");
+		btn:SetEventScriptArgString(ui.LBUTTONUP, "EVENT_STAMP_TOUR_UI_OPEN_COMMAND_CHRISTMAS");
+		title:SetTextByKey("value", "");
+		gb:ShowWindow(1);
+	end
 end
 
 function MINIMIZED_EVENT_PROGRESS_CHECK_BUTTON_CLICK(parent, ctrl, argStr, type)	

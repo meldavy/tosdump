@@ -906,6 +906,9 @@
 		<image name="icon_common_retro01" file="\icon\skill\common\icon_common_retro01.png" imgrect="0 0 128 128" CMM_Caption="2021_9월 여신의 큐브 3종"/>
 		<image name="icon_common_retro02" file="\icon\skill\common\icon_common_retro02.png" imgrect="0 0 128 128"/>
 		<image name="icon_common_retro03" file="\icon\skill\common\icon_common_retro03.png" imgrect="0 0 128 128"/>
+		<image name="icon_earring_party_def_buff" file="\icon\skill\common\icon_earring_party_def_buff.png" imgrect="0 0 128 128" CMM_Caption="수비적인 버프"/>
+		<image name="icon_earring_party_atk_buff" file="\icon\skill\common\icon_earring_party_atk_buff.png" imgrect="0 0 128 128" CMM_Caption="공격적인 버프"/>
+		<image name="icon_earring_party_util_buff" file="\icon\skill\common\icon_earring_party_util_buff.png" imgrect="0 0 128 128" CMM_Caption="유틸적인 버프"/>
 	</imagelist>
 	<imagelist category="restquickslot_icon">
 		<image name="icon_rest_arrow" file="\icon\rest_mode_icon.tga" imgrect="0 0 128 128" CMM_Caption="화살제작"/>

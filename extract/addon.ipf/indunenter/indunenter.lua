@@ -85,7 +85,7 @@ function INDUNENTER_AUTOMATCH_CANCEL()
     INDUNENTER_UPDATE_PC_COUNT(frame, nil, "None", 0);
 end
 
-function SHOW_INDUNENTER_DIALOG(indunType, isAlreadyPlaying, enableAutoMatch, enableEnterRight, enablePartyMatch)   
+function SHOW_INDUNENTER_DIALOG(indunType, isAlreadyPlaying, enableAutoMatch, enableEnterRight, enablePartyMatch)       
     INDUNENTER_MULTI_CANCEL(ui.GetFrame('indunenter'))
 
 local indun_cls = GetClassByType("Indun", indunType);
@@ -304,9 +304,10 @@ function INDUNENTER_MAKE_PICTURE(frame, indunCls)
 end
 
 -- 스킬 제한 경고문
-function INDUNENTER_MAKE_ALERT(frame, indunCls)
+function INDUNENTER_MAKE_ALERT(frame, indunCls)    
 	INDUNENTER_MAKE_SKILL_ALERT(frame, indunCls)
-	INDUNENTER_MAKE_ITEM_ALERT(frame, indunCls)
+    INDUNENTER_MAKE_ITEM_ALERT(frame, indunCls)
+    INDUNENTER_MAKE_DUNGEON_ALERT(frame, indunCls)
 	local restrictBox = GET_CHILD_RECURSIVELY(frame, 'restrictBox');
     GBOX_AUTO_ALIGN(restrictBox, 2, 2, 0, true, true,true);
 end
@@ -319,11 +320,11 @@ function INDUNENTER_MAKE_SKILL_ALERT(frame, indunCls)
     local isLegendRaid = 0;
     if dungeonType == "Raid" or dungeonType == "GTower" or string.find(dungeonType, "MythicDungeon") == 1 then
         isLegendRaid = 1;
-    end
+    end    
 
     if mapName ~= nil and mapName ~= "None" then
         local indunMap = GetClass("Map", mapName);
-        local mapKeyword = TryGetProp(indunMap, "Keyword");
+        local mapKeyword = TryGetProp(indunMap, "Keyword");        
         if mapKeyword ~= nil and string.find(mapKeyword, "IsRaidField") ~= nil then
             restrictSkillBox:ShowWindow(1);
             restrictSkillBox:SetTooltipOverlap(1);
@@ -348,6 +349,21 @@ function INDUNENTER_MAKE_ITEM_ALERT(frame, indunCls)
 		restrictItemBox:SetPosTooltip(TOOLTIP_POSX, TOOLTIP_POSY);
 		restrictItemBox:SetTooltipType("itemRestrictList");
 		restrictItemBox:SetTooltipArg(indunCls.ClassName);
+    end
+end
+
+function INDUNENTER_MAKE_DUNGEON_ALERT(frame, indunCls)    
+    local restrictDungeonBox = GET_CHILD_RECURSIVELY(frame, 'restrictDungeonBox');
+    restrictDungeonBox:ShowWindow(0);
+	local cls = GetClassByStrProp("dungeon_restrict","Category",indunCls.ClassName)
+    if cls ~= nil then
+		restrictDungeonBox:ShowWindow(1);
+		restrictDungeonBox:SetTooltipOverlap(1);
+		local TOOLTIP_POSX = frame:GetUserConfig("TOOLTIP_POSX");
+		local TOOLTIP_POSY = frame:GetUserConfig("TOOLTIP_POSY");
+		restrictDungeonBox:SetPosTooltip(TOOLTIP_POSX, TOOLTIP_POSY);
+		restrictDungeonBox:SetTooltipType("dungeonRestrictList");
+		restrictDungeonBox:SetTooltipArg(indunCls.ClassName);
     end
 end
 

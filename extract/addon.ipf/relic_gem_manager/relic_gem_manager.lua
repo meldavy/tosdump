@@ -108,22 +108,27 @@ local function _REINFORCE_MAT_CTRL_UPDATE(frame, index, mat_name, mat_cnt, is_di
 	end
 end
 
-local function _REINFORCE_PRICE_UPDATE(frame, price, discountStone)
+local function _REINFORCE_PRICE_UPDATE(frame, discountStone)
 	if discountStone == nil then
 		discountStone = 0
 	end
 
-	local r_price = GET_CHILD_RECURSIVELY(frame, 'r_price')
-	local r_invmoney = GET_CHILD_RECURSIVELY(frame, 'r_invmoney')
+	local r_price_gauge = GET_CHILD_RECURSIVELY(frame, 'r_price_gauge')
 	local check_no_msgbox = GET_CHILD_RECURSIVELY(frame, 'check_no_msgbox')
 
-	if price ~= nil then
-		price = math.max(tonumber(price), 0)
-		local cur_money_str = GET_TOTAL_MONEY_STR()
-		local result_money = SumForBigNumberInt64(cur_money_str, tostring(tonumber(price) * -1))
-		r_price:SetTextByKey('value', GET_COMMAED_STRING(price))
-		r_invmoney:SetTextByKey('value', GET_COMMAED_STRING(result_money))
+	local price = frame:GetUserValue('REINFORCE_CUR_PRICE')
+	if price == nil or price == 'None' then
+		price = '0'
 	end
+
+	local totalPrice = frame:GetUserValue('REINFORCE_PRICE')
+	if totalPrice == nil or totalPrice == 'None' then
+		totalPrice = '0'
+	end
+
+	price = math.max(tonumber(DivForBigNumberInt64(price, '100000')), 0)
+	totalPrice = math.max(tonumber(DivForBigNumberInt64(totalPrice, '100000')), 0)
+	r_price_gauge:SetPoint(price, totalPrice)
 	
 	local gem_lv = tonumber(frame:GetUserValue('GEM_LV'))
 	if gem_lv ~= nil then
@@ -148,6 +153,16 @@ end
 local function _REINFORCE_EXEC_BTN_UPDATE(frame)
 	local do_reinforce = GET_CHILD_RECURSIVELY(frame, 'do_reinforce')
 
+	local price = frame:GetUserValue('REINFORCE_CUR_PRICE')
+	if price == nil or price == 'None' then
+		price = '0'
+	end
+
+	local total_price = frame:GetUserValue('REINFORCE_PRICE')
+	if total_price == nil or total_price == 'None' then
+		total_price = '0'
+	end
+
 	local rmat_1 = GET_CHILD_RECURSIVELY(frame, 'rmat_1')
 	local rmat_1_slot = GET_CHILD(rmat_1, 'mat_slot', 'ui::CSlot')
 	local rmat_1_guid = rmat_1_slot:GetUserValue('ITEM_GUID')
@@ -156,7 +171,8 @@ local function _REINFORCE_EXEC_BTN_UPDATE(frame)
 	local rmat_2_slot = GET_CHILD(rmat_2, 'mat_slot', 'ui::CSlot')
 	local rmat_2_guid = rmat_2_slot:GetUserValue('ITEM_GUID')
 	local rmat_2_need = rmat_2_slot:GetUserIValue('NEED_COUNT')
-	if rmat_1_guid ~= 'None' and (rmat_2_guid ~= 'None' or rmat_2_need <= 0) then
+	
+	if IsGreaterThanForBigNumber(total_price, price) == 0 and rmat_1_guid ~= 'None' and (rmat_2_guid ~= 'None' or rmat_2_need <= 0) then
 		do_reinforce:SetEnable(1)
 	else
 		do_reinforce:SetEnable(0)
@@ -200,8 +216,7 @@ function UPDATE_RELIC_GEM_MANAGER_REINFORCE(frame)
 	if gem_guid == 'None' then return end
 	local gem_item = session.GetInvItemByGuid(gem_guid)
 	if gem_item ~= nil then
-		local def_price = frame:GetUserValue('REINFORCE_PRICE')
-		_REINFORCE_PRICE_UPDATE(frame, def_price, 0)
+		_REINFORCE_PRICE_UPDATE(frame, 0)
 		
 		local clear_flag = false
 		
@@ -372,6 +387,11 @@ function UPDATE_RELIC_GEM_REINF_EXTRA_MAT(frame)
 				local class = GetClassByType('Item', inv_item.type)
 				SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, inv_item, obj, inv_item.count)
 				ICON_SET_INVENTORY_TOOLTIP(icon, inv_item, 'poisonpot', class)
+				if arg_str == 'normal' then
+					local lv_txt = slot:CreateOrGetControl('richtext', 'lv_txt', 0, 0, slot:GetWidth(), slot:GetHeight() * 0.3)
+					local lv_str = string.format('{@sti1c}{s16}Lv.%d', TryGetProp(obj, 'NumberArg1', 0))
+					lv_txt:SetText(lv_str)
+				end
 
 				local prevSelectedCount = frame:GetUserIValue('EXTRA_MAT_' .. slotindex)
 				if prevSelectedCount <= inv_item.count then
@@ -489,6 +509,17 @@ function SCR_LBTNDOWN_RELIC_GEM_REINF_EXTRA_MAT(slotset, slot)
 	RELIC_GEM_REINF_RATE_UPDATE(frame)
 end
 
+function RELIC_GEM_MANAGER_REINFORCE_COUPON_CLICK(slotset, slot)
+	local frame = slotset:GetTopParentFrame()
+	if frame == nil then return end
+
+	local gem_lv = frame:GetUserIValue('GEM_LV')
+	if gem_lv <= 0 then return end
+
+	local totalPrice = frame:GetUserValue('REINFORCE_PRICE')
+	local totalStone = shared_item_relic.get_gem_reinforce_mat_stone(gem_lv)
+end
+
 function RELIC_GEM_MANAGER_REINFORCE_DISCOUNT_CLICK(slotSet, slot)
     local frame = ui.GetFrame('relic_gem_manager')
     if frame == nil then
@@ -578,7 +609,8 @@ function RELIC_GEM_MANAGER_REINFORCE_DISCOUNT_CLICK(slotSet, slot)
     -- 초과금액 걷어내기 끝난다음 다시 계산
     local totalPrice = frame:GetUserValue('REINFORCE_PRICE')
 	local discountPrice, discountStone = RELIC_GEM_MANAGER_REINFORCE_TOTAL_DISCOUNT_PRICE()
-	_REINFORCE_PRICE_UPDATE(frame, SumForBigNumberInt64(totalPrice, tostring(tonumber(discountPrice) * -1)), discountStone)
+	frame:SetUserValue('REINFORCE_CUR_PRICE', discountPrice)
+	_REINFORCE_PRICE_UPDATE(frame, discountStone)
 	_REINFORCE_EXEC_BTN_UPDATE(frame)
 end
 
@@ -730,7 +762,7 @@ function RELIC_GEM_MANAGER_REINFORCE_REG_GEM(frame, inv_item, item_obj)
 	
 	local silver_cnt = shared_item_relic.get_gem_reinforce_silver(gem_lv)
 	frame:SetUserValue('REINFORCE_PRICE', silver_cnt)
-	_REINFORCE_PRICE_UPDATE(frame, silver_cnt, 0)
+	_REINFORCE_PRICE_UPDATE(frame, 0)
 
 	rmat_inner:ShowWindow(1)
 
@@ -1126,7 +1158,6 @@ function _RUN_RELIC_GEM_REINFORCE_FAILED()
 	RELIC_GEM_REINFORCE_FAIL_EFFECT(frame)	
 end
 
-
 function RELIC_GEM_REINFORCE_FAIL_EFFECT(frame)
 	local frame = ui.GetFrame('relic_gem_manager')
 	local FAIL_EFFECT_NAME = frame:GetUserConfig('DO_FAIL_EFFECT')
@@ -1224,120 +1255,7 @@ function UPDATE_RELIC_GEM_MANAGER_COMPOSE(frame)
 	if tab_index ~= 1 then return end
 
 	_COMPOSE_EXEC_BTN_UPDATE(frame)
-    
 end
-
---function UPDATE_RELIC_GEM_MANAGER_COMPOSE_DISCOUNT(frame)
---
---	local invItemList = session.GetInvItemList()
---    local discountItemList = SCR_RELIC_GEM_REINFORCE_COUPON()
---
---    FOR_EACH_INVENTORY(invItemList, 
---    function(invItemList, invItem, discountSet, materialItemList, discountItemList)
---		local obj = GetIES(invItem:GetObject())
---        local itemName = TryGetProp(obj, 'ClassName', 'None')
---        
---        if table.find(discountItemList, itemName) > 0 then
---			if imcSlot:GetFilledSlotCount(discountSet) == discountSet:GetSlotCount() then
---				return
---            end
---
---            local slotindex = imcSlot:GetEmptySlotIndex(discountSet)
---            local slot = discountSet:GetSlotByIndex(slotindex)
---            slot:SetMaxSelectCount(invItem.count)
---			slot:SetUserValue('DISCOUNT_POINT', obj.NumberArg1)
---			slot:SetUserValue('DISCOUNT_STONE', obj.NumberArg2)
---
---			local icon = CreateIcon(slot)
---            icon:Set(obj.Icon, 'Item', invItem.type, slotindex, invItem:GetIESID(), invItem.count)
---            
---			local class = GetClassByType('Item', invItem.type)
---			SET_SLOT_ITEM_TEXT_USE_INVCOUNT(slot, invItem, obj, invItem.count)
---			ICON_SET_INVENTORY_TOOLTIP(icon, invItem, 'poisonpot', class)
---        end
---
---	end, false, discountSet, materialItemList, discountItemList)
---end
-
---function RELIC_GEM_MANAGER_COMPOSE_DISCOUNT_CLICK(slotSet, slot)
---    local frame = ui.GetFrame('relic_gem_manager')
---    if frame == nil then
---        return
---    end
---
---	local totalPrice = frame:GetUserValue('COMPOSE_PRICE')
---	local _, totalStone = shared_item_relic.get_gem_compose_mat_cnt()
---
---	-- 할인가 계산
---	local adjustValue = SumForBigNumberInt64(totalPrice, tostring(tonumber(discountPrice) * -1))
---	local adjustStone = totalStone - discountStone
---
---	-- 할인가가 0보다 작을 경우
---	if IsGreaterThanForBigNumber(0, adjustValue) == 1 then
---		local stone = tonumber(slot:GetUserValue("DISCOUNT_STONE"))
---		-- 축석 할인 있음 -> 촉매제
---		if stone ~= nil and stone > 0 then
---			local point = tonumber(slot:GetUserValue("DISCOUNT_POINT"))
---			if point == nil or point == 0 then
---				return
---			end
---	
---			local nowCount = slot:GetSelectCount()
---			local adjustByPoint = math.floor(tonumber(DivForBigNumberInt64(adjustValue, point)))
---			local adjustByStone = math.floor(adjustStone / stone)
---			if adjustByPoint <= 0 and adjustByStone < 0 then
---				local adjustCount = math.max(adjustByPoint, adjustByStone)
---				local adjustedCount = math.max(nowCount + adjustCount, 0)
---				slot:SetSelectCount(adjustedCount)
---				adjustValue = SumForBigNumberInt64(adjustValue, tostring(adjustCount * point * -1))
---			end
---
---			-- 일반 강화 쿠폰 감소 처리
---			local _adjustValue = adjustValue
---			for i = 0, slotSet:GetSelectedSlotCount() - 1 do
---				local _slot = slotSet:GetSelectedSlot(i)
---				local _point = tonumber(_slot:GetUserValue("DISCOUNT_POINT"))
---				local _stone = tonumber(_slot:GetUserValue("DISCOUNT_STONE"))
---				if _stone == 0 then
---					local _nowCount = _slot:GetSelectCount()
---					local _adjustCount = math.floor(tonumber(DivForBigNumberInt64(_adjustValue, _point)))
---					local _adjustedCount = math.max(_nowCount + _adjustCount, 0)
---					_slot:SetSelectCount(_adjustedCount)
---
---					if _adjustedCount == 0 then
---						_slot:Select(0)
---					end
---
---					_adjustValue = _adjustValue - (_adjustedCount * _point)
---					if _adjustValue >= 0 then
---						break
---					end
---				end
---			end
---		else
---			local point = tonumber(slot:GetUserValue("DISCOUNT_POINT"))
---			if point == nil or point == 0 then
---				return
---			end
---			
---			local nowCount = slot:GetSelectCount()
---			local adjustCount = math.floor(tonumber(DivForBigNumberInt64(adjustValue, point)))
---			adjustCount = math.max(nowCount + adjustCount, 0)
---			slot:SetSelectCount(adjustCount)
---		end
---	end
---
---	-- 선택한게 없으면 포커스 풀어주기
---	if slot:GetSelectCount() == 0 then
---		slot:Select(0)
---	end
---
---    ui.EnableSlotMultiSelect(1)
---
---    -- 초과금액 걷어내기 끝난다음 다시 계산
---    local totalPrice = frame:GetUserValue('COMPOSE_PRICE')
---	_COMPOSE_EXEC_BTN_UPDATE(frame)
---end
 
 function RELIC_GEM_MANAGER_COMPOSE_INV_RBTN(item_obj, cslot)
 	local frame = ui.GetFrame('relic_gem_manager')
@@ -2022,13 +1940,22 @@ end
 
 -- 분해
 local function _DECOMPOSE_PRICE_UPDATE(frame, price)
-	local d_price = GET_CHILD_RECURSIVELY(frame, 'd_price')
-	d_price:SetTextByKey('value', GET_COMMAED_STRING(price))
+	local total_price = frame:GetUserValue('DECOMPOSE_PRICE')
+	if total_price == nil or total_price == 'None' then
+		total_price = '0'
+	end
+	price = tonumber(DivForBigNumberInt64(price, '100000'))
+	total_price = tonumber(DivForBigNumberInt64(total_price, '100000'))
 
-	local cur_money_str = GET_TOTAL_MONEY_STR()
-	local result_money = SumForBigNumberInt64(cur_money_str, tostring(tonumber(price) * -1))
-	local d_invmoney = GET_CHILD_RECURSIVELY(frame, 'd_invmoney')
-	d_invmoney:SetTextByKey('value', GET_COMMAED_STRING(result_money))
+	local d_price_gauge = GET_CHILD_RECURSIVELY(frame, 'd_price_gauge')
+	d_price_gauge:SetPoint(price, total_price)
+
+	local do_decompose = GET_CHILD_RECURSIVELY(frame, 'do_decompose')
+	if total_price > 0 and price >= total_price then
+		do_decompose:SetEnable(1)
+	else
+		do_decompose:SetEnable(0)
+	end
 end
 
 function UPDATE_RELIC_GEM_MANAGER_DECOMPOSE(frame)
@@ -2085,18 +2012,15 @@ function UPDATE_RELIC_GEM_MANAGER_DECOMPOSE(frame)
 end
 
 function RELIC_GEM_DECOMPOSE_SET_COUNT(frame)
-	local do_decompose = GET_CHILD_RECURSIVELY(frame, 'do_decompose')
 	local slotSet = GET_CHILD_RECURSIVELY(frame, 'slotlist')
 	local d_slotSet = GET_CHILD_RECURSIVELY(frame, 'dprice_info')
 	local d_slotlist = GET_CHILD_RECURSIVELY(frame, 'dslotlist_discount')
 
 	local decompose_cnt = slotSet:GetSelectedSlotCount()
 	if decompose_cnt <= 0 then
-		do_decompose:SetEnable(0)
 		d_slotSet:ShowWindow(0)
 		d_slotlist:ShowWindow(0)
 	else
-		do_decompose:SetEnable(1)
 		d_slotSet:ShowWindow(1)
 		d_slotlist:ShowWindow(1)
 	end
@@ -2104,7 +2028,7 @@ function RELIC_GEM_DECOMPOSE_SET_COUNT(frame)
 	local cost_per = shared_item_relic.get_gem_decompose_silver()
 	local total_price = MultForBigNumberInt64(decompose_cnt, cost_per)
 	frame:SetUserValue('DECOMPOSE_PRICE', total_price)
-	_DECOMPOSE_PRICE_UPDATE(frame, total_price)
+	_DECOMPOSE_PRICE_UPDATE(frame, '0')
 end
 
 function SCP_LBTDOWN_RELIC_GEM_DECOMPOSE(frame, ctrl)
@@ -2253,5 +2177,5 @@ function RELIC_GEM_MANAGER_DECOMPOSE_DISCOUNT_CLICK(slotSet, slot)
 	
 	local totalPrice = frame:GetUserValue('DECOMPOSE_PRICE')
 	local discountPrice = RELIC_GEM_MANAGER_DECOMPOSE_TOTAL_DISCOUNT_PRICE()
-	_DECOMPOSE_PRICE_UPDATE(frame, SumForBigNumberInt64(totalPrice, tostring(tonumber(discountPrice) * -1)))
+	_DECOMPOSE_PRICE_UPDATE(frame, discountPrice)
 end

@@ -1,5 +1,18 @@
 -- sharedscript.lua
 
+function shuffle(tbl)
+    local ret = {}
+    for k, v in pairs(tbl) do
+        table.insert(ret, v)
+    end
+
+    for i = #ret, 2, -1 do
+      local j = math.random(i)
+      ret[i], ret[j] = ret[j], ret[i]
+    end
+    return ret
+end
+
 ------------ 랜덤 옵션 관련 ----------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 ITEM_POINT_MULTIPLE = 10
@@ -3466,6 +3479,17 @@ function GET_ABILITY_POINT_EXTRACTOR_MIN_VALUE(type)
     return 0;    
 end
 
+-- 특성 포인트 추출 스크롤 교환 최소 잔여 포인트
+function GET_ABILITY_POINT_EXTRACTOR_MIN_REMAIN_POINT(type)
+    if type == 1 then
+        return 500000
+    elseif type == 2 then
+        return 1000000
+    end
+
+    return 0;    
+end
+
 -- 합성 가능한 스킬젬인지 확인
 function CAN_COMPOSITION_SKILL_GEM(item)
     if TryGetProp(item, 'StringArg', 'None') ~= 'SkillGem' then
@@ -3628,7 +3652,14 @@ end
 function IS_LEFT_SUBFRAME_ACC(item)
     local str = TryGetProp(item, 'StringArg', 'None')
     local ClsName = TryGetProp(item, 'ClassName', 'None')
-    if str == 'Half_Acc_EP12' or str == 'Luciferi' or str == 'Acc_EP12' or (str == 'pvp_Mine' and nil ~= string.find(ClsName, 'PVP_EP12')) then
+    local class_type = TryGetProp(item, 'ClassType', 'None')
+    if class_type == 'Ring' or class_Type == 'Neck' then
+        if TryGetProp(item, 'ItemGrade', 0) >= 6 then
+            return true
+        end
+    end
+
+    if str == 'Half_Acc_EP12' or str == 'Isdavi' or str == 'Acc_EP12' or (str == 'pvp_Mine' and nil ~= string.find(ClsName, 'PVP_EP12')) then
         return true
     else
         return false
@@ -3665,6 +3696,10 @@ function GET_EQUIP_GROUP_NAME(item)
 
     if name == 'Relic' then
         return 'Relic'
+    end
+
+    if name == 'Earring' then
+        return 'Earring'
     end
 
     name = TryGetProp(item, 'DefaultEqpSlot', 'None')

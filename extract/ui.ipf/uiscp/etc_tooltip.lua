@@ -18,7 +18,7 @@ function ITEM_TOOLTIP_ETC(tooltipframe, invitem, argStr, usesubframe)
 	ypos = DRAW_EQUIP_TRADABILITY(tooltipframe, invitem, ypos, mainframename);
 	
 	local isHaveLifeTime = TryGetProp(invitem, "LifeTime", 0);	
-	if 0 == tonumber(isHaveLifeTime) and TryGetProp(invitem, 'ExpireDateTime', 'None') == 'None' then
+	if 0 == tonumber(isHaveLifeTime) and GET_ITEM_EXPIRE_TIME(invitem) == 'None' then
 		ypos = DRAW_SELL_PRICE(tooltipframe, invitem, ypos, mainframename); -- 가격
 	else
 		ypos = DRAW_REMAIN_LIFE_TIME(tooltipframe, invitem, ypos, mainframename); -- 남은 시간
@@ -639,7 +639,7 @@ function ITEM_TOOLTIP_ETC_EVENT(tooltipframe, invitem, argStr, usesubframe)
 	ypos = DRAW_EQUIP_TRADABILITY(tooltipframe, invitem, ypos, mainframename);
 	
 	local isHaveLifeTime = TryGetProp(invitem, "LifeTime", 0);	
-	if 0 == tonumber(isHaveLifeTime) and TryGetProp(invitem, 'ExpireDateTime', 'None') == 'None' then
+	if 0 == tonumber(isHaveLifeTime) and GET_ITEM_EXPIRE_TIME(invitem) == 'None' then
 		ypos = DRAW_SELL_PRICE(tooltipframe, invitem, ypos, mainframename); -- 가격
 	else
 		ypos = DRAW_REMAIN_LIFE_TIME(tooltipframe, invitem, ypos, mainframename); -- 남은 시간
@@ -781,12 +781,10 @@ function PVP_MINE_MISC_BOOST_DESC(item)
 	local pc = GetMyPCObject()
 	
 	local a = comma_value(GET_PVP_MINE_MISC_BOOST_COUNT2(pc)) -- 주간 최대치
-	local b = comma_value(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST2(pc, 'uphill')) -- 업힐
-	local c = comma_value(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST2(pc, 'rift')) -- 차붕
 	local d = comma_value(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST2(pc, 'solo_dun')) -- 베르니케
 	local e = comma_value(GET_ADDITIONAL_DROP_COUNT_PVP_MINE_MISC_BOOST2(pc, 'weekly_boss')) -- 주간 보스
 	local f = comma_value((GET_PVP_MINE_MISC_BOOST_FIELD_RATE2(pc) - 1) * 100) -- 필드 획득량
 
-	local clmsg = ScpArgMsg("pvp_mine_misc_boost_tooltip{a}{b}{c}{d}{e}{f}", "a", a ,"b", b, 'c', c, 'd', d, 'e', e, 'f', f);	
+	local clmsg = ScpArgMsg("pvp_mine_misc_boost_tooltip{a}{d}{e}{f}", "a", a , 'd', d, 'e', e, 'f', f);	
 	return clmsg
 end

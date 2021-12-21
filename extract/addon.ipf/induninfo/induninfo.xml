@@ -32,7 +32,8 @@
 		<richtext name="restrictSkillText" rect="0 0 200 30" parent="restrictSkillBox" margin="5 0 0 0" layout_gravity="left center" caption="{img NOTICE_Dm_! 30 30}{@st43}{s16}스킬 제한{/}" hittest="false"/>
 		<groupbox name="restrictItemBox" rect="0 0 196 40" parent="restrictBox" margin="0 40 0 0" layout_gravity="left top" draw="false" image="text_bg_black"/>
 		<richtext name="restrictItemText" rect="0 0 200 30" parent="restrictItemBox" margin="5 0 0 0" layout_gravity="left center" caption="{img NOTICE_Dm_! 30 30}{@st43}{s16}입장 제한{/}" hittest="false"/>
-
+		<groupbox name="restrictDungeonBox" rect="0 0 196 40" parent="restrictBox" margin="0 40 0 0" layout_gravity="left top" draw="false" image="text_bg_black"/>
+		<richtext name="restrictDungeonText" rect="0 0 200 30" parent="restrictDungeonBox" margin="5 0 0 0" layout_gravity="left center" caption="{img NOTICE_Dm_! 30 30}{@st43}{s16}던전 적용 사항{/}" hittest="false"/>
 		<groupbox name="countBox" parent="indunbox" rect="0 0 412 60" margin="0 44 0 0" layout_gravity="right top" draw="false" hittestbox="false"/>
 		<picture name="countPic" parent="countBox" rect="0 0 27 27" margin="0 0 0 0" layout_gravity="left center" image="indun_entrance"/>
 		<picture name="cyclePic" parent="countBox" rect="0 0 60 27" margin="110 2 0 0" layout_gravity="left center" image="indun_icon_week_l"/>
@@ -111,6 +112,7 @@
 		<button name="Button2" rect="0 0 160 45" parent="buttonBox" margin="0 0 0 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" skin="test_pvp_btn" oversound="button_over"/>
 		<button name="Button3" rect="0 0 160 45" parent="buttonBox" margin="0 43 160 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" skin="test_pvp_btn" oversound="button_over"/>
 		<button name="tinyButton" rect="0 0 90 40" parent="buttonBox" margin="0 45 325 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" skin="test_pvp_btn" oversound="button_over" format="{s17}{#050505}%s" param1="btnText" param1_def="조합식" LBtnUpScp="ui.OpenFrame('toshero_info_combine')"/>
+		<button name="recordButton" rect="0 0 220 45" parent="buttonBox" margin="0 43 160 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" skin="test_pvp_btn" oversound="button_over" format="{s17}{#050505}%s" param1="btnText" param1_def="클리어 기록"/>		
 		<button name="RedButton" rect="0 0 160 45" parent="buttonBox" margin="0 43 0 0" layout_gravity="right top" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" skin="test_red_button" oversound="button_over"/>
 		<richtext name="Button1Text" rect="0 0 160 45" parent="Button1" margin="0 0 0 0" layout_gravity="center center" textalign="left center" hittest="false" format="{s17}{#050505}%s" param1="btnText" param1_def="이동" autofontsizebywidth="160"/>
 		<richtext name="Button2Text" rect="0 0 160 45" parent="Button2" margin="0 0 0 0" layout_gravity="center center" textalign="left center" hittest="false" format="{s17}{#050505}%s" param1="btnText" param1_def="이동" autofontsizebywidth="160"/>

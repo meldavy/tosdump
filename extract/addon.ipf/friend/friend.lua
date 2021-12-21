@@ -611,7 +611,7 @@ function UPDATE_FRIEND_CONTROLSET_BY_PCINFO(ctrlSet, mapID, channel, info, drawN
 
 		if jobportrait ~= nil then
 			jobportrait = tolua.cast(jobportrait, "ui::CPicture");
-			local imgName = ui.CaptureModelHeadImage_IconInfo(info:GetIconInfo());
+			local imgName = ui.CaptureModelHeadImage_IconInfo_BGColor(info:GetIconInfo(), "FFFFFFFF", 0)
 			jobportrait:SetImage(imgName);			
 			jobportrait:ShowWindow(1);
 		end

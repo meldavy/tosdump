@@ -131,6 +131,15 @@ function ADVENTURE_BOOK_TEAM_BATTLE_RANK_UPDATE(frame, msg, argStr, argNum)
 	end
 end
 
+local cannot_join_buff_list = {
+	TeamBattleLeague_Penalty_Lv1 = 'HasTeamBattleLeaguePenalty',
+	TeamBattleLeague_Penalty_Lv2 = 'HasTeamBattleLeaguePenalty',
+	secret_medicine_str_470 = 'CantJoinPVPCuzSecretMedicine',
+	secret_medicine_int_470 = 'CantJoinPVPCuzSecretMedicine',
+	secret_medicine_con_470 = 'CantJoinPVPCuzSecretMedicine',
+	secret_medicine_mspd_470 = 'CantJoinPVPCuzSecretMedicine',
+	secret_medicine_rsp_470 = 'CantJoinPVPCuzSecretMedicine',
+}
 function ADVENTURE_BOOK_JOIN_WORLDPVP(parent, ctrl)
     if IS_IN_EVENT_MAP() == true then
         ui.SysMsg(ClMSg('ImpossibleInCurrentMap'));
@@ -138,9 +147,11 @@ function ADVENTURE_BOOK_JOIN_WORLDPVP(parent, ctrl)
     end 
 
 	local accObj = GetMyAccountObj();
-	if IsBuffApplied(GetMyPCObject(), "TeamBattleLeague_Penalty_Lv1") == "YES" or IsBuffApplied(GetMyPCObject(), "TeamBattleLeague_Penalty_Lv2") == "YES" then
-		ui.SysMsg(ClMsg("HasTeamBattleLeaguePenalty"));
-		return;
+	for _name, _clmsg in pairs(cannot_join_buff_list) do
+		if IsBuffApplied(GetMyPCObject(), _name) == "YES" then
+			ui.SysMsg(ClMsg(_clmsg));
+			return;
+		end
 	end
 	
 	local cls = GET_TEAM_BATTLE_CLASS();

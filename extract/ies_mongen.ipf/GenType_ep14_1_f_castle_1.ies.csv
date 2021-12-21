@@ -14,6 +14,7 @@ ClassID,GenType,Lv,Range,GenRange,RespawnTime,MaxPop,Minimap,Hide,UseAIOufOfPC,A
 41,41,1,40,1,60000,1,1,0,0,0,0,0,npc_CEN_master,[센츄리온 마스터] 크라이 첵,,,,,,,EP14_1_F_CASTLE_1_NPC3,,,NO,YES,NO,Neutral,,,,
 42,42,1,50,1,1,1,2,0,0,0,0,0,Warp_arrow,델무어 장원,,,,MON_DUMMY,,,,WARP_EP14_1_F_CASTLE_1_TO_EP14_1_F_CASTLE_2,,NO,YES,NO,Neutral,,,,
 43,43,1,50,1,1,1,2,0,0,0,0,0,Warp_arrow,키르티마스 숲,,,,MON_DUMMY,,,,WARP_EP14_1_F_CASTLE_1_TO_EP13_F_SIAULIAI_5,,NO,YES,NO,Neutral,,,,
+44,44,1,40,1,1,1,2,0,0,0,0,0,npc_sage_female_2,세이지 파견원,,,,,,,D_CASTLE_19_1_PORTAL_NPC_01,D_CASTLE_19_1_PORTAL_NPC_01,,NO,YES,NO,Neutral,,,,
 45,45,1,40,100,20000,16,0,0,0,1,0,0,rootcrystal_05,나무뿌리 수정,,,,MON_TORCH,,,,,,NO,YES,NO,RootCrystal,,,,
 1001,1001,1,40,60,30000,1,0,0,0,1,0,0,Bleakferret_Spear,블릭페릿 창병,,,,,,,,,,NO,YES,NO,Monster,,,,
 1002,1002,1,40,60,30000,1,0,0,0,1,0,0,Bleakferret_Spear,블릭페릿 창병,,,,,,,,,,NO,YES,NO,Monster,,,,

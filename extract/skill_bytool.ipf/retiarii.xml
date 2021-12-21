@@ -352,7 +352,7 @@
                 <Scp Scp="SKL_SET_TARGET_CIRCLE" Client="NO" UseSleep="NO" Time="800">
                     <Pos Angle="0" Dist="0" PosType="3"/>
                     <Num Num="60"/>
-                    <Num Num="10" UseFunc="1" FuncTxt="local value = 3 + obj.Level * 3;
+                    <Num Num="10" UseFunc="1" FuncTxt="local value = 9 + obj.Level * 2;
                     if IsPVPField(self) == 1 and value > 2 then
                     value = math.floor((math.max(0, value-2)^0.5))+math.min(2, value)
                     end
@@ -484,7 +484,7 @@
                     <Pos Angle="0" Dist="3.8255448e-43"/>
                     <Num Num="55"/>
                     <Num Num="160"/>
-                    <Num FuncTxt="local value = 3 + obj.Level * 3;
+                    <Num FuncTxt="local value = 9 + obj.Level * 2;
                     if IsPVPField(self) == 1 and value > 2 then
                     value = math.floor((math.max(0, value-2)^0.5))+math.min(2, value)
                     end

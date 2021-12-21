@@ -62,7 +62,12 @@ function ABILITY_POINT_EXTRACTOR_RESET(frame, msg, argStr, type)
     frame:SetUserValue('TYPE', type);
     frame:SetUserValue('ENABLE_COUNT', enableCount);
     
-    ABILITY_POINT_EXTRACTOR_SET_EDIT(extractScrollEdit, GET_ABILITY_POINT_EXTRACTOR_MIN_VALUE(type));
+    local minRemainPoint = GET_ABILITY_POINT_EXTRACTOR_MIN_REMAIN_POINT(type)
+    if session.ability.GetAbilityPoint() < minRemainPoint then
+        ABILITY_POINT_EXTRACTOR_SET_EDIT(extractScrollEdit, 0);
+    else
+        ABILITY_POINT_EXTRACTOR_SET_EDIT(extractScrollEdit, GET_ABILITY_POINT_EXTRACTOR_MIN_VALUE(type));
+    end
     ABILITY_POINT_EXTRACTOR_UPDATE_MONEY(frame);
 end
 
@@ -128,6 +133,32 @@ function ABILITY_POINT_EXTRACTOR_UPDATE_MONEY(frame)
     
     local abilityPoint = session.ability.GetAbilityPoint();
     local expectAbilityPoint = abilityPoint - tonumber(consumePoint);
+
+    local extractScrollEdit = GET_CHILD_RECURSIVELY(frame, 'extractScrollEdit');
+    local extractScrollBox = GET_CHILD_RECURSIVELY(frame, 'extractScrollBox');
+    local extractScrollDown = GET_CHILD_RECURSIVELY(frame, 'extractScrollDown');
+    local extractScrollUp = GET_CHILD_RECURSIVELY(frame, 'extractScrollUp');
+    local extractScrollReset = GET_CHILD_RECURSIVELY(frame, 'extractScrollReset');
+    local extractScrollMax = GET_CHILD_RECURSIVELY(frame, 'extractScrollMax');
+
+    local minRemainPoint = GET_ABILITY_POINT_EXTRACTOR_MIN_REMAIN_POINT(type)
+    if abilityPoint < minRemainPoint then
+        remainPointText:SetFontName('red_18')
+        remainPointText:SetTextTooltip(ScpArgMsg("AbilityPointExtractor_NotEnoughAbilityPoint", "MIN", GET_COMMAED_STRING(GET_ABILITY_POINT_EXTRACTOR_MIN_REMAIN_POINT(type))))
+        extractScrollBox:SetEnable(0)
+        extractScrollDown:SetEnable(0)
+        extractScrollUp:SetEnable(0)
+        extractScrollReset:SetEnable(0)
+        extractScrollMax:SetEnable(0)
+    else
+        remainPointText:SetFontName('brown_18')
+        remainPointText:SetTextTooltip('')
+        extractScrollBox:SetEnable(1)
+        extractScrollDown:SetEnable(1)
+        extractScrollUp:SetEnable(1)
+        extractScrollReset:SetEnable(1)
+        extractScrollMax:SetEnable(1)
+    end
 
     if type == 1 then        
         local expectMoneyStr = "";
@@ -251,6 +282,14 @@ function ABILITY_POINT_EXTRACTOR(parent, ctrl)
     local topFrame = parent:GetTopParentFrame();
     local count = topFrame:GetUserIValue('SCROLL_COUNT');
     local type = topFrame:GetUserIValue("TYPE");
+
+    local abilityPoint = session.ability.GetAbilityPoint();
+    local minRemainPoint = GET_ABILITY_POINT_EXTRACTOR_MIN_REMAIN_POINT(type)
+    if abilityPoint < minRemainPoint then
+        ui.SysMsg(ScpArgMsg("AbilityPointExtractor_NotEnoughAbilityPoint", "MIN", GET_COMMAED_STRING(minRemainPoint)))
+        return
+    end
+
     if count < 1 then
         return;
     end
@@ -310,10 +349,14 @@ end
 function ABILITY_POINT_EXTRACTOR_TYPE_RADIO_BTN_CLICK(parent, ctrl, argStr, type)
     local frame = parent:GetTopParentFrame();
     local question = GET_CHILD(frame, "question");
-    local tooltipText = ClMsg("AbilityPointExtractorTooltipText_1");
-    if type == 2 then
+    local tooltipText = "";
+    local minRemainPoint = GET_ABILITY_POINT_EXTRACTOR_MIN_REMAIN_POINT(type)
+    local remainPoint = GET_COMMAED_STRING(minRemainPoint)
+    if type == 1 then
+        tooltipText = ScpArgMsg("AbilityPointExtractorTooltipText_1{MIN_REMAIN_POINT}", "MIN_REMAIN_POINT", remainPoint)
+    elseif type == 2 then
         local fee = GET_ABILITY_POINT_EXTRACTOR_FEE(type);
-        tooltipText = ScpArgMsg("AbilityPointExtractorTooltipText_2{VALUE}{MIN}", "VALUE", fee, "MIN", GET_ABILITY_POINT_EXTRACTOR_MIN_VALUE(type));
+        tooltipText = ScpArgMsg("AbilityPointExtractorTooltipText_2{VALUE}{MIN_REMAIN_POINT}{MIN}", "VALUE", fee, "MIN_REMAIN_POINT", remainPoint, "MIN", GET_ABILITY_POINT_EXTRACTOR_MIN_VALUE(type));
     end
     question:SetTextTooltip(tooltipText);
 

@@ -1492,7 +1492,7 @@ function MAKE_ITEM_SKILL_RESTRICT_INFO(frame, clsName, ypos, strlSetWidth)
     return textWidth, ypos + ctrlSet:GetHeight();
 end
 
-function UPDATE_ITEM_RESTRICT_INFO_TOOLTIP(frame, category)
+function UPDATE_ITEM_RESTRICT_INFO_TOOLTIP(frame, indunName)
 	local titleBox = GET_CHILD_RECURSIVELY(frame, "titleBox");
 	local title = GET_CHILD(titleBox,"title")
     local INNER_X = frame:GetUserConfig("INNER_X");
@@ -1505,13 +1505,35 @@ function UPDATE_ITEM_RESTRICT_INFO_TOOLTIP(frame, category)
 	frame:RemoveChildByType('controlset')
     for i = 0, cnt - 1 do
         local itemRestrict = GetClassByIndexFromList(restrictList, i);
-		if TryGetProp(itemRestrict, "Category") == category then
+		if TryGetProp(itemRestrict, "Category") == indunName then
 			local width, height = MAKE_ITEM_RESTRICT_INFO(frame, itemRestrict, ypos + INNER_Y);
             xpos = math.max(xpos, width);
             ypos = height;
 		end
     end
     frame:Resize(xpos + INNER_X, ypos + INNER_Y);
+end
+
+function UPDATE_DUNGEON_RESTRICT_INFO_TOOLTIP(frame, indunName)
+	local titleBox = GET_CHILD_RECURSIVELY(frame, "titleBox");
+	local title = GET_CHILD(titleBox,"title")
+    local INNER_X = frame:GetUserConfig("INNER_X");
+    local INNER_Y = frame:GetUserConfig("INNER_Y");
+
+    local xpos = title:GetWidth() + title:GetX();
+    local ypos = titleBox:GetHeight();
+	local restrictList, cnt = GetClassList("dungeon_restrict");
+
+	frame:RemoveChildByType('controlset')
+    for i = 0, cnt - 1 do
+		local itemRestrict = GetClassByIndexFromList(restrictList, i);
+		if TryGetProp(itemRestrict, "Category") == indunName then
+			local width, height = MAKE_ITEM_RESTRICT_INFO(frame, itemRestrict, ypos + INNER_Y);
+            xpos = math.max(xpos, width);
+            ypos = height;
+		end
+    end
+	frame:Resize(xpos + INNER_X, ypos + INNER_Y);
 end
 
 function MAKE_ITEM_RESTRICT_INFO(frame, cls, ypos)
@@ -1526,6 +1548,8 @@ function MAKE_ITEM_RESTRICT_INFO(frame, cls, ypos)
 	end
     local name = TryGetProp(cls, "Spot_Name");
 
+    local indun_name = TryGetProp(cls, "Category", 'None')    
+
     local INNER_X = frame:GetUserConfig("INNER_X");
     local ctrlSet = frame:CreateOrGetControlSet("skill_restrict_info_list", "SKILL_RESTRICT_INFO_" .. name, INNER_X, ypos);
     local text = GET_CHILD_RECURSIVELY(ctrlSet, "skill_info");
@@ -1533,6 +1557,18 @@ function MAKE_ITEM_RESTRICT_INFO(frame, cls, ypos)
 	text:SetTextByKey("name", name);
 
 	local desc = TryGetProp(cls,"Desc")
+    if TryGetProp(cls, 'MsgType', 'None') == 'GearScore' then
+        local map_cls = GetClass('Indun', indun_name)        
+        if map_cls ~= nil and TryGetProp(map_cls, 'GearScore', 0) ~= 0 then
+            desc = ScpArgMsg(desc, 'score', TryGetProp(map_cls, 'GearScore', 0))            
+        end
+    elseif TryGetProp(cls, 'MsgType', 'None') == 'AbilityScore' then
+        local map_cls = GetClass('Indun', indun_name)             
+        if map_cls ~= nil and TryGetProp(map_cls, 'AbilityScore', 0) ~= 0 then
+            desc = ScpArgMsg(desc, 'score', TryGetProp(map_cls, 'AbilityScore', 0))            
+        end
+    end    
+    
     text:SetTextByKey("caption", desc);
     
     local textWidth = text:GetTextWidth();

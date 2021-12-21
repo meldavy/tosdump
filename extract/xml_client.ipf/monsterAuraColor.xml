@@ -76,4 +76,28 @@
 			<Color RGBA="150;100;255;150" Time="1.5"/>
 		</Node>
 	</Pattern>
+	<Pattern PatternName="PartyLeaderBuff_NoDamage">
+		<Node Factor="1" TimeTerm="1.5" DiffusionType="Stop" ColorBlendType="Linear" Attach="Self">
+			<Color RGBA="0;85;255;255" Time="0"/>
+			<Color RGBA="0;85;255;255" Time="0.5"/>
+			<Color RGBA="0;85;255;255" Time="1"/>
+			<Color RGBA="0;85;255;255" Time="1.5"/>
+		</Node>
+	</Pattern>
+	<Pattern PatternName="PartyLeaderBuff_CoolDown">
+		<Node Factor="1" TimeTerm="1.5" DiffusionType="Stop" ColorBlendType="Linear" Attach="Self">
+			<Color RGBA="255;255;0;150" Time="0"/>
+			<Color RGBA="255;255;0;150" Time="0.5"/>
+			<Color RGBA="255;255;0;150" Time="1"/>
+			<Color RGBA="255;255;0;150" Time="1.5"/>
+		</Node>
+	</Pattern>
+	<Pattern PatternName="PartyLeaderBuff_DamageUp">
+		<Node Factor="1" TimeTerm="1.5" DiffusionType="Stop" ColorBlendType="Linear" Attach="Self">
+			<Color RGBA="252;0;0;255" Time="0"/>
+			<Color RGBA="252;0;0;255" Time="0.5"/>
+			<Color RGBA="252;0;0;255" Time="1"/>
+			<Color RGBA="252;0;0;255" Time="1.5"/>
+		</Node>
+	</Pattern>
 </Aura>

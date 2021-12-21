@@ -289,21 +289,9 @@ end
 
 
 function ON_PARTY_BOARD_PARTICIPANT_NOTICE(frame, msg, argStr, argNum)
+	frame = ui.GetFrame('ingamealert')
 	local participantList = session.party.GetParticipantList()
-	local partyBoard = ui.GetFrame("party_search_board")
-	local tab = GET_CHILD(partyBoard, "party_tab")
-	local tabIndex = tab:GetSelectItemIndex()
-
-	local ctrl = GET_CHILD_RECURSIVELY(frame, "elem_PartyParticipant")
-	if ctrl:IsVisible() == 1 then
-		return;
-	end
-
 	if participantList:Count() == 0 then
-		return;
-	end
-
-	if partyBoard:IsVisible() == 1 and tabIndex == 1 then
 		return;
 	end
 

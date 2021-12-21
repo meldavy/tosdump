@@ -1,5 +1,6 @@
 ﻿-- housing_craft.lua 
 
+local selectedValue = 1
 function HOUSING_CRAFT_ON_INIT(addon, frame)
 	addon:RegisterMsg('HOUSINGCRAFT_UPDATE_ENDTIME', 'HOUSING_CRAFT_REMAIN_TIME_UPDATE');
 	addon:RegisterMsg('SUCCESS_RECEIVE_HOUSINGCRAFT_GOODS', 'HOUSING_CRAFT_RECEIVED_GOODS');
@@ -8,6 +9,7 @@ function HOUSING_CRAFT_ON_INIT(addon, frame)
 
 end
 function HOUSING_CRAFT_OPEN(frame)
+	selectedValue = 1
 	housing.RequestArrangedFurniture();
 	local help_pic = GET_CHILD_RECURSIVELY(frame, "helpPic");
 	if help_pic ~= nil then
@@ -47,17 +49,18 @@ function CREATE_POINTCRAFT_CATEGORY(frame)
 	local value_cnt = categoryCls.ValueCnt
 	local category = categoryCls.ClassName
 	local baseid = categoryCls.BaseID 
-
 	for i = 1, value_cnt do
 		local groupCls = GetClassByType("Housing_CraftShop_Group", baseid + i);
 		local coinName = groupCls.Name 
 		local limitCnt = groupCls.LimitCount
         local categoryCtrl = categorygbox:CreateOrGetControlSet('house_craft_coin_cate', 'CATEGORY_CTRL_'..(baseid + i), 0, (i - 1) * 70);
 		
-		local mainCoinNametxt = categoryCtrl:GetChild("mainCoinNameText")
-		local coinNametxt = categoryCtrl:GetChild("coinNameText")
-		local conditiontxt = categoryCtrl:GetChild("conditionText")
-		local shadow = categoryCtrl:GetChild("shadow")
+		local mainCoinNametxt = GET_CHILD(categoryCtrl,"mainCoinNameText")
+		local coinNametxt = GET_CHILD(categoryCtrl, "coinNameText")
+		local conditiontxt = GET_CHILD(categoryCtrl, "conditionText")
+		local shadow = GET_CHILD(categoryCtrl, "shadow")
+
+		categoryCtrl:SetUserValue("VALUE_COUNT", i)
 
 		mainCoinNametxt:SetTextByKey("name", coinName)
 		coinNametxt:SetTextByKey("name", coinName)
@@ -112,19 +115,29 @@ function CREATE_POINTCRAFT_LIST(frame, furniture_list)
 	maingbox:RemoveAllChild()
 	for i = 1, #furnitures do
 		local furnitureCls = furnitures[i]
-		local listCtrl = maingbox:CreateOrGetControlSet('house_craft_furniture', 'LIST_CTRL_'..cnt, (cnt%2)*280 + 5, math.floor(cnt/2) * 282 + 5);
-		local icon = GET_CHILD_RECURSIVELY(listCtrl, "icon")
-		local infoName = GET_CHILD(listCtrl, "infoName")
-		local detailbox = GET_CHILD(listCtrl, "coingb")
-		local itemCls = GetClass("Item", furnitureCls.ItemClassName)
-		
-		icon:SetImage(TryGetProp(itemCls,"Icon","None"))
-		infoName:SetTextByKey("name", furnitureCls.Name)
+		local preset = GetClass("HousingCraft_RewardGroup", TryGetProp(furnitureCls,"RewardGroup"))
+		local presetValue = TryGetProp(preset, "Value"..selectedValue, 0)
+		if presetValue ~= 0 then
+			local listCtrl = maingbox:CreateOrGetControlSet('house_craft_furniture', 'LIST_CTRL_'..cnt, (cnt%2)*280 + 5, math.floor(cnt/2) * 282 + 5);
+			local icon = GET_CHILD_RECURSIVELY(listCtrl, "icon")
+			local infoName = GET_CHILD(listCtrl, "infoName")
+			local detailbox = GET_CHILD(listCtrl, "coingb")
+			local itemCls = GetClass("Item", furnitureCls.ItemClassName)
+			
+			icon:SetImage(TryGetProp(itemCls,"Icon","None"))
+			infoName:SetTextByKey("name", furnitureCls.Name)
 
-		HOUSING_CRAFT_CREATE_LIST_DETAIL(frame, furnitureCls, detailbox)
+			HOUSING_CRAFT_CREATE_LIST_DETAIL(frame, furnitureCls, detailbox)
 
-		cnt = cnt + 1
+			cnt = cnt + 1
+		end
 	end
+
+	local titleText = GET_CHILD_RECURSIVELY(frame, "titletext")
+	local categoryCls = HOUSING_CRAFT_GET_CATEGORY_CLS(frame)
+	local baseid = categoryCls.BaseID 
+	local groupCls = GetClassByType("Housing_CraftShop_Group", baseid + selectedValue);
+	titleText:SetTextByKey("title", groupCls.Name)
 end
 
 function HOUSING_CRAFT_CREATE_LIST_DETAIL(frame, furniture, detailbox)
@@ -132,19 +145,21 @@ function HOUSING_CRAFT_CREATE_LIST_DETAIL(frame, furniture, detailbox)
 	local value = categoryCls.ValueCnt
 	local baseid = categoryCls.BaseID 
 	local preset = GetClass("HousingCraft_RewardGroup", TryGetProp(furniture,"RewardGroup"))
-	local j = 1
-	for i = 1, value do
-		if preset["Value"..i] ~= 0 then
-			local groupCls = GetClassByType("Housing_CraftShop_Group", baseid + i);
-			local detailCtrl = detailbox:CreateOrGetControlSet('house_craft_furniture_detail', 'LIST_DETAIL_CTRL_'..j, 0, 35 * (j-1));
-			local icon = GET_CHILD(detailCtrl, "icon")
-			local name = GET_CHILD(detailCtrl, "name")
-			icon:SetImage(groupCls.Icon)
-			name:SetTextByKey("name", groupCls.Name)
-			name:SetTextByKey("point", preset["Value"..i])
-			j = j + 1
-		end
+	local presetValue = TryGetProp(preset, "Value"..selectedValue, 0)
+	if presetValue ~= 0 then
+		local groupCls = GetClassByType("Housing_CraftShop_Group", baseid + selectedValue);
+		local detailCtrl = detailbox:CreateOrGetControlSet('house_craft_furniture_detail', 'LIST_DETAIL_CTRL', 0, 0);
+		local icon = GET_CHILD(detailCtrl, "icon")
+		local name = GET_CHILD(detailCtrl, "name")
+		icon:SetImage(groupCls.Icon)
+		name:SetTextByKey("name", groupCls.Name)
+		name:SetTextByKey("point", presetValue)
 	end
+end
+
+function HOUSING_CRAFT_SELECT_CATEGORY(parent, self)
+	selectedValue = parent:GetUserIValue("VALUE_COUNT");
+	housing.RequestArrangedFurniture();
 end
 
 ---- 쿠폰 로직----

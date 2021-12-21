@@ -510,12 +510,16 @@ function GET_BASIC_ATK(item)
         return 0, 0;
     end
 
-    if grade == 6 and classType ~= 'Neck' and classType ~= 'Ring' then
-        itemATK = 13128
-        if classType == 'Trinket' then
-            itemATK = itemATK * 0.15
-        elseif TryGetProp(item, 'EquipGroup', 'None') == 'THWeapon' then
-            itemATK = itemATK * 1.15
+    if grade == 6 then
+        if classType ~= 'Neck' and classType ~= 'Ring' then
+            itemATK = 13128
+            if classType == 'Trinket' then
+                itemATK = itemATK * 0.15
+            elseif TryGetProp(item, 'EquipGroup', 'None') == 'THWeapon' then
+                itemATK = itemATK * 1.15
+            end
+        else
+            itemATK = 934
         end
     end
 
@@ -617,12 +621,16 @@ function GET_BASIC_MATK(item)
         itemATK = ChangeBasicProp
     end
     
-    if grade == 6 and classType ~= 'Neck' and classType ~= 'Ring' then
-        itemATK = 13128
-        if classType == 'Trinket' then
-            itemATK = itemATK * 0.15
-        elseif TryGetProp(item, 'EquipGroup', 'None') == 'THWeapon' then
-            itemATK = itemATK * 1.15
+    if grade == 6 then
+        if classType ~= 'Neck' and classType ~= 'Ring' then
+            itemATK = 13128
+            if classType == 'Trinket' then
+                itemATK = itemATK * 0.15
+            elseif TryGetProp(item, 'EquipGroup', 'None') == 'THWeapon' then
+                itemATK = itemATK * 1.15
+            end
+        else
+            itemATK = 934
         end
     end
     

@@ -442,7 +442,7 @@ function SET_SLOT_LIFETIME_IMAGE(invItem, icon, slot, force_off)
 	end
 
 	local itemIES = GetIES(invItem:GetObject());
-	local expire_datetime = TryGetProp(itemIES, 'ExpireDateTime', 'None')
+	local expire_datetime = GET_ITEM_EXPIRE_TIME(itemIES)
 
 	if  expire_datetime ~= 'None' or (force_off ~= false and invItem.hasLifeTime == true and invItem.count > 0) then
 		ICON_SET_ITEM_REMAIN_LIFETIME(icon);
@@ -487,7 +487,15 @@ function QUICKSLOTNEXTBAR_UPDATE_ALL_SLOT()
 				    updateslot = false;
 				end
 		    end	
+			
 		    if true == updateslot and quickSlotInfo.category ~= 'NONE' then
+				if quickSlotInfo.category == '' then
+					local cls = GetClassByType("Buff", quickSlotInfo.type)
+					if cls ~= nil then 
+						quickSlotInfo.category = 'Buff'
+					end	
+				end
+
 				local slot = GET_CHILD_RECURSIVELY(frame, "slot"..i+1, "ui::CSlot")
 			    SET_QUICK_SLOT(frame, slot, quickSlotInfo.category, quickSlotInfo.type, quickSlotInfo:GetIESID(), 0, true, true);
 		    end
@@ -568,10 +576,10 @@ function SET_QUICK_SLOT(frame, slot, category, type, iesID, makeLog, sendSavePac
 			-- 장착 아이템 특별관리 // Type이 아닌 iesID로만 찾으며, 장착 중이면 미보유 중으로 취급한다.
 			if itemIES.ItemType == 'Equip' then
 				if iesID == "" then
-					equipItemHave = false
+					equipItemHave = false				
 				end
 
-				if session.GetInvItemByGuid(iesID) == nil or session.GetEquipItemByGuid(iesID) ~= nil then
+				if iesID ~= '' and (session.GetInvItemByGuid(iesID) == nil or session.GetEquipItemByGuid(iesID) ~= nil) then
 					equipItemHave = false
 				end
 			end
@@ -596,7 +604,7 @@ function SET_QUICK_SLOT(frame, slot, category, type, iesID, makeLog, sendSavePac
 
 				if itemIES.MaxStack > 0 or itemIES.GroupName == "Material" then
 					if itemIES.MaxStack > 1 then -- 개수는 스택형 아이템만 표시해주자
-						if TryGetProp(itemIES, 'ExpireDateTime', 'None') ~= 'None' then
+						if GET_ITEM_EXPIRE_TIME(itemIES) ~= 'None' then
 							local font = '{s14}{ol}{b}'	
 							if invenItemInfo.count >= 1000 then
 								font = '{s12}{ol}{b}'	
@@ -636,6 +644,17 @@ function SET_QUICK_SLOT(frame, slot, category, type, iesID, makeLog, sendSavePac
 			end
 
 			ICON_SET_ITEM_COOLDOWN_OBJ(icon, itemIES);
+		end
+	elseif category == 'Buff' then
+		local cls = GetClassByType("Buff", type)
+		if cls == nil then return end
+
+		QUICKSLOT_SET_GAUGE_VISIBLE(slot, 0)
+		imageName = TryGetProp(cls, 'Icon', 'None')
+		if imageName == 'None' then
+			imageName = ''
+		else
+			imageName = 'icon_' .. imageName
 		end
 	end
 	
@@ -684,6 +703,11 @@ function SET_QUICK_SLOT(frame, slot, category, type, iesID, makeLog, sendSavePac
 				icon:SetTooltipNumArg(type);
 				icon:SetTooltipIESID(iesID);
 			end
+		elseif category == 'Buff' then
+			local cls = GetClassByType("Buff", type)
+			icon:Set(imageName, category, type, 0)
+			icon:SetTooltipType('buff')
+			icon:SetTooltipArg(session.GetMyHandle(), cls.ClassID, 0)
 		else
 			if category == 'Skill' then
 				icon:SetTooltipType('skill');
@@ -897,6 +921,11 @@ function QUICKSLOTNEXPBAR_SLOT_USE(frame, slot, argStr, argNum)
 		return;
 	end
 	
+	if iconInfo:GetCategory() == 'Buff' and joystickquickslotRestFrame:IsVisible() == 0 then
+		party.ReqPartySkill(iconInfo.type)
+		return;
+	end
+	
 	if icon:GetStringColorTone() == "FFFF0000" then
 		return;
 	end
@@ -954,7 +983,7 @@ function QUICKSLOTNEXPBAR_SLOT_RBTNDOWN(frame, control, argStr, argNum)
 	CLEAR_QUICKSLOT_SLOT(slot, 1, true);
 end
 
-function QUICKSLOTNEXPBAR_ON_DROP(frame, control, argStr, argNum)	
+function QUICKSLOTNEXPBAR_ON_DROP(frame, control, argStr, argNum)		
 	local liftIcon = ui.GetLiftIcon();
 	local liftIconiconInfo = liftIcon:GetInfo();
 	local iconParentFrame = liftIcon:GetTopParentFrame();
@@ -963,12 +992,12 @@ function QUICKSLOTNEXPBAR_ON_DROP(frame, control, argStr, argNum)
 	local iconCategory = 0;
 	local iconType = 0;
 	local iconGUID = "";
-
+	
 	if nil ~= liftIconiconInfo then
-		iconCategory = liftIconiconInfo:GetCategory();
+		iconCategory = liftIconiconInfo:GetCategory();		
 		iconType = liftIconiconInfo.type;
 		iconGUID = liftIconiconInfo:GetIESID();
-
+		
 		if iconGUID ~= '0' then		
 			local invItem = GET_PC_ITEM_BY_GUID(iconGUID);			
 			if invItem ~= nil then
@@ -999,7 +1028,7 @@ function QUICKSLOTNEXPBAR_ON_DROP(frame, control, argStr, argNum)
 			end
 		end
 	end
-
+	
 	if iconParentFrame:GetName() == 'quickslotnexpbar' then
 		local popSlotObj = liftIcon:GetParent();
 		if popSlotObj:GetName() ~=  slot:GetName() then
@@ -1034,7 +1063,7 @@ function QUICKSLOTNEXPBAR_ON_DROP(frame, control, argStr, argNum)
 		QUICKSLOT_REGISTER(joystickFrame, iconType, slot:GetSlotIndex() + 1, iconCategory, true);        
 	end
 
-	--새거 등록
+	--새거 등록		
 	QUICKSLOTNEXPBAR_NEW_SETICON(frame, slot, iconCategory, iconType, iconGUID);
     DebounceScript("JOYSTICK_QUICKSLOT_UPDATE_ALL_SLOT", 0.1);
 end

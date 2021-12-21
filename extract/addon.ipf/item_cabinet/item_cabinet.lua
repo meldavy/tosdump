@@ -421,7 +421,7 @@ function ITEM_CABINET_ITEM_TAB_INIT(listCls, itemTabCtrl)
 		add_str = '(' ..  ClMsg('Unique1') .. ')'
 	end
 
-	SET_SLOT_BG_BY_ITEMGRADE(itemSlot, TryGetProp(itemCls, 'ItemGrade'));
+	SET_SLOT_BG_BY_ITEMGRADE(itemSlot, itemCls);
 	itemText:SetTextByKey('name', TryGetProp(itemCls, 'Name') .. add_str);
 	
 	local icon = CreateIcon(itemSlot);

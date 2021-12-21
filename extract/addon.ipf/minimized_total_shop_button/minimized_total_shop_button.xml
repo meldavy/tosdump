@@ -6,6 +6,6 @@
 	<draw blend="100" drawtitlebar="false" drawframe="false"/>
 	<option visible="true" closebutton="false" useimageitem="true" piptype="right" autoopen="true" hideable="false"/>
 	<controls>
-		<button name="openTotalShopBtn" rect="0 0 56 56" margin="0 0 0 0" layout_gravity="center center" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="" clicksound="button_click_3" oversound="button_cursor_over_2" image="total_shop_btn" LBtnDownScp="MINIMIZED_TOTAL_SHOP_BUTTON_CLICK"/>
+		<button name="openTotalShopBtn" rect="0 0 56 56" margin="0 0 0 0" layout_gravity="center center" MouseOffAnim="btn_mouseoff" MouseOnAnim="btn_mouseover" caption="" clicksound="button_click_3" oversound="button_cursor_over_2" image="total_shop_btn" LBtnDownScp="MINIMIZED_TOTAL_SHOP_BUTTON_CLICK" texttooltip="{@st59}상점 펼쳐보기{/}"/>
 	</controls>
 </uiframe>

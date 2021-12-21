@@ -129,7 +129,13 @@ function ON_MARKET_SELL_LIST(frame, msg, argStr, argNum)
 		end
 
 		local nameCtrl = ctrlSet:GetChild("name");
-		nameCtrl:SetTextByKey("value", GET_FULL_NAME(itemObj));
+		local name_text = GET_FULL_NAME(itemObj)
+		local grade = shared_item_earring.get_earring_grade(itemObj)		
+		if grade > 0 then
+			name_text = name_text .. '(' .. grade .. ClMsg('Grade') .. ')'
+		end
+
+		nameCtrl:SetTextByKey("value", name_text);
 
 		local totalPriceCtrl = ctrlSet:GetChild("totalPrice");
 		local totalPriceValue, b, c = math.mul_int_for_lua(marketItem:GetSellPrice(), marketItem.count);
