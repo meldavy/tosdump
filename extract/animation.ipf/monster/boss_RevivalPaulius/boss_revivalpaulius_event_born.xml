@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionDesc>
+    <Sound frame="0.00" soundFile="mon_move_revivalpaulius_event_born"/>
+    <Sound frame="124.00" soundFile="mon_move_revivalpaulius_footstep_1"/>
+    <Sound frame="148.00" soundFile="mon_move_revivalpaulius_footstep_2"/>
+    <Sound frame="174.29" soundFile="mon_move_revivalpaulius_footstep_1"/>
+    <Sound frame="198.00" soundFile="mon_move_revivalpaulius_footstep_2"/>
+</ActionDesc>

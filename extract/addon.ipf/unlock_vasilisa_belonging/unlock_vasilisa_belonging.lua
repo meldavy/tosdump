@@ -15,9 +15,9 @@ function UNLOCK_VASILISA_BELONGING_SCROLL_TARGET_ITEM_SLOT(slot, invItem, scroll
 	local iconInfo = icon:GetInfo();
 	iconInfo.type = type;
 
-	icon:SetTooltipType("reinforceitem");
-	icon:SetTooltipArg("transcendscroll", scrollClsID, invItem:GetIESID());
-	
+	icon:SetTooltipType('wholeitem');
+	icon:SetTooltipArg("", TryGetProp(itemCls, "ClassID", 0), invItem:GetIESID());
+	icon:SetTooltipOverlap(1)
 end
 
 function UNLOCK_VASILISA_BELONGING_SCROLL_EXEC_ASK_AGAIN(frame, btn)
@@ -42,10 +42,15 @@ function UNLOCK_VASILISA_BELONGING_SCROLL_EXEC_ASK_AGAIN(frame, btn)
 	if scrollInvItem == nil then		
 		return;
 	end
-	local scrollObj = GetIES(scrollInvItem:GetObject());
-	local clmsg = ScpArgMsg("ReallyUnlockBelonging")    
-	imcSound.PlaySoundEvent(frame:GetUserConfig("TRANS_BTN_OK_SOUND"));
-	ui.MsgBox_NonNested(clmsg, frame:GetName(), "UNLOCK_VASILISA_BELONGING_SCROLL_EXEC", "None");
+	
+	local yesscp = 'UNLOCK_VASILISA_BELONGING_SCROLL_EXEC'
+
+	local option = {}
+	option.ChangeTitle = "TitleUnlockItem"
+	option.CompareTextColor = nil
+	option.CompareTextDesc =  ScpArgMsg('ReallyGoddessUnlock','item', itemObj.Name)
+
+	WARNINGMSGBOX_EX_FRAME_OPEN(frame, nil, 'ReallyUnlockBelonging' .. ';UnlockBelonging/' .. yesscp, 0, option)
 end
 
 function UNLOCK_VASILISA_BELONGING_SCROLL_RESULT(isSuccess)

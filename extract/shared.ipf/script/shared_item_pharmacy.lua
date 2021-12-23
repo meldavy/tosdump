@@ -20,8 +20,8 @@ local function make_pharmacy_reward_list()
     table.insert(_pharmacy_reward_list[470], {'secret_medicine_con_470', 1})
     table.insert(_pharmacy_reward_list[470], {'secret_medicine_mspd_470', 1})
     table.insert(_pharmacy_reward_list[470], {'secret_medicine_rsp_470', 1})
-    table.insert(_pharmacy_reward_list[470], {'secret_medicine_holy_470', 3})
-    table.insert(_pharmacy_reward_list[470], {'secret_medicine_energy_470', 3})
+    table.insert(_pharmacy_reward_list[470], {'secret_medicine_holy_470', 2})
+    table.insert(_pharmacy_reward_list[470], {'secret_medicine_energy_470', 2})
 end
 
 make_pharmacy_reward_list()

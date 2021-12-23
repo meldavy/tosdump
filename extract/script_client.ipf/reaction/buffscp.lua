@@ -1973,6 +1973,17 @@ function Gresme_Raven_FlyBuff_LEAVE(actor, obj, buff)
     end
 end
 
+function DelmoreCastleGate_colorblend_clear_ENTER(actor, obj, buff)
+    if actor ~= nil then
+        C_COLORBLEND_ACTOR(actor, obj, 1, 0, 0, 0, 0, 0, 1)
+    end
+end
+function DelmoreCastleGate_colorblend_clear_LEAVE(actor, obj, buff)
+    if actor ~= nil then
+        C_COLORBLEND_ACTOR(actor, obj, 1, 0, 0, 0, 0, 0, 1)
+    end
+end
+
 -- EarringRaid Party Buff 여신의 전언 파티 버프 스킬-- 
 function PartyLeaderBuff_NoDamage_ENTER(actor, obj, buff)
     imcSound.PlaySoundEvent("monster_state_1")

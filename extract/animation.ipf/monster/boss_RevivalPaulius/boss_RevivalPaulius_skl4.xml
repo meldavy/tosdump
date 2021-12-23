@@ -1,101 +1,102 @@
 <?xml version="1.0" encoding="EUC-KR"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by IMCGames Co., Ltd (IMCGames Co., Ltd) -->
 <ActionDesc>
-	<Shockwave frame="35" type="2" intensity="5" frequency="65" duration="2" range="1000"/>
-	<Shockwave frame="59" type="2" intensity="10" frequency="65" duration="1.5" range="1000"/>
-	<BlendOn frame="0" R="0" G="0" B="0" A="50"/>
-	<BlendOn frame="41" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="42" R="0" G="0" B="0" A="0"/>
-	<BlendOn frame="44" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="45" R="0" G="0" B="0" A="0"/>
-	<BlendOn frame="47" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="48" R="0" G="0" B="0" A="0"/>
-	<BlendOn frame="50" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="51" R="0" G="0" B="0" A="0"/>
-	<BlendOn frame="53" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="54" R="0" G="0" B="0" A="0"/>
-	<BlendOn frame="56" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="57" R="0" G="0" B="0" A="0"/>
-	<BlendOn frame="59" R="150" G="100" B="150" A="100"/>
-	<BlendOn frame="60" R="200" G="100" B="200" A="200"/>
-	<BlendOff frame="61" R="0" G="0" B="0" A="0"/>
-	<Particle frame="70" attachNode="Bip001 Spine" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_root" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Bip001 Spine" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="5.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Bip001 L UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Bip001 R UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Bip001 R Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Bip001 L Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone01" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone02" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone03" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone04" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone06" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone07" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone08" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone09" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone05" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone10" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone11" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_stone12" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_effect_eye" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_effect_eye001" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Bip001 Spine" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_root" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Bip001 Spine" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="5.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Bip001 L UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Bip001 R UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Bip001 R Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Bip001 L Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone01" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone02" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone03" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone04" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone06" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone07" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone08" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone09" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone05" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone10" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone11" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_stone12" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_effect_eye" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="0" attachNode="Dummy_effect_eye001" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="20" attachNode="Dummy_effect_eye" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="80" attachNode="Dummy_effect_eye" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="20" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="0.8" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="30" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="40" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.1" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="50" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="60" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="59" attachNode="Dummy_effect_skl1" particleName="F_ground185_spred_out_light_white" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="61" attachNode="Dummy_effect_skl1" particleName="F_ground201_light_spread_out" useAttach="false" hiddenObj="false" changeEffect="None" scale="12" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="59" attachNode="Dummy_effect_skl1" particleName="F_cleric_RingOfLight_circle_explosion_end_violet" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="64" attachNode="Dummy_effect_skl1" particleName="F_cleric_RingOfLight_circle_explosion_end_violet" useAttach="false" hiddenObj="false" changeEffect="None" scale="7.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="61" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack3_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="3.5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="60" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack_violet_burstup_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="2.7" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="64" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="67" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="4.3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack_violet_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="73" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="7" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="76" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="9" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="66" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack_violet_burstup_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="9" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="59" attachNode="Dummy_effect_skl1" particleName="F_ground207_crack_explosion_blue2" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="99" attachNode="Dummy_effect_skl1" particleName="F_smoke204_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="9" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="74" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="89" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="104" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="119" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="134" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="40" attachNode="Dummy_effect_hand_R" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="70" attachNode="Dummy_effect_hand_R" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="5" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="15" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="30" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="45" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="60" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="75" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="90" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="115" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
-	<Particle frame="130" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20"/>
+    <BlendOn frame="0" R="0" G="0" B="0" A="50"/>
+    <Particle frame="0" attachNode="Bip001 Spine" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_root" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Bip001 Spine" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="5.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Bip001 L UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Bip001 R UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Bip001 R Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Bip001 L Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone01" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone02" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone03" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone04" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone06" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone07" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone08" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone09" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone05" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone10" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone11" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_stone12" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_effect_eye" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="0" attachNode="Dummy_effect_eye001" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Sound frame="0.42" soundFile="mon_move_revivalpaulius_skl4"/>
+    <Particle frame="5" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="15" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="20" attachNode="Dummy_effect_eye" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="20" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="0.8" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="30" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="30" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Shockwave frame="35" type="2" intensity="5" frequency="65" duration="2" range="1000"/>
+    <Particle frame="40" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="40" attachNode="Dummy_effect_hand_R" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <BlendOn frame="41" R="150" G="100" B="150" A="100"/>
+    <BlendOn frame="42" R="0" G="0" B="0" A="0"/>
+    <BlendOn frame="44" R="150" G="100" B="150" A="100"/>
+    <BlendOn frame="45" R="0" G="0" B="0" A="0"/>
+    <Particle frame="45" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <BlendOn frame="47" R="150" G="100" B="150" A="100"/>
+    <BlendOn frame="48" R="0" G="0" B="0" A="0"/>
+    <BlendOn frame="50" R="150" G="100" B="150" A="100"/>
+    <Particle frame="50" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <BlendOn frame="51" R="0" G="0" B="0" A="0"/>
+    <BlendOn frame="53" R="150" G="100" B="150" A="100"/>
+    <BlendOn frame="54" R="0" G="0" B="0" A="0"/>
+    <BlendOn frame="56" R="150" G="100" B="150" A="100"/>
+    <BlendOn frame="57" R="0" G="0" B="0" A="0"/>
+    <Shockwave frame="59" type="2" intensity="10" frequency="65" duration="1.5" range="1000"/>
+    <BlendOn frame="59" R="150" G="100" B="150" A="100"/>
+    <Particle frame="59" attachNode="Dummy_effect_skl1" particleName="F_ground185_spred_out_light_white" useAttach="false" hiddenObj="false" changeEffect="None" scale="2" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="59" attachNode="Dummy_effect_skl1" particleName="F_cleric_RingOfLight_circle_explosion_end_violet" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="59" attachNode="Dummy_effect_skl1" particleName="F_ground207_crack_explosion_blue2" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <BlendOn frame="60" R="200" G="100" B="200" A="200"/>
+    <Particle frame="60" attachNode="Dummy_effect_eye" particleName="F_warrior_Charge_cast_light_white" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="60" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack_violet_burstup_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="2.7" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="60" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <BlendOff frame="61" R="0" G="0" B="0" A="0"/>
+    <Particle frame="61" attachNode="Dummy_effect_skl1" particleName="F_ground201_light_spread_out" useAttach="false" hiddenObj="false" changeEffect="None" scale="12" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="61" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack3_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="3.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="64" attachNode="Dummy_effect_skl1" particleName="F_cleric_RingOfLight_circle_explosion_end_violet" useAttach="false" hiddenObj="false" changeEffect="None" scale="7.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="64" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="66" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack_violet_burstup_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="9" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="67" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="4.3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Bip001 Spine" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_root" particleName="F_levitation005_dark_violet3_1_re" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Bip001 Spine" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="5.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Bip001 L UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Bip001 R UpperArm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="0" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Bip001 R Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Bip001 L Forearm" particleName="F_levitation025_red" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone01" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone02" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone03" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone04" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone06" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone07" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone08" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone09" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone05" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone10" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone11" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_stone12" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_effect_eye" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="3" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_effect_eye001" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1.5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack_violet_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="70" attachNode="Dummy_effect_hand_R" particleName="F_smoke198_red_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="73" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="7" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="74" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="75" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="76" attachNode="Dummy_effect_skl1" particleName="F_ground190_circle_crack2_1" useAttach="false" hiddenObj="false" changeEffect="None" scale="9" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="80" attachNode="Dummy_effect_eye" particleName="F_levitation005_dark_violet1" useAttach="true" hiddenObj="false" changeEffect="None" scale="1" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="89" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="90" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="99" attachNode="Dummy_effect_skl1" particleName="F_smoke204_dark" useAttach="false" hiddenObj="false" changeEffect="None" scale="9" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="104" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="5" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="115" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="119" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="130" attachNode="Dummy_body" particleName="F_levitation053_blue" useAttach="true" hiddenObj="false" changeEffect="None" scale="4" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
+    <Particle frame="134" attachNode="Dummy_effect_hand_R" particleName="I_archer_pistol_atk_smoke3_dark" useAttach="true" hiddenObj="false" changeEffect="None" scale="6" pause="true" use2DEffect="false" soft2DValue="20" targetPos="false"/>
 </ActionDesc>

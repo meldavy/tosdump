@@ -7,6 +7,6 @@
 	<draw drawtitlebar="false" drawframe="false"/>
 	<option visible="false" hideable="false" autoopen="false" closebutton="false"/>
 	<controls>
-		<groupbox name="gbox" rect="-15 4 190 45" hittest="false" hittestbox="false" margin="0 0 0 0" layout_gravity="right top" draw="true" resizebyparent="true" resizebyresolution="true" scrollbar="false" fixheight="false" skin="chat_window"/>
+		<groupbox name="gbox" rect="-15 4 120 45" hittest="false" hittestbox="false" margin="0 0 0 0" layout_gravity="right top" draw="true" resizebyparent="true" resizebyresolution="true" scrollbar="false" fixheight="false" skin="chat_window"/>
 	</controls>
 </uiframe>

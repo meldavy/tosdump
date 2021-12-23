@@ -10,8 +10,8 @@
                     <Event execCount="1" eventName="MongoLog">
                         <execList>
                             <ToolScp Scp="GAME_ST_EVT_EXEC_SOUL_CRISTAL_LIMIT" Client="NO" UseSleep="NO">
-                                <Num Num="1"/>
-                                <Num Num="5"/>
+                                <Num Num="0"/>
+                                <Num Num="0"/>
                             </ToolScp>
                             <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO">
                                 <Str Str="Goddess_Raid_Delmore_Solo"/>
@@ -246,27 +246,6 @@
                             <ToolScp Scp="MGAME_FAIL_CHECK_LOG" Client="NO" UseSleep="NO">
                                 <Str Str="Goddess_Raid_Delmore_Solo"/>
                                 <Str Str="TimeOut"/>
-                            </ToolScp>
-                        </execList>
-                    </Event>
-                    <Event execCount="1" eventName="PC_ALL_DEAD">
-                        <condList>
-                            <ToolScp Scp="MGAME_EVT_COND_PCCNT_IMMEDIATELY" Client="NO" UseSleep="NO">
-                                <Num Num="0"/>
-                            </ToolScp>
-                        </condList>
-                        <execList>
-                            <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
-                                <Str Str="Fail"/>
-                            </ToolScp>
-                            <ToolScp Scp="MGAME_MSG_ICON" Client="YES" UseSleep="NO">
-                                <Str Str="모든 PC가 전투 불능상태가 되어 레이드에 실패하였습니다.{nl}30초 후 입장 지역으로 돌아갑니다."/>
-                                <Str Str="!"/>
-                                <Num Num="5"/>
-                            </ToolScp>
-                            <ToolScp Scp="MGAME_FAIL_CHECK_LOG" Client="NO" UseSleep="NO">
-                                <Str Str="Goddess_Raid_Delmore_Solo"/>
-                                <Str Str="AllPCDead"/>
                             </ToolScp>
                         </execList>
                     </Event>

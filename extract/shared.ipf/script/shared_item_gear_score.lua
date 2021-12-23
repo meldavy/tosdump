@@ -161,15 +161,17 @@ function GET_GEAR_SCORE(item, pc)
     local use_lv = TryGetProp(item, 'UseLv', 1)
     local item_lv = TryGetProp(item, 'EvolvedItemLv', 0)
 
+    local is_growth = false
     if TryGetProp(item, 'StringArg', 'None') == 'Growth_Item_Legend' and TryGetProp(item, 'NumberArg1', 0) ~= 0 then
         local growthItem = CALC_GROWTH_ITEM_LEVEL(item);
         if growthItem ~= nil then
             use_lv = growthItem;
+            is_growth = true
         end
     end
-
+    
     use_lv = math.max(use_lv, item_lv)
-
+    
     if check_slot_list[type] == nil then        
         return 0
     end
@@ -383,6 +385,10 @@ function GET_GEAR_SCORE(item, pc)
         local ret = 0.5 * ( (4*transcend) + (3*reinforce)) + ( (30*grade) + (1.66*avg_lv) )*0.5
         ret = ret * set_option * set_advantage + add_acc + gem_point        
         
+        if is_growth == true then
+            ret = ret * 0.9
+        end
+
         return math.floor(ret + 0.5)
     end
 

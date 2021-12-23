@@ -326,6 +326,8 @@ function SET_SLOT_STYLESET(slot, itemCls, itemGrade_Flag, itemLevel_Flag, itemAp
 				else
 					reinforceLv = TryGetProp(itemCls, 'Relic_LV', 1)
 				end
+			elseif TryGetProp(itemCls, 'GroupName', 'None') == 'Earring' then
+				reinforceLv = shared_item_earring.get_earring_grade(itemCls)
 			end			
 			SET_SLOT_REINFORCE_LEVEL(slot, reinforceLv);			
 		end

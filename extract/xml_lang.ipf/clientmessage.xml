@@ -694,7 +694,7 @@
 		<Class ClassID="3514" ClassName="ArcheologyRelicFarAway" Data="유물이 멀리 있는 것 같습니다."/>
 		<Class ClassID="3515" ClassName="ArcheologyRelicNear" Data="유물이 {@st59}{s19}{#33FF33}가까이{/}{/}{/} 있는 것 같습니다."/>
 		<Class ClassID="3516" ClassName="Archeology_Lv470" Data="[Lv.470] 유물 상점"/>		
-		<Class ClassID="3517" ClassName="AllAreaRelicFindedInThisArea" Data="고고학 임무를 통해 모든 유물을 발굴하였습니다. 다시 임무를 받아 유물을 발굴하세요."/>		
+		<Class ClassID="3517" ClassName="AllAreaRelicFindedInThisArea" Data="고고학 임무를 통해 모든 유물을 발굴하였습니다. 다시 임무를 받아 유물을 발굴하세요."/>
 	</Category>
 	<Category Name="Item">
 		<Class ClassID="4001" ClassName="GetItem" Data="아이템 획득"/>
@@ -1187,6 +1187,9 @@
 		<Class ClassID="4497" ClassName="SelectItemTrade{ITEM}" Data="{@st66d_y}{s20}{ITEM}{/}{/} {nl}을/를 정말 선택하시겠습니까?{nl} {nl}선택 후에는 다른 선택지로 변경 할 수 없습니다."/>
 		<Class ClassID="4498" ClassName="PhrmacyMaterial" Data="비약 연성술"/>
 		<Class ClassID="4499" ClassName="YouHaveSameLevelArcane" Data="개방권의 레벨과 같거나 더 높은 레벨의 아이템이 등록되어 있습니다."/>
+		<Class ClassID="4500" ClassName="TitleUnlockItem" Data="{#FE7E00}{s30}해당 아이템의 귀속을 해제합니다.{/}{/}"/>
+		<Class ClassID="4501" ClassName="ReallyGoddessUnlock" Data="{s22}{#FE7E00}[{item}]{nl} {nl}정말 귀속을 해제하시겠습니까?{nl}귀속을 해제하시려면{nl}다음 단어를 입력해 주세요.{/}{/} "/>
+		<Class ClassID="4502" ClassName="YESSCP_ALL_OPEN_RELIC_CUBE_MSG" Data="{nl} {nl}사용시 {@st41}{#33FF33}[{num}]{/}{/}개의 큐브가 모두 사용되며, 사용으로 획득한 아이템은 되돌릴 수 없습니다.{nl}{@st66d_y}{s20}{nl} {nl}정말 사용하시겠습니까?"/>
 	</Category>
 	<Category Name="ItemTooltip">
 		<Class ClassID="5001" ClassName="CoolDown : {Sec} Sec" Data="재사용 대기시간 : {Sec}초"/>
@@ -15874,7 +15877,7 @@
 		<Class ClassID="302726" ClassName="EVENT_2112_6TH_APPLE_OVER" Data="{#FF3333}최대 수령 횟수를 초과하였습니다.{nl}매주 월요일 오전 06시 초기화 됩니다.{/}"/>
 		<Class ClassID="302727" ClassName="EVENT_2112_6TH_CHECK_MSG2" Data="{#0066FF}[6주년]{/} 콘텐츠 보상 2배 지급 현황{nl}LV400 레벨 던전({#0066FF}{COUNT1}{/}/10회){nl}텔하르샤({#0066FF}{COUNT2}{/}/10회){nl}마신의 성소 자동매칭({#0066FF}{COUNT3}{/}/10회){nl}챌린지 모드 자동매칭(460LV)({#0066FF}{COUNT4}{/}/10회){nl}분열 특이점 자동 매칭({#0066FF}{COUNT5}{/}/10회){nl}성자의 기도소 - 1인,자동매칭({#0066FF}{COUNT6}{/}/10회){nl}성물 레이드 - 1인,자동매칭 Nomal({#0066FF}{COUNT7}{/}/10회){nl}성물 레이드 - 파티,자동매칭 Hard({#0066FF}{COUNT8}{/}/10회){nl}{#FF3333}※주간 제한은 매주 월요일 오전 06시 초기화 됩니다.{/}"/>
 		<Class ClassID="302728" ClassName="EVENT_2112_6TH_SEL4" Data="{#003399}[6주년 성장&amp;득템]{/}이벤트 설명"/>
-		<Class ClassID="302729" ClassName="EVENT_2112_6TH_CHECK_MSG3" Data="{#0066FF}[6주년]{/} 신규 콘텐츠 지원 현황{nl}접속 시간({#0066FF}{TIME}{/}분){nl}일일 60분 누적 접속 보상 획득 현황({#0066FF}{REWARD1}{/}/2회){nl}일일 접속 보상 현황({#0066FF}{REWARD2}{/}/1){nl}{#FF3333}{nl}{#FF3333}※일일 제한은 매일 오전 06시 초기화 됩니다.{/}"/>
+		<Class ClassID="302729" ClassName="EVENT_2112_6TH_CHECK_MSG3" Data="{#0066FF}[6주년]{/} 신규 콘텐츠 지원 현황{nl}접속 시간({#0066FF}{TIME}{/}분){nl}일일 60분 누적 접속 보상 획득 현황({#0066FF}{REWARD1}{/}/{MAX}회){nl}일일 접속 보상 현황({#0066FF}{REWARD2}{/}/1){nl}{#FF3333}{nl}{#FF3333}※일일 제한은 매일 오전 06시 초기화 됩니다.{/}"/>
 		<Class ClassID="302730" ClassName="KUPOLE_TESTSERVER4_DLG_5" Data="비약 연성술"/>
 	</Category>
 	<Category Name="Account">

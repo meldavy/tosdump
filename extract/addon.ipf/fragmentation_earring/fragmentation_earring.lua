@@ -155,7 +155,7 @@ function RELEASE_FRAGMENTATION_EARRING_UI_HOLD()
 	local frame = ui.GetFrame("fragmentation_earring");
 
 	local effect_gb = GET_CHILD_RECURSIVELY(frame, 'effect_gb');
-	effect_gb:StopUIEffect('COMPOSITION_EFFECT', true, 0);
+	effect_gb:StopUIEffect('FRAGMENTATION_EARRING_EFFECT', true, 0);
     ui.SetHoldUI(false);
 end
 

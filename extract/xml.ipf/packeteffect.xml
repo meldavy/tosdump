@@ -598,7 +598,7 @@
         <Effect Name="I_DelmoreCastleGate_force001"/>
         <Effect Name="I_DelmoreCastleGate_force001
 "/>
-        <Effect Name="I_DelmoreCastleGate_force001
+		<Effect Name="I_DelmoreCastleGate_force001
 "/>
         <Effect Name="skl10_loop"/>
         <Effect Name="skl12_loop"/>
@@ -643,6 +643,13 @@
         <Effect Name="I_force029_red"/>
         <Effect Name="F_DelmoreCastleGate_skl5_levitation001"/>
     <Effect Name="F_DelmoreCastleGate_skl4_ground002"/>
+        <Effect Name="F_ground158_light_red3"/>
+        <Effect Name="F_DelmoreCastleGate_skl2_levitation"/>
+        <Effect Name="F_ground158_light_violet2"/>
+        <Effect Name="F_DelmoreCastleGate_skl7_ground001"/>
+        <Effect Name="F_hit009_rize_red3_1"/>
+        <Effect Name="F_light075_yellow_loop3"/>
+        <Effect Name="F_explosion140_ground_dark_red2"/>
 	</Category>
     <Category ID="132">
         <Effect Name="I_arrow005_mash2_red#Dummy_back_arrow04"/>
@@ -25866,5 +25873,6 @@
 		<Effect Name="F_pattern026_eye_loop_red_violet"/>
 		<Effect Name="F_pattern026_eye_loop_blue_violet"/>
 		<Effect Name="F_ground222_loop"/>
+	<Effect Name="F_ground223_dark_loop"/>
 	</Category>
 </packeteffects>

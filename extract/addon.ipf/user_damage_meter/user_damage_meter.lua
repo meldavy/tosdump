@@ -28,25 +28,25 @@ function ON_USER_DAMAGE_LIST(nameList, damageList)
     end
     AUTO_CAST(frame)
     local damageRankGaugeBox = GET_CHILD_RECURSIVELY(frame,"damageRankGaugeBox")
-    UPDATE_USER_DAMAGE_METER_GUAGE(frame,damageRankGaugeBox, totalDamage)
+    UPDATE_USER_DAMAGE_METER_GUAGE(frame,damageRankGaugeBox, totalDamage, nameList)
 end
 
 
-function UPDATE_USER_DAMAGE_METER_GUAGE(frame, groupbox, totalDamage)
+function UPDATE_USER_DAMAGE_METER_GUAGE(frame, groupbox, totalDamage, nameList)
     local font = frame:GetUserConfig('GAUGE_FONT');
     
-    index = 1
-    for name, damage in pairs(damage_meter_info_total) do
-        local ctrlSet = groupbox:GetControlSet('gauge_with_two_text', 'GAUGE_'..index)
+    for i = 1, #nameList do
+        local name = nameList[i]
+        local damage = damage_meter_info_total[name]
+        local ctrlSet = groupbox:GetControlSet('gauge_with_two_text', 'GAUGE_'..i)
         if ctrlSet == nil then
-            ctrlSet = groupbox:CreateControlSet('gauge_with_two_text', 'GAUGE_'..index, 0, (index-1)*17);
+            ctrlSet = groupbox:CreateControlSet('gauge_with_two_text', 'GAUGE_'..i, 0, (i-1)*17);
             groupbox:Resize(groupbox:GetWidth(),groupbox:GetHeight()+17)
         end
         local point = MultForBigNumberInt64(damage,"100")
         point = DivForBigNumberInt64(point,totalDamage)
-        local skin = 'gauge_damage_meter_0'..math.min(index,4)
+        local skin = 'gauge_damage_meter_0'..math.min(i,4)
         damage = font..STR_KILO_CHANGE(damage)..'K'
         DAMAGE_METER_GAUGE_SET(ctrlSet,font..name,point,font..damage,skin);
-        index = index + 1
     end
 end

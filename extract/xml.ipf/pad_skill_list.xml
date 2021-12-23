@@ -8446,6 +8446,9 @@ return value;"/>
             <ToolScp Scp="PAD_FUNC_UPDATE_RUNSCRIPT" Client="NO" UseSleep="NO">
                 <Str_Arg Str="SCR_DelmoreCastleGate_SKL11_LINKAROOW_PAD_EFFECT"/>
             </ToolScp>
+            <ToolScp Scp="PAD_FUNC_UPDATE_RUNSCRIPT" Client="NO" UseSleep="NO">
+                <Str_Arg Str="SCR_DelmoreCastleGate_SKL11_PADKILL_CHECK" />
+            </ToolScp>
 		</updateEvent>
 	</PadSkill>
     <PadSkill Name="DelmoreCastleGate_SKL1_Pad1" CheckerType="0" PadHeight="10" Range="30" UpdateTerm="20" ApplyFlyMon="1" EnableSearch="0" IsMagicType="0" IsMineType="0">
@@ -8501,7 +8504,7 @@ return value;"/>
 		</destroyEvent>
         <updateEvent>
             <ToolScp Scp="PAD_DAMAGE_ENEMY" Client="NO" UseSleep="NO">
-                <Num Num="10"/>
+                <Num Num="1"/>
                 <Num Num="0"/>
                 <Num Num="0"/>
                 <Str_Arg Str="F_fire044_7" Arg="3"/>

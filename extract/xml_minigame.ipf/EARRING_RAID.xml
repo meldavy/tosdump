@@ -22,6 +22,10 @@
                             </ToolScp>
                         </condList>
                         <execList>
+                            <ToolScp Scp="GAME_ST_EVT_EXEC_SOUL_CRISTAL_LIMIT" Client="NO" UseSleep="NO">
+                                <Num Num="1"/>
+                                <Num Num="5"/>
+                            </ToolScp>
                             <ToolScp Scp="MGAME_EVT_SCP_TO_MON_CMD" Client="NO" UseSleep="NO">
                                 <MGameObj List="Start/0"/>
                                 <Str Str="SCR_EARRING_RAID_START"/>
@@ -99,6 +103,7 @@
                             <ToolScp Scp="MGAME_EVT_COND_PCCNT_IMMEDIATELY" Client="NO" UseSleep="NO">
                                 <Num Num="0"/>
                             </ToolScp>
+                            <ToolScp Scp="GAME_ST_EVT_COND_SOUL_CRISTAL_NONE" Client="NO" UseSleep="NO"/>
                         </condList>
                         <execList>
                             <ToolScp Scp="GAME_ST_EVT_EXEC_STAGE_START" Client="NO" UseSleep="NO">
@@ -222,6 +227,11 @@
                 </ObjList>
                 <StageEvents>
                     <Event execCount="1" eventName="Stop">
+                        <condList>
+                            <ToolScp Scp="GAME_ST_EVT_COND_TIMECHECK" Client="NO" UseSleep="NO">
+                                <Num Num="10"/>
+                            </ToolScp>
+                        </condList>
                         <execList>
                             <ToolScp Scp="MGAME_SET_RAID_TIMER_END" Client="NO" UseSleep="NO"/>
                             <ToolScp Scp="MGAME_STAGE_CHECK_LOG_STAGEPROGRESS" Client="NO" UseSleep="NO">

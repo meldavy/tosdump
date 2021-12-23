@@ -15,9 +15,9 @@ function UNLOCK_EARRING_BELONGING_SCROLL_TARGET_ITEM_SLOT(slot, invItem, scrollC
 	local iconInfo = icon:GetInfo();
 	iconInfo.type = type;
 
-	icon:SetTooltipType("reinforceitem");
-	icon:SetTooltipArg("transcendscroll", scrollClsID, invItem:GetIESID());
-	
+	icon:SetTooltipType('wholeitem');
+	icon:SetTooltipArg("", TryGetProp(itemCls, "ClassID", 0), invItem:GetIESID());
+	icon:SetTooltipOverlap(1)
 end
 
 function UNLOCK_EARRING_BELONGING_SCROLL_EXEC_ASK_AGAIN(frame, btn)
